@@ -47,7 +47,7 @@ print( name )
 ```lua title="Find all players"
 local players = entities.FindByClass("CTFPlayer")
 
-for i, player in ipairs(players) do
+for i, player in pairs(players) do
     print( player:GetName() )
 end
 ```
