@@ -1,0 +1,26 @@
+site_name: Lmaobox Lua
+site_url: https://lmaobox.net/lua/
+theme:
+  favicon: images/favicon.png
+  name: material
+  features:
+    - content.code.annotate
+    
+  palette:
+    primary: 'indigo'
+    accent: 'blue'
+
+extra:
+  homepage: https://lmaobox.net
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+extra_css:
+  - stylesheets/dark_theme.css 
+  - stylesheets/codehilite.css
+
