@@ -453,6 +453,10 @@ Returns the current damage stats as a following table:
 | `critical`         | 250      |
 | `melee`         | 90      |
 
+### GetWeaponInfo()
+
+Returns [data](WeaponData.md) about the weapon
+
 ## Examples
 
 ``` lua title="Calculate needed crit hack damage"
