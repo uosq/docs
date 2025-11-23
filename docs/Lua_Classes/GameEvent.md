@@ -1,6 +1,6 @@
 # GameEvent
 
-Represents a game event that was sent from the server. For a list of game events for Source games and TF2 see the [GameEvent List](https://wiki.alliedmods.net/Team_Fortress_2_Events).
+Represents a game event that was sent from the server. For a list of game events for Source games and TF2 see the [GameEvent List](https://developer.valvesoftware.com/wiki/Team_Fortress_2/Scripting/Game_Events).
 
 ## Methods
 
