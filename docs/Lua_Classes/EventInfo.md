@@ -23,3 +23,13 @@ integer
 string (raw bytes)
 
 ## Examples
+
+``` lua title="Print the data field"
+callbacks.Register("ProcessTempEntities", function (entEvtTable)
+    for ent, eventInfo in pairs(entEvtTable) do
+        if ent:GetNetworkName() == "CTETFParticleEffect" then
+            print(eventInfo.data)
+        end
+    end
+end)
+```
