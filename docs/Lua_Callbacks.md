@@ -8,48 +8,48 @@ Callbacks are the functions that are called when certain events happen. They are
 
 Called every frame. It is called after the screen is rendered, and can be used to draw text or objects on the screen.
 
-### DrawModel( DrawModelContext:ctx )
+### DrawModel( [DrawModelContext:ctx](Lua_Classes/DrawModelContext.md) )
 
 Called every time a model is just about to be drawn on the screen. You can use this to change the material used to draw the model or do some other effects.\
 
-### DrawStaticProps( StaticPropRenderInfo:info )
+### DrawStaticProps( [StaticPropRenderInfo:info](Lua_Classes/StaticPropRenderInfo.md) )
 
 Called every time static props are just about to be drawn on the screen. You can use this to change colors, materials, or do some other effects.
 
-### CreateMove( UserCmd:cmd )
+### CreateMove( [UserCmd:cmd](Lua_Classes/UserCmd.md) )
 
 Called every input update (66 times/sec), allows to modify viewangles, buttons, packet sending, etc. Useful for changing player movement or inputs.
 
-### FireGameEvent( GameEvent:event )
+### FireGameEvent( [GameEvent:event](Lua_Classes/GameEvent.md) )
 
 Called for all available game events. Game events are small packets of information that are sent from the server to the client, data about a situation that has happened.
 
-### DispatchUserMessage( UserMessage:msg )
+### DispatchUserMessage( [UserMessage:msg](Lua_Classes/UserMessage.md) )
 
 Called on every user message of type [UserMessage](./Lua_Classes/UserMessage.md). User messages are small packets of information that are sent from the server to the client, data about a situation that has happened.
 
-### SendStringCmd( StringCmd:cmd )
+### SendStringCmd( [StringCmd:cmd](Lua_Classes/StringCmd.md) )
 
 Called when console command is sent to server, ex. chat command "say".
 
-### FrameStageNotify( stage:integer )
+### FrameStageNotify( stage:integer) )
 
 Called multiple times per frame for each stage of the frame, such as rendering start, end, network update start, end, etc. You can do some actions here better than anywhere else. Make sure to check the E_ClientFrameStage constant.
 This used to be PostPropUpdate if you only updates on NETWORK_UPDATE_START. PostPropUpdate is now deprecated, please do not use it.
 
-### RenderView( ViewSetup:view )
+### RenderView( [ViewSetup:view](Lua_Classes/ViewSetup.md) )
 
 Called before the players view of type [ViewSetup](./Lua_Classes/ViewSetup.md) is rendered. You can use this to change the view, such as changing the view angles, fov, or origin.
 
-### PostRenderView( ViewSetup:view )
+### PostRenderView( [ViewSetup:view](Lua_Classes/ViewSetup.md) )
 
 Called after a players view of type [ViewSetup](./Lua_Classes/ViewSetup.md) is rendered. This is an ideal place to draw custom views (such as camera views) on the screen, as the primary view has already been rendered.
 
-### RenderViewModel( ViewSetup:vmview )
+### RenderViewModel( [ViewSetup:view](Lua_Classes/ViewSetup.md) )
 
 Called before the players viewmodel view of type [ViewSetup](./Lua_Classes/ViewSetup.md) is rendered. You can use this to change the rendering of the viewmodel, such as changing the viewmodel angles, fov, or origin.
 
-### ServerCmdKeyValues( StringCmd:keyvalues )
+### ServerCmdKeyValues( [StringCmd:keyvalues](Lua_Classes/StringCmd.md) )
 
 Called when the client sends a keyvalues message to the server. Keyvalues are a way of sending data to the server, and are used for many things, such as sending MVM Upgrades, using items, and more.
 
@@ -57,7 +57,7 @@ Called when the client sends a keyvalues message to the server. Keyvalues are a 
 
 Called when a fake crate is to be uncrated. This is called before the crate is actually uncrated. You can return a table of items that will be shown as uncrated. The loot list is useful as a reference for what items can be uncrated in this crate, but you can create any items you want.
 
-### OnLobbyUpdated( GameServerLobby:lobby )
+### OnLobbyUpdated( [GameServerLobby:lobby](Lua_Classes/GameServerLobby.md) )
 
 Called when a lobby is found or updated. This can also be called before the lobby is joined, so you can use this to decide whether or not to join the game (abandon), or to do something with the list of players in the lobby if youre in the game.
 
@@ -73,7 +73,7 @@ Called when a message is being sent to the GC. You can use this to intercept mes
 
 Called when a message is being received from the GC. You can use this to intercept messages received from the GC, and modify them or not process them at all. Return E_GCResults.k_EGCResultOK to process the message, or E_GCResults.k_EGCResultNoMessage to not process it.
 
-### SendNetMsg( NetMessage:msg, reliable:boolean, voice:boolean )
+### SendNetMsg( [NetMessage:msg](Lua_Classes/NetMessage.md), reliable:boolean, voice:boolean )
 
 Called when a message of type [NetMessage](./Lua_Classes/NetMessage.md) is being sent to the server. You can use this to intercept messages sent to the server, and modify them or not send them at all. Return true to send the message, or false to not send it.
 
@@ -81,7 +81,7 @@ Called when a message of type [NetMessage](./Lua_Classes/NetMessage.md) is being
 
 This is called after the screen space effects are rendered. You can use this to draw custom screen space effects, such as a custom bloom effect, or a custom blur effect, etc.
 
-### ProcessTempEntities( Table<TempEntity, EventInfo> entEvtTable )
+### ProcessTempEntities( Table<[TempEntity](Lua_Classes/TempEntity.md), [EventInfo](Lua_Classes/EventInfo.md)> entEvtTable )
 
 Called immediately when server sends one or more temporary entities to the client. Table consists of [TempEntity](./Lua_Classes/TempEntity.md) in first place and [EventInfo](./Lua_Classes/EventInfo.md) in the second place for each temporary entity. You may modify the entity and event data or read the temporary entity netvars before it is destroyed.
 
