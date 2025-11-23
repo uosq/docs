@@ -453,7 +453,7 @@ Returns the current damage stats as a following table:
 | `critical`         | 250      |
 | `melee`         | 90      |
 
-### GetWeaponInfo()
+### GetWeaponData()
 
 Returns [data](WeaponData.md) about the weapon
 
