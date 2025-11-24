@@ -72,7 +72,7 @@ When creating textures, you should make sure each size is a valid power of 2. Ot
 
 ### CreateTexture( imagePath:string )
 
-Create texture from image on the given path. Path is relative to `%localappdata%`.. But you can also specify an absolute path if you wish. Returns texture id for the newly created texture. Supported image extensions: PNG, JPG, BMP, TGA, VTF
+Create texture from image on the given path. Path is relative to `%localappdata%/lua/`.. But you can also specify an absolute path if you wish. Returns texture id for the newly created texture. Supported image extensions: PNG, JPG, BMP, TGA, VTF
 
 ### CreateTextureRGBA( rgbaBinaryData:string, width:integer, height:integer )
 
