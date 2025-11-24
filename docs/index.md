@@ -35,7 +35,7 @@ Or any of the following guides for example:
 
 1. Make sure you have Lmaobox loaded
 
-2. Create example.lua file in your %localappdata% folder and save your code there
+2. Create example.lua file in your %localappdata%/lua/ folder and save your code there
 
 3. Execute the script ingame using console command:
 
