@@ -74,6 +74,12 @@ Writes an integer to the buffer. Default bitLength is 32 (4 bytes). For short, u
 
 Writes a float to the buffer. Default bitLength is 32 (4 bytes). For short, use 16, for long, use 64.
 
+### Delete()
+
+Deletes the buffer.
+
+This should be called when the buffer is not needed anymore.
+
 ## Examples
 
 ```lua title="Write and print with a BitBuffer"
@@ -93,8 +99,4 @@ local bit = bitBuffer:ReadBit()
 print(str, int, byte, bit)
 
 bitBuffer:Delete()
-
 ```
-
-```lua title="Write and print with a NetMessage"
-

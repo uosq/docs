@@ -319,6 +319,10 @@ Returns the weapon ID of the weapon.
 
 Returns whether the weapon's view model is flipped.
 
+### GetWeaponData()
+
+Returns [data](WeaponData.md) about the weapon
+
 ## Weapon shooting gun methods
 
 Weapon "gun" methods are only available if the weapon is a shooting weapon, i.e. with projectiles.
