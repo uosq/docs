@@ -78,7 +78,7 @@ Returns true if the entity is alive
 
 ### EstimateAbsVelocity()
 
-Returns the estimated absolute velocity of the entity as [Vector3](Vector3.md)
+Returns the estimated absolute velocity of the entity as [Vector3](../Vector3)
 
 ### GetMoveType()
 
@@ -86,11 +86,11 @@ Returns the move type of the entity (the netvar propr does not work)
 
 ### HitboxSurroundingBox()
 
-Returns the hitbox surrounding box of the entity as table of [Vector3](Vector3.md) mins and maxs
+Returns the hitbox surrounding box of the entity as table of [Vector3](../Vector3) mins and maxs
 
 ### EntitySpaceHitboxSurroundingBox()
 
-Returns the hitbox surrounding box of the entity in entity space as table of [Vector3](Vector3.md) mins and maxs
+Returns the hitbox surrounding box of the entity in entity space as table of [Vector3](../Vector3) mins and maxs
 
 ### SetupBones( [boneMask:integer], [currentTime:number] )
 
@@ -98,7 +98,7 @@ Sets up the bones of the entity, boneMask is optional, by default 0x7FF00, and c
 
 ### GetHitboxes( [currentTime:number] )
 
-Returns world-transformed hitboxes of the entity as table of tables, each containing 2 entries of [Vector3](Vector3.md): mins and maxs positions of each hitbox.
+Returns world-transformed hitboxes of the entity as table of tables, each containing 2 entries of [Vector3](../Vector3): mins and maxs positions of each hitbox.
 The currentTime argument is optional, by default 0, and can be changed if you want the transform to be based on a different time.
 Example returned table:
 
@@ -141,7 +141,7 @@ Returns true if the entity is dormant (not being updated). Dormant entities are 
 
 ### ToInventoryItem()
 
-If the entity is an item that can be in player's inventory, such as a wearable or a weapon, returns the inventory item as [Item](Item.md)
+If the entity is an item that can be in player's inventory, such as a wearable or a weapon, returns the inventory item as [Item](../Item)
 
 ## Attributes
 
@@ -375,7 +375,7 @@ Returns the swing range of the weapon, returns nil if the weapon is not a melee 
 
 ### DoSwingTrace()
 
-Returns the [Trace object](Trace.md) result of the weapon's swing. In simple terms, it simulates what would weapon hit if it was swung.
+Returns the [Trace object](../Trace) result of the weapon's swing. In simple terms, it simulates what would weapon hit if it was swung.
 
 ### Medigun methods
 
