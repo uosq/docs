@@ -2,7 +2,7 @@
 
 The vector library provides a simple way to manipulate 3D vectors. You can use both Lua tables and Vector3 instances as arguments. The functions below showcase only the table-based option.
 
-See definitions of [Vector3](../Lua_Classes/vector3.md) and [EulerAngles](../Lua_Classes/EulerAngles.md)
+See definitions of [Vector3](../Lua_Classes/Vector3.md) and [EulerAngles](../Lua_Classes/EulerAngles.md)
 
 ## Functions
 
