@@ -883,7 +883,7 @@ m_Shared
 	m_nHalloweenBombHeadStage:  Integer
 	m_nPlayerCondEx2:  Integer
 	m_nPlayerCondEx3:  Integer
-	m_nStreaks:: DataTable
+	m_nStreaks: DataTable
 	m_unTauntSourceItemID_Low:  Integer
 	m_unTauntSourceItemID_High:  Integer
 	m_flRuneCharge: Float
