@@ -1,2778 +1,3061 @@
 # Entity Props
 
-``` title="Entity props and tables"
-"TF2EntProps"
+## Entities
+
+### CTFWearableLevelableItem
+```lua
+m_unLevel:  Integer
+```
+
+### CTFWearableCampaignItem
+```lua
+m_nState:  Integer
+```
+
+### CTFBaseRocket
+```lua
+m_vInitialVelocity:  Vector
+m_vecOrigin:  Vector
+m_angRotation:  Vector
+m_iDeflected:  Integer
+m_hLauncher:  Integer
+```
+
+### CTFWeaponBaseGrenadeProj
+```lua
+m_vInitialVelocity:  Vector
+m_bCritical:  Integer
+m_iDeflected:  Integer
+m_vecOrigin:  Vector
+m_angRotation:  Vector
+m_hDeflectOwner:  Integer
+```
+
+### CTFWeaponBase
+```lua
+m_bLowered:  Integer
+m_iReloadMode:  Integer
+m_bResetParity:  Integer
+m_bReloadedThroughAnimEvent:  Integer
+m_bDisguiseWeapon:  Integer
+
+LocalActiveTFWeaponData
 {
-	"DT_TFWearableLevelableItem"
+	m_flLastCritCheckTime: Float
+	m_flReloadPriorNextFire: Float
+	m_flLastFireTime: Float
+	m_flEffectBarRegenTime: Float
+	m_flObservedCritChance: Float
+}
+
+NonLocalTFWeaponData: DataTable
+m_flEnergy: Float
+m_hExtraWearable:  Integer
+m_hExtraWearableViewModel:  Integer
+m_bBeingRepurposedForTaunt:  Integer
+m_nKillComboClass:  Integer
+m_nKillComboCount:  Integer
+m_flInspectAnimEndTime: Float
+m_nInspectStage:  Integer
+m_iConsecutiveShots:  Integer
+```
+
+### CTFWeaponRobotArm
+```lua
+m_hRobotArm:  Integer
+```
+
+### CTFWeaponThrowable
+```lua
+m_flChargeBeginTime: Float
+```
+
+### CTFWeaponKatana
+```lua
+m_bIsBloody:  Integer
+```
+
+### CSniperDot
+```lua
+m_flChargeStartTime: Float
+```
+
+### CTFSniperRifleClassic
+```lua
+m_bCharging:  Integer
+```
+
+### CTFSniperRifle
+```lua
+	SniperRifleLocalData
 	{
-		"m_unLevel"		"Int"
+	m_flChargedDamage: Float
 	}
-	"DT_TFWearableCampaignItem"
+```
+
+### CWeaponChargedSMG
+```lua
+m_flMinicritCharge: Float
+```
+
+### CTFWeaponSlap
+```lua
+m_bFirstHit:  Integer
+m_nNumKills:  Integer
+```
+
+### CTFWeaponRocketPack
+```lua
+m_flInitLaunchTime: Float
+m_flLaunchTime: Float
+m_flToggleEndTime: Float
+m_bEnabled:  Integer
+```
+
+### CCrossbow
+```lua
+m_flRegenerateDuration: Float
+m_flLastUsedTimestamp: Float
+```
+
+### CWeaponRaygun
+```lua
+m_bUseNewProjectileCode:  Integer
+```
+
+### CWeaponPipebombLauncher
+```lua
+PipebombLauncherLocalData
+{
+	m_iPipebombCount:  Integer
+	m_flChargeBeginTime: Float
+}
+```
+
+### CParticleCannon
+```lua
+m_flChargeBeginTime: Float
+m_iChargeEffect:  Integer
+```
+
+### CWeaponMinigun
+```lua
+m_iWeaponState:  Integer
+m_bCritShot:  Integer
+```
+
+### CWeaponMedigun
+```lua
+m_hHealingTarget:  Integer
+m_bHealing:  Integer
+m_bAttacking:  Integer
+m_bChargeRelease:  Integer
+m_bHolstered:  Integer
+m_nChargeResistType:  Integer
+m_hLastHealingTarget:  Integer
+
+LocalTFWeaponMedigunData
+{
+	m_flChargeLevel: Float
+}
+
+NonLocalTFWeaponMedigunData
+{
+	m_flChargeLevel: Float
+}
+```
+
+### CWeaponLunchBox
+```lua
+m_bBroken:  Integer
+```
+
+### CTFWeaponKnife
+```lua
+m_bReadyToBackstab:  Integer
+m_bKnifeExists:  Integer
+m_flKnifeRegenerateDuration: Float
+m_flKnifeMeltTimestamp: Float
+```
+
+### CWeaponGrenadeLauncher
+```lua
+m_flDetonateTime: Float
+m_iCurrentTube:  Integer
+m_iGoalTube:  Integer
+```
+
+### CTFProjectile_Pipebomb
+```lua
+m_bTouched:  Integer
+m_iType:  Integer
+m_hLauncher:  Integer
+m_bDefensiveBomb:  Integer
+```
+
+### CGrapplingHook
+```lua
+m_hProjectile:  Integer
+```
+
+### CWeaponFlareGun_Revenge
+```lua
+m_fLastExtinguishTime: Float
+```
+
+### CWeaponFlareGun
+```lua
+m_flChargeBeginTime: Float
+```
+
+### CWeaponFlameThrower
+```lua
+m_iWeaponState:  Integer
+m_bCritFire:  Integer
+m_bHitTarget:  Integer
+m_flChargeBeginTime: Float
+
+LocalFlameThrowerData
+{
+	m_iActiveFlames:  Integer
+	m_iDamagingFlames:  Integer
+	m_hFlameManager:  Integer
+	m_bHasHalloweenSpell:  Integer
+}
+```
+### CWeaponFlameBall
+```lua
+m_flRechargeScale: Float
+```
+
+### CWeaponCompoundBow
+```lua
+m_bArrowAlight:  Integer
+m_bNoFire:  Integer
+```
+
+### CTFWeaponStickBomb
+```lua
+m_iDetonated:  Integer
+```
+
+### CTFWeaponBreakableMelee
+```lua
+m_bBroken:  Integer
+```
+
+### CTFDroppedWeapon
+```lua
+m_Item
 	{
-		"m_nState"		"Int"
-	}
-	"DT_TFBaseRocket"
+	m_iItemDefinitionIndex:  Integer
+	m_iEntityLevel:  Integer
+	m_iItemIDHigh:  Integer
+	m_iItemIDLow:  Integer
+	m_iAccountID:  Integer
+	m_iEntityQuality:  Integer
+	m_bInitialized:  Integer
+	m_bOnlyIterateItemViewAttributes:  Integer
+	m_AttributeList
 	{
-		"m_vInitialVelocity"		"Vector"
-		"m_vecOrigin"		"Vector"
-		"m_angRotation"		"Vector"
-		"m_iDeflected"		"Int"
-		"m_hLauncher"		"Int"
-	}
-	"DT_TFWeaponBaseGrenadeProj"
-	{
-		"m_vInitialVelocity"		"Vector"
-		"m_bCritical"		"Int"
-		"m_iDeflected"		"Int"
-		"m_vecOrigin"		"Vector"
-		"m_angRotation"		"Vector"
-		"m_hDeflectOwner"		"Int"
-	}
-	"DT_TFWeaponBase"
-	{
-		"m_bLowered"		"Int"
-		"m_iReloadMode"		"Int"
-		"m_bResetParity"		"Int"
-		"m_bReloadedThroughAnimEvent"		"Int"
-		"m_bDisguiseWeapon"		"Int"
-		"LocalActiveTFWeaponData"
+		m_Attributes
 		{
-			"m_flLastCritCheckTime"		"Float"
-			"m_flReloadPriorNextFire"		"Float"
-			"m_flLastFireTime"		"Float"
-			"m_flEffectBarRegenTime"		"Float"
-			"m_flObservedCritChance"		"Float"
-		}
-		"NonLocalTFWeaponData"		"DataTable"
-		"m_flEnergy"		"Float"
-		"m_hExtraWearable"		"Int"
-		"m_hExtraWearableViewModel"		"Int"
-		"m_bBeingRepurposedForTaunt"		"Int"
-		"m_nKillComboClass"		"Int"
-		"m_nKillComboCount"		"Int"
-		"m_flInspectAnimEndTime"		"Float"
-		"m_nInspectStage"		"Int"
-		"m_iConsecutiveShots"		"Int"
-	}
-	"DT_TFWeaponRobotArm"
-	{
-		"m_hRobotArm"		"Int"
-	}
-	"DT_TFWeaponThrowable"
-	{
-		"m_flChargeBeginTime"		"Float"
-	}
-	"DT_TFWeaponKatana"
-	{
-		"m_bIsBloody"		"Int"
-	}
-	"DT_SniperDot"
-	{
-		"m_flChargeStartTime"		"Float"
-	}
-	"DT_TFSniperRifleClassic"
-	{
-		"m_bCharging"		"Int"
-	}
-	"DT_TFSniperRifle"
-	{
-		"SniperRifleLocalData"
-		{
-			"m_flChargedDamage"		"Float"
-		}
-	}
-	"DT_WeaponChargedSMG"
-	{
-		"m_flMinicritCharge"		"Float"
-	}
-	"DT_TFWeaponSlap"
-	{
-		"m_bFirstHit"		"Int"
-		"m_nNumKills"		"Int"
-	}
-	"DT_TFWeaponRocketPack"
-	{
-		"m_flInitLaunchTime"		"Float"
-		"m_flLaunchTime"		"Float"
-		"m_flToggleEndTime"		"Float"
-		"m_bEnabled"		"Int"
-	}
-	"DT_Crossbow"
-	{
-		"m_flRegenerateDuration"		"Float"
-		"m_flLastUsedTimestamp"		"Float"
-	}
-	"DT_WeaponRaygun"
-	{
-		"m_bUseNewProjectileCode"		"Int"
-	}
-	"DT_WeaponPipebombLauncher"
-	{
-		"PipebombLauncherLocalData"
-		{
-			"m_iPipebombCount"		"Int"
-			"m_flChargeBeginTime"		"Float"
-		}
-	}
-	"DT_ParticleCannon"
-	{
-		"m_flChargeBeginTime"		"Float"
-		"m_iChargeEffect"		"Int"
-	}
-	"DT_WeaponMinigun"
-	{
-		"m_iWeaponState"		"Int"
-		"m_bCritShot"		"Int"
-	}
-	"DT_WeaponMedigun"
-	{
-		"m_hHealingTarget"		"Int"
-		"m_bHealing"		"Int"
-		"m_bAttacking"		"Int"
-		"m_bChargeRelease"		"Int"
-		"m_bHolstered"		"Int"
-		"m_nChargeResistType"		"Int"
-		"m_hLastHealingTarget"		"Int"
-		"LocalTFWeaponMedigunData"
-		{
-			"m_flChargeLevel"		"Float"
-		}
-		"NonLocalTFWeaponMedigunData"
-		{
-			"m_flChargeLevel"		"Float"
-		}
-	}
-	"DT_WeaponLunchBox"
-	{
-		"m_bBroken"		"Int"
-	}
-	"DT_TFWeaponKnife"
-	{
-		"m_bReadyToBackstab"		"Int"
-		"m_bKnifeExists"		"Int"
-		"m_flKnifeRegenerateDuration"		"Float"
-		"m_flKnifeMeltTimestamp"		"Float"
-	}
-	"DT_WeaponGrenadeLauncher"
-	{
-		"m_flDetonateTime"		"Float"
-		"m_iCurrentTube"		"Int"
-		"m_iGoalTube"		"Int"
-	}
-	"DT_TFProjectile_Pipebomb"
-	{
-		"m_bTouched"		"Int"
-		"m_iType"		"Int"
-		"m_hLauncher"		"Int"
-		"m_bDefensiveBomb"		"Int"
-	}
-	"DT_GrapplingHook"
-	{
-		"m_hProjectile"		"Int"
-	}
-	"DT_WeaponFlareGun_Revenge"
-	{
-		"m_fLastExtinguishTime"		"Float"
-	}
-	"DT_WeaponFlareGun"
-	{
-		"m_flChargeBeginTime"		"Float"
-	}
-	"DT_WeaponFlameThrower"
-	{
-		"m_iWeaponState"		"Int"
-		"m_bCritFire"		"Int"
-		"m_bHitTarget"		"Int"
-		"m_flChargeBeginTime"		"Float"
-		"LocalFlameThrowerData"
-		{
-			"m_iActiveFlames"		"Int"
-			"m_iDamagingFlames"		"Int"
-			"m_hFlameManager"		"Int"
-			"m_bHasHalloweenSpell"		"Int"
-		}
-	}
-	"DT_WeaponFlameBall"
-	{
-		"m_flRechargeScale"		"Float"
-	}
-	"DT_WeaponCompoundBow"
-	{
-		"m_bArrowAlight"		"Int"
-		"m_bNoFire"		"Int"
-	}
-	"DT_TFWeaponStickBomb"
-	{
-		"m_iDetonated"		"Int"
-	}
-	"DT_TFWeaponBreakableMelee"
-	{
-		"m_bBroken"		"Int"
-	}
-	"DT_TFDroppedWeapon"
-	{
-		"m_Item"
-		{
-			"m_iItemDefinitionIndex"		"Int"
-			"m_iEntityLevel"		"Int"
-			"m_iItemIDHigh"		"Int"
-			"m_iItemIDLow"		"Int"
-			"m_iAccountID"		"Int"
-			"m_iEntityQuality"		"Int"
-			"m_bInitialized"		"Int"
-			"m_bOnlyIterateItemViewAttributes"		"Int"
-			"m_AttributeList"
+			lengthproxy
 			{
-				"m_Attributes"
-				{
-					"lengthproxy"
-					{
-						"lengthprop20"		"Int"
-					}
-				}
-			}
-			"m_iTeamNumber"		"Int"
-			"m_NetworkedDynamicAttributesForDemos"
-			{
-				"m_Attributes"
-				{
-					"lengthproxy"
-					{
-						"lengthprop20"		"Int"
-					}
-				}
+				lengthprop20:  Integer
 			}
 		}
-		"m_flChargeLevel"		"Float"
 	}
-	"DT_TFWeaponSapper"
-	{
-		"m_flChargeBeginTime"		"Float"
-	}
-	"DT_TFWeaponBuilder"
-	{
-		"m_iBuildState"		"Int"
-		"BuilderLocalData"
+	m_iTeamNumber:  Integer
+	m_NetworkedDynamicAttributesForDemos
 		{
-			"m_iObjectType"		"Int"
-			"m_hObjectBeingBuilt"		"Int"
-			"m_aBuildableObjectTypes"		"DataTable"
-		}
-		"m_iObjectMode"		"Int"
-		"m_flWheatleyTalkingUntil"		"Float"
-	}
-	"DT_TFWeaponBuilder"
-	{
-		"m_iBuildState"		"Int"
-		"BuilderLocalData"
-		{
-			"m_iObjectType"		"Int"
-			"m_hObjectBeingBuilt"		"Int"
-			"m_aBuildableObjectTypes"		"DataTable"
-		}
-		"m_iObjectMode"		"Int"
-		"m_flWheatleyTalkingUntil"		"Float"
-	}
-	"DT_TFProjectile_Rocket"
-	{
-		"m_bCritical"		"Int"
-	}
-	"DT_TFProjectile_Flare"
-	{
-		"m_bCritical"		"Int"
-	}
-	"DT_TFProjectile_EnergyBall"
-	{
-		"m_bChargedShot"		"Int"
-		"m_vColor1"		"Vector"
-		"m_vColor2"		"Vector"
-	}
-	"DT_TFProjectile_Arrow"
-	{
-		"m_bArrowAlight"		"Int"
-		"m_bCritical"		"Int"
-		"m_iProjectileType"		"Int"
-	}
-	"DT_MannVsMachineStats"
-	{
-		"m_iCurrentWaveIdx"		"Int"
-		"m_iServerWaveID"		"Int"
-		"m_runningTotalWaveStats"
-		{
-			"nCreditsDropped"		"Int"
-			"nCreditsAcquired"		"Int"
-			"nCreditsBonus"		"Int"
-			"nPlayerDeaths"		"Int"
-			"nBuyBacks"		"Int"
-		}
-		"m_previousWaveStats"
-		{
-			"nCreditsDropped"		"Int"
-			"nCreditsAcquired"		"Int"
-			"nCreditsBonus"		"Int"
-			"nPlayerDeaths"		"Int"
-			"nBuyBacks"		"Int"
-		}
-		"m_currentWaveStats"
-		{
-			"nCreditsDropped"		"Int"
-			"nCreditsAcquired"		"Int"
-			"nCreditsBonus"		"Int"
-			"nPlayerDeaths"		"Int"
-			"nBuyBacks"		"Int"
-		}
-		"m_iCurrencyCollectedForRespec"		"Int"
-		"m_nRespecsAwardedInWave"		"Int"
-	}
-	"DT_TFBaseBoss"
-	{
-		"m_lastHealthPercentage"		"Float"
-	}
-	"DT_BossAlpha"
-	{
-		"m_isNuking"		"Int"
-	}
-	"DT_TFWeaponSpellBook"
-	{
-		"m_iSelectedSpellIndex"		"Int"
-		"m_iSpellCharges"		"Int"
-		"m_flTimeNextSpell"		"Float"
-		"m_bFiredAttack"		"Int"
-	}
-	"DT_Hightower_TeleportVortex"
-	{
-		"m_iState"		"Int"
-	}
-	"DT_TeleportVortex"
-	{
-		"m_iState"		"Int"
-	}
-	"DT_Zombie"
-	{
-		"m_flHeadScale"		"Float"
-	}
-	"DT_Merasmus"
-	{
-		"m_bRevealed"		"Int"
-		"m_bIsDoingAOEAttack"		"Int"
-		"m_bStunned"		"Int"
-	}
-	"DT_EyeballBoss"
-	{
-		"m_lookAtSpot"		"Vector"
-		"m_attitude"		"Int"
-	}
-	"DT_TFBotHintEngineerNest"
-	{
-		"m_bHasActiveTeleporter"		"Int"
-	}
-	"DT_BotNPCMinion"
-	{
-		"m_stunTarget"		"Int"
-	}
-	"DT_BotNPC"
-	{
-		"m_laserTarget"		"Int"
-		"m_isNuking"		"Int"
-	}
-	"DT_PasstimeGun"
-	{
-		"m_eThrowState"		"Int"
-		"m_fChargeBeginTime"		"Float"
-	}
-	"DT_TFRobotDestruction_Robot"
-	{
-		"m_iHealth"		"Int"
-		"m_iMaxHealth"		"Int"
-		"m_eType"		"Int"
-	}
-	"DT_TFReviveMarker"
-	{
-		"m_hOwner"		"Int"
-		"m_iHealth"		"Int"
-		"m_iMaxHealth"		"Int"
-		"m_nRevives"		"Int"
-	}
-	"DT_TFProjectile_BallOfFire"
-	{
-		"m_vecInitialVelocity"		"Vector"
-		"m_vecSpawnOrigin"		"Vector"
-	}
-	"DT_TFBaseProjectile"
-	{
-		"m_vInitialVelocity"		"Vector"
-		"m_hLauncher"		"Int"
-	}
-	"DT_TFPointManager"
-	{
-		"m_nRandomSeed"		"Int"
-		"m_unNextPointIndex"		"Int"
-		"m_nSpawnTime"		"DataTable"
-	}
-	"DT_TFRobotDestructionLogic"
-	{
-		"m_nMaxPoints"		"Int"
-		"m_nBlueScore"		"Int"
-		"m_nRedScore"		"Int"
-		"m_nBlueTargetPoints"		"Int"
-		"m_nRedTargetPoints"		"Int"
-		"m_flBlueTeamRespawnScale"		"Float"
-		"m_flRedTeamRespawnScale"		"Float"
-		"m_flBlueFinaleEndTime"		"Float"
-		"m_flRedFinaleEndTime"		"Float"
-		"m_flFinaleLength"		"Float"
-		"m_szResFile"		"String"
-		"m_eWinningMethod"		"DataTable"
-		"m_flCountdownEndTime"		"Float"
-	}
-	"DT_TFRobotDestruction_RobotGroup"
-	{
-		"m_pszHudIcon"		"String"
-		"m_iTeamNum"		"Int"
-		"m_nGroupNumber"		"Int"
-		"m_nState"		"Int"
-		"m_flRespawnStartTime"		"Float"
-		"m_flRespawnEndTime"		"Float"
-		"m_flLastAttackedTime"		"Float"
-	}
-	"DT_TFPlayerDestructionLogic"
-	{
-		"m_hRedTeamLeader"		"Int"
-		"m_hBlueTeamLeader"		"Int"
-		"m_iszCountdownImage"		"String"
-		"m_bUsingCountdownImage"		"Int"
-	}
-	"DT_TFMinigameLogic"
-	{
-		"m_hActiveMinigame"		"Int"
-	}
-	"DT_TFMinigame"
-	{
-		"m_nMinigameTeamScore"		"DataTable"
-		"m_nMaxScoreForMiniGame"		"Int"
-		"m_pszHudResFile"		"String"
-		"m_eScoringType"		"Int"
-	}
-	"DT_TFPowerupBottle"
-	{
-		"m_bActive"		"Int"
-		"m_usNumCharges"		"Int"
-	}
-	"DT_HalloweenSoulPack"
-	{
-		"m_hTarget"		"Int"
-		"m_vecPreCurvePos"		"Vector"
-		"m_vecStartCurvePos"		"Vector"
-		"m_flDuration"		"Float"
-	}
-	"DT_BonusRoundLogic"
-	{
-		"m_aBonusPlayerRoll"
-		{
-			"lengthproxy"
+		m_Attributes
 			{
-				"lengthprop101"		"Int"
-			}
-		}
-		"m_hBonusWinner"		"Int"
-		"m_Item"
-		{
-			"m_iItemDefinitionIndex"		"Int"
-			"m_iEntityLevel"		"Int"
-			"m_iItemIDHigh"		"Int"
-			"m_iItemIDLow"		"Int"
-			"m_iAccountID"		"Int"
-			"m_iEntityQuality"		"Int"
-			"m_bInitialized"		"Int"
-			"m_bOnlyIterateItemViewAttributes"		"Int"
-			"m_AttributeList"
-			{
-				"m_Attributes"
+				lengthproxy
 				{
-					"lengthproxy"
-					{
-						"lengthprop20"		"Int"
-					}
-				}
-			}
-			"m_iTeamNumber"		"Int"
-			"m_NetworkedDynamicAttributesForDemos"
-			{
-				"m_Attributes"
-				{
-					"lengthproxy"
-					{
-						"lengthprop20"		"Int"
-					}
+					lengthprop20:  Integer
 				}
 			}
 		}
 	}
-	"DT_TFGameRulesProxy"
-	{
-		"tf_gamerules_data"
-		{
-			"m_nGameType"		"Int"
-			"m_nStopWatchState"		"Int"
-			"m_pszTeamGoalStringRed"		"String"
-			"m_pszTeamGoalStringBlue"		"String"
-			"m_flCapturePointEnableTime"		"Float"
-			"m_nHudType"		"Int"
-			"m_bIsInTraining"		"Int"
-			"m_bAllowTrainingAchievements"		"Int"
-			"m_bIsWaitingForTrainingContinue"		"Int"
-			"m_bIsTrainingHUDVisible"		"Int"
-			"m_bIsInItemTestingMode"		"Int"
-			"m_hBonusLogic"		"Int"
-			"m_bPlayingKoth"		"Int"
-			"m_bPlayingMedieval"		"Int"
-			"m_bPlayingHybrid_CTF_CP"		"Int"
-			"m_bPlayingSpecialDeliveryMode"		"Int"
-			"m_bPlayingRobotDestructionMode"		"Int"
-			"m_hRedKothTimer"		"Int"
-			"m_hBlueKothTimer"		"Int"
-			"m_nMapHolidayType"		"Int"
-			"m_itHandle"		"Int"
-			"m_bPlayingMannVsMachine"		"Int"
-			"m_hBirthdayPlayer"		"Int"
-			"m_nBossHealth"		"Int"
-			"m_nMaxBossHealth"		"Int"
-			"m_fBossNormalizedTravelDistance"		"Int"
-			"m_bMannVsMachineAlarmStatus"		"Int"
-			"m_bHaveMinPlayersToEnableReady"		"Int"
-			"m_bBountyModeEnabled"		"Int"
-			"m_nHalloweenEffect"		"Int"
-			"m_fHalloweenEffectStartTime"		"Float"
-			"m_fHalloweenEffectDuration"		"Float"
-			"m_halloweenScenario"		"Int"
-			"m_bHelltowerPlayersInHell"		"Int"
-			"m_bIsUsingSpells"		"Int"
-			"m_bCompetitiveMode"		"Int"
-			"m_nMatchGroupType"		"Int"
-			"m_bMatchEnded"		"Int"
-			"m_bPowerupMode"		"Int"
-			"m_pszCustomUpgradesFile"		"String"
-			"m_bTruceActive"		"Int"
-			"m_bShowMatchSummary"		"Int"
-			"\"m_bShowCompetitiveMatchSummary\""		"Int"
-			"m_bTeamsSwitched"		"Int"
-			"m_bMapHasMatchSummaryStage"		"Int"
-			"m_bPlayersAreOnMatchSummaryStage"		"Int"
-			"m_bStopWatchWinner"		"Int"
-			"m_ePlayerWantsRematch"		"DataTable"
-			"m_eRematchState"		"Int"
-			"m_nNextMapVoteOptions"		"DataTable"
-			"m_nForceUpgrades"		"Int"
-			"m_nForceEscortPushLogic"		"Int"
-			"m_bRopesHolidayLightsAllowed"		"Int"
-		}
-	}
-	"DT_TETFParticleEffect"
-	{
-		"m_vecOrigin[0]"		"Float"
-		"m_vecOrigin[1]"		"Float"
-		"m_vecOrigin[2]"		"Float"
-		"m_vecStart[0]"		"Float"
-		"m_vecStart[1]"		"Float"
-		"m_vecStart[2]"		"Float"
-		"m_vecAngles"		"Vector"
-		"m_iParticleSystemIndex"		"Int"
-		"entindex"		"Int"
-		"m_iAttachType"		"Int"
-		"m_iAttachmentPointIndex"		"Int"
-		"m_bResetParticles"		"Int"
-		"m_bCustomColors"		"Int"
-		"m_CustomColors.m_vecColor1"		"Vector"
-		"m_CustomColors.m_vecColor2"		"Vector"
-		"m_bControlPoint1"		"Int"
-		"m_ControlPoint1.m_eParticleAttachment"		"Int"
-		"m_ControlPoint1.m_vecOffset[0]"		"Float"
-		"m_ControlPoint1.m_vecOffset[1]"		"Float"
-		"m_ControlPoint1.m_vecOffset[2]"		"Float"
-	}
-	"DT_TETFExplosion"
-	{
-		"m_vecOrigin[0]"		"Float"
-		"m_vecOrigin[1]"		"Float"
-		"m_vecOrigin[2]"		"Float"
-		"m_vecNormal"		"Vector"
-		"m_iWeaponID"		"Int"
-		"entindex"		"Int"
-		"m_nDefID"		"Int"
-		"m_nSound"		"Int"
-		"m_iCustomParticleIndex"		"Int"
-	}
-	"DT_TETFBlood"
-	{
-		"m_vecOrigin[0]"		"Float"
-		"m_vecOrigin[1]"		"Float"
-		"m_vecOrigin[2]"		"Float"
-		"m_vecNormal"		"Vector"
-		"entindex"		"Int"
-	}
-	"DT_TFFlameManager"
-	{
-		"m_hWeapon"		"Int"
-		"m_hAttacker"		"Int"
-		"m_flSpreadDegree"		"Float"
-		"m_flRedirectedFlameSizeMult"		"Float"
-		"m_flFlameStartSizeMult"		"Float"
-		"m_flFlameEndSizeMult"		"Float"
-		"m_flFlameIgnorePlayerVelocity"		"Float"
-		"m_flFlameReflectionAdditionalLifeTime"		"Float"
-		"m_flFlameReflectionDamageReduction"		"Float"
-		"m_iMaxFlameReflectionCount"		"Int"
-		"m_nShouldReflect"		"Int"
-		"m_flFlameSpeed"		"Float"
-		"m_flFlameLifeTime"		"Float"
-		"m_flRandomLifeTimeOffset"		"Float"
-		"m_flFlameGravity"		"Float"
-		"m_flFlameDrag"		"Float"
-		"m_flFlameUp"		"Float"
-		"m_bIsFiring"		"Int"
-	}
-	"DT_CHalloweenGiftPickup"
-	{
-		"m_hTargetPlayer"		"Int"
-	}
-	"DT_CBonusDuckPickup"
-	{
-		"m_bSpecial"		"Int"
-	}
-	"DT_CaptureFlag"
-	{
-		"m_bDisabled"		"Int"
-		"m_bVisibleWhenDisabled"		"Int"
-		"m_nType"		"Int"
-		"m_nFlagStatus"		"Int"
-		"m_flResetTime"		"Float"
-		"m_flNeutralTime"		"Float"
-		"m_flMaxResetTime"		"Float"
-		"m_hPrevOwner"		"Int"
-		"m_szModel"		"String"
-		"m_szHudIcon"		"String"
-		"m_szPaperEffect"		"String"
-		"m_szTrailEffect"		"String"
-		"m_nUseTrailEffect"		"Int"
-		"m_nPointValue"		"Int"
-		"m_flAutoCapTime"		"Float"
-		"m_bGlowEnabled"		"Int"
-		"m_flTimeToSetPoisonous"		"Float"
-	}
-	"DT_TFTeam"
-	{
-		"m_nFlagCaptures"		"Int"
-		"m_iRole"		"Int"
-		"team_object_array_element"		"Int"
-		"\"team_object_array\""		"Array"
-		"m_hLeader"		"Int"
-	}
-	"DT_TFPlayerResource"
-	{
-		"m_iTotalScore"		"DataTable"
-		"m_iMaxHealth"		"DataTable"
-		"m_iMaxBuffedHealth"		"DataTable"
-		"m_iPlayerClass"		"DataTable"
-		"m_bArenaSpectator"		"DataTable"
-		"m_iActiveDominations"		"DataTable"
-		"m_flNextRespawnTime"		"DataTable"
-		"m_iChargeLevel"		"DataTable"
-		"m_iDamage"		"DataTable"
-		"m_iDamageAssist"		"DataTable"
-		"m_iDamageBoss"		"DataTable"
-		"m_iHealing"		"DataTable"
-		"m_iHealingAssist"		"DataTable"
-		"m_iDamageBlocked"		"DataTable"
-		"m_iCurrencyCollected"		"DataTable"
-		"m_iBonusPoints"		"DataTable"
-		"m_iPlayerLevel"		"DataTable"
-		"m_iStreaks"		"DataTable"
-		"m_iUpgradeRefundCredits"		"DataTable"
-		"m_iBuybackCredits"		"DataTable"
-		"m_iPartyLeaderRedTeamIndex"		"Int"
-		"m_iPartyLeaderBlueTeamIndex"		"Int"
-		"m_iEventTeamStatus"		"Int"
-		"m_iPlayerClassWhenKilled"		"DataTable"
-		"m_iConnectionState"		"DataTable"
-		"m_flConnectTime"		"DataTable"
-	}
-	"DT_TFPlayer"
-	{
-		"m_bSaveMeParity"		"Int"
-		"m_bIsMiniBoss"		"Int"
-		"m_bIsABot"		"Int"
-		"m_nBotSkill"		"Int"
-		"m_nWaterLevel"		"Int"
-		"m_hRagdoll"		"Int"
-		"m_PlayerClass"
-		{
-			"m_iClass"		"Int"
-			"m_iszClassIcon"		"String"
-			"m_iszCustomModel"		"String"
-			"m_vecCustomModelOffset"		"Vector"
-			"m_angCustomModelRotation"		"Vector"
-			"m_bCustomModelRotates"		"Int"
-			"m_bCustomModelRotationSet"		"Int"
-			"m_bCustomModelVisibleToSelf"		"Int"
-			"m_bUseClassAnimations"		"Int"
-			"m_iClassModelParity"		"Int"
-		}
-		"m_Shared"
-		{
-			"m_nPlayerCond"		"Int"
-			"m_bJumping"		"Int"
-			"m_nNumHealers"		"Int"
-			"m_iCritMult"		"Int"
-			"m_iAirDash"		"Int"
-			"m_nAirDucked"		"Int"
-			"m_flDuckTimer"		"Float"
-			"m_nPlayerState"		"Int"
-			"m_iDesiredPlayerClass"		"Int"
-			"m_flMovementStunTime"		"Float"
-			"m_iMovementStunAmount"		"Int"
-			"m_iMovementStunParity"		"Int"
-			"m_hStunner"		"Int"
-			"m_iStunFlags"		"Int"
-			"m_nArenaNumChanges"		"Int"
-			"m_bArenaFirstBloodBoost"		"Int"
-			"m_iWeaponKnockbackID"		"Int"
-			"m_bLoadoutUnavailable"		"Int"
-			"m_iItemFindBonus"		"Int"
-			"m_bShieldEquipped"		"Int"
-			"m_bParachuteEquipped"		"Int"
-			"m_iNextMeleeCrit"		"Int"
-			"m_iDecapitations"		"Int"
-			"m_iRevengeCrits"		"Int"
-			"m_iDisguiseBody"		"Int"
-			"m_hCarriedObject"		"Int"
-			"m_bCarryingObject"		"Int"
-			"m_flNextNoiseMakerTime"		"Float"
-			"m_iSpawnRoomTouchCount"		"Int"
-			"m_iKillCountSinceLastDeploy"		"Int"
-			"m_flFirstPrimaryAttack"		"Float"
-			"m_flEnergyDrinkMeter"		"Float"
-			"m_flHypeMeter"		"Float"
-			"m_flChargeMeter"		"Float"
-			"m_flInvisChangeCompleteTime"		"Float"
-			"m_nDisguiseTeam"		"Int"
-			"m_nDisguiseClass"		"Int"
-			"m_nDisguiseSkinOverride"		"Int"
-			"m_nMaskClass"		"Int"
-			"m_hDisguiseTarget"		"Int"
-			"m_iDisguiseHealth"		"Int"
-			"m_bFeignDeathReady"		"Int"
-			"m_hDisguiseWeapon"		"Int"
-			"m_nTeamTeleporterUsed"		"Int"
-			"m_flCloakMeter"		"Float"
-			"m_flSpyTranqBuffDuration"		"Float"
-			"tfsharedlocaldata"
-			{
-				"m_nDesiredDisguiseTeam"		"Int"
-				"m_nDesiredDisguiseClass"		"Int"
-				"m_flStealthNoAttackExpire"		"Float"
-				"m_flStealthNextChangeTime"		"Float"
-				"m_bLastDisguisedAsOwnTeam"		"Int"
-				"m_flRageMeter"		"Float"
-				"m_bRageDraining"		"Int"
-				"m_flNextRageEarnTime"		"Float"
-				"m_bInUpgradeZone"		"Int"
-				"m_flItemChargeMeter"		"DataTable"
-				"m_bPlayerDominated"		"DataTable"
-				"m_bPlayerDominatingMe"		"DataTable"
-				"m_ScoreData"
-				{
-					"m_iCaptures"		"Int"
-					"m_iDefenses"		"Int"
-					"m_iKills"		"Int"
-					"m_iDeaths"		"Int"
-					"m_iSuicides"		"Int"
-					"m_iDominations"		"Int"
-					"m_iRevenge"		"Int"
-					"m_iBuildingsBuilt"		"Int"
-					"m_iBuildingsDestroyed"		"Int"
-					"m_iHeadshots"		"Int"
-					"m_iBackstabs"		"Int"
-					"m_iHealPoints"		"Int"
-					"m_iInvulns"		"Int"
-					"m_iTeleports"		"Int"
-					"m_iResupplyPoints"		"Int"
-					"m_iKillAssists"		"Int"
-					"m_iPoints"		"Int"
-					"m_iBonusPoints"		"Int"
-					"m_iDamageDone"		"Int"
-					"m_iCrits"		"Int"
-				}
-				"m_RoundScoreData"
-				{
-					"m_iCaptures"		"Int"
-					"m_iDefenses"		"Int"
-					"m_iKills"		"Int"
-					"m_iDeaths"		"Int"
-					"m_iSuicides"		"Int"
-					"m_iDominations"		"Int"
-					"m_iRevenge"		"Int"
-					"m_iBuildingsBuilt"		"Int"
-					"m_iBuildingsDestroyed"		"Int"
-					"m_iHeadshots"		"Int"
-					"m_iBackstabs"		"Int"
-					"m_iHealPoints"		"Int"
-					"m_iInvulns"		"Int"
-					"m_iTeleports"		"Int"
-					"m_iResupplyPoints"		"Int"
-					"m_iKillAssists"		"Int"
-					"m_iPoints"		"Int"
-					"m_iBonusPoints"		"Int"
-					"m_iDamageDone"		"Int"
-					"m_iCrits"		"Int"
-				}
-			}
-			"m_ConditionList"
-			{
-				"_condition_bits"		"Int"
-			}
-			"m_iTauntIndex"		"Int"
-			"m_iTauntConcept"		"Int"
-			"m_nPlayerCondEx"		"Int"
-			"m_iStunIndex"		"Int"
-			"m_nHalloweenBombHeadStage"		"Int"
-			"m_nPlayerCondEx2"		"Int"
-			"m_nPlayerCondEx3"		"Int"
-			"m_nStreaks"		"DataTable"
-			"m_unTauntSourceItemID_Low"		"Int"
-			"m_unTauntSourceItemID_High"		"Int"
-			"m_flRuneCharge"		"Float"
-			"m_bHasPasstimeBall"		"Int"
-			"m_bIsTargetedForPasstimePass"		"Int"
-			"m_hPasstimePassTarget"		"Int"
-			"m_askForBallTime"		"Float"
-			"m_bKingRuneBuffActive"		"Int"
-			"m_ConditionData"
-			{
-				"lengthproxy"
-				{
-					"lengthprop131"		"Int"
-				}
-			}
-			"m_nPlayerCondEx4"		"Int"
-			"m_flHolsterAnimTime"		"Float"
-			"m_hSwitchTo"		"Int"
-		}
-		"m_hItem"		"Int"
-		"tflocaldata"
-		{
-			"m_vecOrigin"		"VectorXY"
-			"m_vecOrigin[2]"		"Float"
-			"player_object_array_element"		"Int"
-			"\"player_object_array\""		"Array"
-			"m_angEyeAngles[0]"		"Float"
-			"m_angEyeAngles[1]"		"Float"
-			"m_bIsCoaching"		"Int"
-			"m_hCoach"		"Int"
-			"m_hStudent"		"Int"
-			"m_nCurrency"		"Int"
-			"m_nExperienceLevel"		"Int"
-			"m_nExperienceLevelProgress"		"Int"
-			"m_bMatchSafeToLeave"		"Int"
-		}
-		"tfnonlocaldata"
-		{
-			"m_vecOrigin"		"VectorXY"
-			"m_vecOrigin[2]"		"Float"
-			"m_angEyeAngles[0]"		"Float"
-			"m_angEyeAngles[1]"		"Float"
-		}
-		"m_bAllowMoveDuringTaunt"		"Int"
-		"m_bIsReadyToHighFive"		"Int"
-		"m_hHighFivePartner"		"Int"
-		"m_nForceTauntCam"		"Int"
-		"m_flTauntYaw"		"Float"
-		"m_nActiveTauntSlot"		"Int"
-		"m_iTauntItemDefIndex"		"Int"
-		"m_flCurrentTauntMoveSpeed"		"Float"
-		"m_flVehicleReverseTime"		"Float"
-		"m_flMvMLastDamageTime"		"Float"
-		"\"m_flLastDamageTime\""		"Float"
-		"m_bInPowerPlay"		"Int"
-		"m_iSpawnCounter"		"Int"
-		"m_bArenaSpectator"		"Int"
-		"m_AttributeManager"
-		{
-			"m_hOuter"		"Int"
-			"m_ProviderType"		"Int"
-			"m_iReapplyProvisionParity"		"Int"
-		}
-		"m_flHeadScale"		"Float"
-		"m_flTorsoScale"		"Float"
-		"m_flHandScale"		"Float"
-		"m_bUseBossHealthBar"		"Int"
-		"m_bUsingVRHeadset"		"Int"
-		"m_bForcedSkin"		"Int"
-		"m_nForcedSkin"		"Int"
-		"m_bGlowEnabled"		"Int"
-		"TFSendHealersDataTable"
-		{
-			"m_nActiveWpnClip"		"Int"
-		}
-		"m_flKartNextAvailableBoost"		"Float"
-		"m_iKartHealth"		"Int"
-		"m_iKartState"		"Int"
-		"m_hGrapplingHookTarget"		"Int"
-		"m_hSecondaryLastWeapon"		"Int"
-		"m_bUsingActionSlot"		"Int"
-		"m_flInspectTime"		"Float"
-		"m_flHelpmeButtonPressTime"		"Float"
-		"m_iCampaignMedals"		"Int"
-		"m_iPlayerSkinOverride"		"Int"
-		"m_bViewingCYOAPDA"		"Int"
-		"m_bRegenerating"		"Int"
-	}
-	"DT_TFRagdoll"
-	{
-		"m_vecRagdollOrigin"		"Vector"
-		"m_hPlayer"		"Int"
-		"m_vecForce"		"Vector"
-		"m_vecRagdollVelocity"		"Vector"
-		"m_nForceBone"		"Int"
-		"m_bGib"		"Int"
-		"m_bBurning"		"Int"
-		"m_bElectrocuted"		"Int"
-		"m_bFeignDeath"		"Int"
-		"m_bWasDisguised"		"Int"
-		"m_bOnGround"		"Int"
-		"m_bCloaked"		"Int"
-		"m_bBecomeAsh"		"Int"
-		"m_iDamageCustom"		"Int"
-		"m_iTeam"		"Int"
-		"m_iClass"		"Int"
-		"m_hRagWearables"
-		{
-			"lengthproxy"
-			{
-				"lengthprop8"		"Int"
-			}
-		}
-		"m_bGoldRagdoll"		"Int"
-		"m_bIceRagdoll"		"Int"
-		"m_bCritOnHardHit"		"Int"
-		"m_flHeadScale"		"Float"
-		"m_flTorsoScale"		"Float"
-		"m_flHandScale"		"Float"
-	}
-	"DT_TEPlayerAnimEvent"
-	{
-		"m_hPlayer"		"Int"
-		"m_iEvent"		"Int"
-		"m_nData"		"Int"
-	}
-	"DT_TFPasstimeLogic"
-	{
-		"m_hBall"		"Int"
-		"m_trackPoints[0]"		"Vector"
-		"m_trackPoints"		"Array"
-		"m_iNumSections"		"Int"
-		"m_iCurrentSection"		"Int"
-		"m_flMaxPassRange"		"Float"
-		"m_iBallPower"		"Int"
-		"m_flPackSpeed"		"Float"
-		"m_bPlayerIsPackMember"		"DataTable"
-	}
-	"DT_PasstimeBall"
-	{
-		"m_iCollisionCount"		"Int"
-		"m_hHomingTarget"		"Int"
-		"m_hCarrier"		"Int"
-		"m_hPrevCarrier"		"Int"
-	}
-	"DT_TFObjectiveResource"
-	{
-		"m_nMannVsMachineMaxWaveCount"		"Int"
-		"m_nMannVsMachineWaveCount"		"Int"
-		"m_nMannVsMachineWaveEnemyCount"		"Int"
-		"m_nMvMWorldMoney"		"Int"
-		"m_flMannVsMachineNextWaveTime"		"Float"
-		"m_bMannVsMachineBetweenWaves"		"Int"
-		"m_nFlagCarrierUpgradeLevel"		"Int"
-		"m_flMvMBaseBombUpgradeTime"		"Float"
-		"m_flMvMNextBombUpgradeTime"		"Float"
-		"m_iszMvMPopfileName"		"String"
-		"m_iChallengeIndex"		"Int"
-		"m_nMvMEventPopfileType"		"Int"
-		"m_nMannVsMachineWaveClassCounts"		"DataTable"
-		"m_iszMannVsMachineWaveClassNames[0]"		"String"
-		"m_iszMannVsMachineWaveClassNames"		"Array"
-		"m_nMannVsMachineWaveClassFlags"		"DataTable"
-		"m_nMannVsMachineWaveClassCounts2"		"DataTable"
-		"m_iszMannVsMachineWaveClassNames2[0]"		"String"
-		"m_iszMannVsMachineWaveClassNames2"		"Array"
-		"m_nMannVsMachineWaveClassFlags2"		"DataTable"
-		"m_bMannVsMachineWaveClassActive"		"DataTable"
-		"m_bMannVsMachineWaveClassActive2"		"DataTable"
-	}
-	"DT_TFGlow"
-	{
-		"m_iMode"		"Int"
-		"m_glowColor"		"Int"
-		"m_bDisabled"		"Int"
-		"m_hTarget"		"Int"
-	}
-	"DT_TEFireBullets"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_vecAngles[0]"		"Float"
-		"m_vecAngles[1]"		"Float"
-		"m_iWeaponID"		"Int"
-		"m_iMode"		"Int"
-		"m_iSeed"		"Int"
-		"m_iPlayer"		"Int"
-		"m_flSpread"		"Float"
-		"m_bCritical"		"Int"
-	}
-	"DT_AmmoPack"
-	{
-		"m_vecInitialVelocity"		"Vector"
-		"m_angRotation[0]"		"Float"
-		"m_angRotation[1]"		"Float"
-		"m_angRotation[2]"		"Float"
-	}
-	"DT_ObjectTeleporter"
-	{
-		"m_iState"		"Int"
-		"m_flRechargeTime"		"Float"
-		"m_flCurrentRechargeDuration"		"Float"
-		"m_iTimesUsed"		"Int"
-		"m_flYawToExit"		"Float"
-		"m_bMatchBuilding"		"Int"
-	}
-	"DT_ObjectSentrygun"
-	{
-		"m_iAmmoShells"		"Int"
-		"m_iAmmoRockets"		"Int"
-		"m_iState"		"Int"
-		"m_bPlayerControlled"		"Int"
-		"m_nShieldLevel"		"Int"
-		"m_bShielded"		"Int"
-		"m_hEnemy"		"Int"
-		"m_hAutoAimTarget"		"Int"
-		"SentrygunLocalData"
-		{
-			"m_iKills"		"Int"
-			"m_iAssists"		"Int"
-		}
-	}
-	"DT_ObjectDispenser"
-	{
-		"m_iState"		"Int"
-		"m_iAmmoMetal"		"Int"
-		"m_iMiniBombCounter"		"Int"
-		"healing_array_element"		"Int"
-		"\"healing_array\""		"Array"
-	}
-	"DT_MonsterResource"
-	{
-		"m_iBossHealthPercentageByte"		"Int"
-		"m_iBossStunPercentageByte"		"Int"
-		"m_iSkillShotCompleteCount"		"Int"
-		"m_fSkillShotComboEndTime"		"Float"
-		"m_iBossState"		"Int"
-	}
-	"DT_FuncPasstimeGoal"
-	{
-		"m_bTriggerDisabled"		"Int"
-		"m_iGoalType"		"Int"
-	}
-	"DT_CaptureZone"
-	{
-		"m_bDisabled"		"Int"
-	}
-	"DT_CurrencyPack"
-	{
-		"m_bDistributed"		"Int"
-	}
-	"DT_BaseObject"
-	{
-		"m_iHealth"		"Int"
-		"m_iMaxHealth"		"Int"
-		"m_bHasSapper"		"Int"
-		"m_iObjectType"		"Int"
-		"m_bBuilding"		"Int"
-		"m_bPlacing"		"Int"
-		"m_bCarried"		"Int"
-		"m_bCarryDeploy"		"Int"
-		"m_bMiniBuilding"		"Int"
-		"m_flPercentageConstructed"		"Float"
-		"m_fObjectFlags"		"Int"
-		"m_hBuiltOnEntity"		"Int"
-		"m_bDisabled"		"Int"
-		"m_hBuilder"		"Int"
-		"m_vecBuildMaxs"		"Vector"
-		"m_vecBuildMins"		"Vector"
-		"m_iDesiredBuildRotations"		"Int"
-		"m_bServerOverridePlacement"		"Int"
-		"m_iUpgradeLevel"		"Int"
-		"m_iUpgradeMetal"		"Int"
-		"m_iUpgradeMetalRequired"		"Int"
-		"m_iHighestUpgradeLevel"		"Int"
-		"m_iObjectMode"		"Int"
-		"m_bDisposableBuilding"		"Int"
-		"m_bWasMapPlaced"		"Int"
-		"m_bPlasmaDisable"		"Int"
-	}
-	"DT_TestTraceline"
-	{
-		"m_clrRender"		"Int"
-		"m_vecOrigin"		"Vector"
-		"m_angRotation[0]"		"Float"
-		"m_angRotation[1]"		"Float"
-		"m_angRotation[2]"		"Float"
-		"moveparent"		"Int"
-	}
-	"DT_TEWorldDecal"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_nIndex"		"Int"
-	}
-	"DT_TESpriteSpray"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_vecDirection"		"Vector"
-		"m_nModelIndex"		"Int"
-		"m_fNoise"		"Float"
-		"m_nCount"		"Int"
-		"m_nSpeed"		"Int"
-	}
-	"DT_TESprite"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_nModelIndex"		"Int"
-		"m_fScale"		"Float"
-		"m_nBrightness"		"Int"
-	}
-	"DT_TESparks"
-	{
-		"m_nMagnitude"		"Int"
-		"m_nTrailLength"		"Int"
-		"m_vecDir"		"Vector"
-	}
-	"DT_TESmoke"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_nModelIndex"		"Int"
-		"m_fScale"		"Float"
-		"m_nFrameRate"		"Int"
-	}
-	"DT_TEShowLine"
-	{
-		"m_vecEnd"		"Vector"
-	}
-	"DT_TEProjectedDecal"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_angRotation"		"Vector"
-		"m_flDistance"		"Float"
-		"m_nIndex"		"Int"
-	}
-	"DT_TEPlayerDecal"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_nEntity"		"Int"
-		"m_nPlayer"		"Int"
-	}
-	"DT_TEPhysicsProp"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_angRotation[0]"		"Float"
-		"m_angRotation[1]"		"Float"
-		"m_angRotation[2]"		"Float"
-		"m_vecVelocity"		"Vector"
-		"m_nModelIndex"		"Int"
-		"m_nFlags"		"Int"
-		"m_nSkin"		"Int"
-		"m_nEffects"		"Int"
-	}
-	"DT_TEParticleSystem"
-	{
-		"m_vecOrigin[0]"		"Float"
-		"m_vecOrigin[1]"		"Float"
-		"m_vecOrigin[2]"		"Float"
-	}
-	"DT_TEMuzzleFlash"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_vecAngles"		"Vector"
-		"m_flScale"		"Float"
-		"m_nType"		"Int"
-	}
-	"DT_TELargeFunnel"
-	{
-		"m_nModelIndex"		"Int"
-		"m_nReversed"		"Int"
-	}
-	"DT_TEKillPlayerAttachments"
-	{
-		"m_nPlayer"		"Int"
-	}
-	"DT_TEImpact"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_vecNormal"		"Vector"
-		"m_iType"		"Int"
-		"m_ucFlags"		"Int"
-	}
-	"DT_TEGlowSprite"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_nModelIndex"		"Int"
-		"m_fScale"		"Float"
-		"m_fLife"		"Float"
-		"m_nBrightness"		"Int"
-	}
-	"DT_TEShatterSurface"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_vecAngles"		"Vector"
-		"m_vecForce"		"Vector"
-		"m_vecForcePos"		"Vector"
-		"m_flWidth"		"Float"
-		"m_flHeight"		"Float"
-		"m_flShardSize"		"Float"
-		"m_nSurfaceType"		"Int"
-		"m_uchFrontColor[0]"		"Int"
-		"m_uchFrontColor[1]"		"Int"
-		"m_uchFrontColor[2]"		"Int"
-		"m_uchBackColor[0]"		"Int"
-		"m_uchBackColor[1]"		"Int"
-		"m_uchBackColor[2]"		"Int"
-	}
-	"DT_TEFootprintDecal"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_vecDirection"		"Vector"
-		"m_nEntity"		"Int"
-		"m_nIndex"		"Int"
-		"m_chMaterialType"		"Int"
-	}
-	"DT_TEFizz"
-	{
-		"m_nEntity"		"Int"
-		"m_nModelIndex"		"Int"
-		"m_nDensity"		"Int"
-		"m_nCurrent"		"Int"
-	}
-	"DT_TEExplosion"
-	{
-		"m_nModelIndex"		"Int"
-		"m_fScale"		"Float"
-		"m_nFrameRate"		"Int"
-		"m_nFlags"		"Int"
-		"m_vecNormal"		"Vector"
-		"m_chMaterialType"		"Int"
-		"m_nRadius"		"Int"
-		"m_nMagnitude"		"Int"
-	}
-	"DT_TEEnergySplash"
-	{
-		"m_vecPos"		"Vector"
-		"m_vecDir"		"Vector"
-		"m_bExplosive"		"Int"
-	}
-	"DT_TEEffectDispatch"
-	{
-		"m_EffectData"
-		{
-			"m_vOrigin[0]"		"Float"
-			"m_vOrigin[1]"		"Float"
-			"m_vOrigin[2]"		"Float"
-			"m_vStart[0]"		"Float"
-			"m_vStart[1]"		"Float"
-			"m_vStart[2]"		"Float"
-			"m_vAngles"		"Vector"
-			"m_vNormal"		"Vector"
-			"m_fFlags"		"Int"
-			"m_flMagnitude"		"Float"
-			"m_flScale"		"Float"
-			"m_nAttachmentIndex"		"Int"
-			"m_nSurfaceProp"		"Int"
-			"m_iEffectName"		"Int"
-			"m_nMaterial"		"Int"
-			"m_nDamageType"		"Int"
-			"m_nHitBox"		"Int"
-			"entindex"		"Int"
-			"m_nColor"		"Int"
-			"m_flRadius"		"Float"
-			"m_bCustomColors"		"Int"
-			"m_CustomColors.m_vecColor1"		"Vector"
-			"m_CustomColors.m_vecColor2"		"Vector"
-			"m_bControlPoint1"		"Int"
-			"m_ControlPoint1.m_eParticleAttachment"		"Int"
-			"m_ControlPoint1.m_vecOffset[0]"		"Float"
-			"m_ControlPoint1.m_vecOffset[1]"		"Float"
-			"m_ControlPoint1.m_vecOffset[2]"		"Float"
-		}
-	}
-	"DT_TEDynamicLight"
-	{
-		"m_vecOrigin"		"Vector"
-		"r"		"Int"
-		"g"		"Int"
-		"B"		"Int"
-		"exponent"		"Int"
-		"m_fRadius"		"Float"
-		"m_fTime"		"Float"
-		"m_fDecay"		"Float"
-	}
-	"DT_TEDecal"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_vecStart"		"Vector"
-		"m_nEntity"		"Int"
-		"m_nHitBox"		"Int"
-		"m_nIndex"		"Int"
-	}
-	"DT_TEClientProjectile"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_vecVelocity"		"Vector"
-		"m_nModelIndex"		"Int"
-		"m_nLifeTime"		"Int"
-		"m_hOwner"		"Int"
-	}
-	"DT_TEBubbleTrail"
-	{
-		"m_vecMins"		"Vector"
-		"m_vecMaxs"		"Vector"
-		"m_nModelIndex"		"Int"
-		"m_flWaterZ"		"Float"
-		"m_nCount"		"Int"
-		"m_fSpeed"		"Float"
-	}
-	"DT_TEBubbles"
-	{
-		"m_vecMins"		"Vector"
-		"m_vecMaxs"		"Vector"
-		"m_nModelIndex"		"Int"
-		"m_fHeight"		"Float"
-		"m_nCount"		"Int"
-		"m_fSpeed"		"Float"
-	}
-	"DT_TEBSPDecal"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_nEntity"		"Int"
-		"m_nIndex"		"Int"
-	}
-	"DT_TEBreakModel"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_angRotation[0]"		"Float"
-		"m_angRotation[1]"		"Float"
-		"m_angRotation[2]"		"Float"
-		"m_vecSize"		"Vector"
-		"m_vecVelocity"		"Vector"
-		"m_nModelIndex"		"Int"
-		"m_nRandomization"		"Int"
-		"m_nCount"		"Int"
-		"m_fTime"		"Float"
-		"m_nFlags"		"Int"
-	}
-	"DT_TEBloodStream"
-	{
-		"m_vecDirection"		"Vector"
-		"r"		"Int"
-		"g"		"Int"
-		"B"		"Int"
-		"a"		"Int"
-		"m_nAmount"		"Int"
-	}
-	"DT_TEBloodSprite"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_vecDirection"		"Vector"
-		"r"		"Int"
-		"g"		"Int"
-		"B"		"Int"
-		"a"		"Int"
-		"m_nSprayModel"		"Int"
-		"m_nDropModel"		"Int"
-		"m_nSize"		"Int"
-	}
-	"DT_TEBeamSpline"
-	{
-		"m_nPoints"		"Int"
-		"m_vecPoints[0]"		"Vector"
-		"m_vecPoints"		"Array"
-	}
-	"DT_TEBeamRingPoint"
-	{
-		"m_vecCenter"		"Vector"
-		"m_flStartRadius"		"Float"
-		"m_flEndRadius"		"Float"
-	}
-	"DT_TEBeamRing"
-	{
-		"m_nStartEntity"		"Int"
-		"m_nEndEntity"		"Int"
-	}
-	"DT_TEBeamPoints"
-	{
-		"m_vecStartPoint"		"Vector"
-		"m_vecEndPoint"		"Vector"
-	}
-	"DT_TEBeamLaser"
-	{
-		"m_nStartEntity"		"Int"
-		"m_nEndEntity"		"Int"
-	}
-	"DT_TEBeamFollow"
-	{
-		"m_iEntIndex"		"Int"
-	}
-	"DT_TEBeamEnts"
-	{
-		"m_nStartEntity"		"Int"
-		"m_nEndEntity"		"Int"
-	}
-	"DT_TEBeamEntPoint"
-	{
-		"m_nStartEntity"		"Int"
-		"m_nEndEntity"		"Int"
-		"m_vecStartPoint"		"Vector"
-		"m_vecEndPoint"		"Vector"
-	}
-	"DT_BaseBeam"
-	{
-		"m_nModelIndex"		"Int"
-		"m_nHaloIndex"		"Int"
-		"m_nStartFrame"		"Int"
-		"m_nFrameRate"		"Int"
-		"m_fLife"		"Float"
-		"m_fWidth"		"Float"
-		"m_fEndWidth"		"Float"
-		"m_nFadeLength"		"Int"
-		"m_fAmplitude"		"Float"
-		"m_nSpeed"		"Int"
-		"r"		"Int"
-		"g"		"Int"
-		"B"		"Int"
-		"a"		"Int"
-		"m_nFlags"		"Int"
-	}
-	"DT_TEMetalSparks"
-	{
-		"m_vecPos"		"Vector"
-		"m_vecDir"		"Vector"
-	}
-	"DT_SteamJet"
-	{
-		"m_SpreadSpeed"		"Float"
-		"m_Speed"		"Float"
-		"m_StartSize"		"Float"
-		"m_EndSize"		"Float"
-		"m_Rate"		"Float"
-		"m_JetLength"		"Float"
-		"m_bEmit"		"Int"
-		"m_bFaceLeft"		"Int"
-		"m_nType"		"Int"
-		"m_spawnflags"		"Int"
-		"m_flRollSpeed"		"Float"
-	}
-	"DT_SmokeStack"
-	{
-		"m_SpreadSpeed"		"Float"
-		"m_Speed"		"Float"
-		"m_StartSize"		"Float"
-		"m_EndSize"		"Float"
-		"m_Rate"		"Float"
-		"m_JetLength"		"Float"
-		"m_bEmit"		"Int"
-		"m_flBaseSpread"		"Float"
-		"m_flTwist"		"Float"
-		"m_flRollSpeed"		"Float"
-		"m_iMaterialModel"		"Int"
-		"m_AmbientLight.m_vPos"		"Vector"
-		"m_AmbientLight.m_vColor"		"Vector"
-		"m_AmbientLight.m_flIntensity"		"Float"
-		"m_DirLight.m_vPos"		"Vector"
-		"m_DirLight.m_vColor"		"Vector"
-		"m_DirLight.m_flIntensity"		"Float"
-		"m_vWind"		"Vector"
-	}
-	"DT_DustTrail"
-	{
-		"m_SpawnRate"		"Float"
-		"m_Color"		"Vector"
-		"m_ParticleLifetime"		"Float"
-		"m_StopEmitTime"		"Float"
-		"m_MinSpeed"		"Float"
-		"m_MaxSpeed"		"Float"
-		"m_MinDirectedSpeed"		"Float"
-		"m_MaxDirectedSpeed"		"Float"
-		"m_StartSize"		"Float"
-		"m_EndSize"		"Float"
-		"m_SpawnRadius"		"Float"
-		"m_bEmit"		"Int"
-		"m_Opacity"		"Float"
-	}
-	"DT_FireTrail"
-	{
-		"m_nAttachment"		"Int"
-		"m_flLifetime"		"Float"
-	}
-	"DT_SporeTrail"
-	{
-		"m_flSpawnRate"		"Float"
-		"m_vecEndColor"		"Vector"
-		"m_flParticleLifetime"		"Float"
-		"m_flStartSize"		"Float"
-		"m_flEndSize"		"Float"
-		"m_flSpawnRadius"		"Float"
-		"m_bEmit"		"Int"
-	}
-	"DT_SporeExplosion"
-	{
-		"m_flSpawnRate"		"Float"
-		"m_flParticleLifetime"		"Float"
-		"m_flStartSize"		"Float"
-		"m_flEndSize"		"Float"
-		"m_flSpawnRadius"		"Float"
-		"m_bEmit"		"Int"
-		"m_bDontRemove"		"Int"
-	}
-	"DT_RocketTrail"
-	{
-		"m_SpawnRate"		"Float"
-		"m_StartColor"		"Vector"
-		"m_EndColor"		"Vector"
-		"m_ParticleLifetime"		"Float"
-		"m_StopEmitTime"		"Float"
-		"m_MinSpeed"		"Float"
-		"m_MaxSpeed"		"Float"
-		"m_StartSize"		"Float"
-		"m_EndSize"		"Float"
-		"m_SpawnRadius"		"Float"
-		"m_bEmit"		"Int"
-		"m_nAttachment"		"Int"
-		"m_Opacity"		"Float"
-		"m_bDamaged"		"Int"
-		"m_flFlareScale"		"Float"
-	}
-	"DT_SmokeTrail"
-	{
-		"m_SpawnRate"		"Float"
-		"m_StartColor"		"Vector"
-		"m_EndColor"		"Vector"
-		"m_ParticleLifetime"		"Float"
-		"m_StopEmitTime"		"Float"
-		"m_MinSpeed"		"Float"
-		"m_MaxSpeed"		"Float"
-		"m_MinDirectedSpeed"		"Float"
-		"m_MaxDirectedSpeed"		"Float"
-		"m_StartSize"		"Float"
-		"m_EndSize"		"Float"
-		"m_SpawnRadius"		"Float"
-		"m_bEmit"		"Int"
-		"m_nAttachment"		"Int"
-		"m_Opacity"		"Float"
-	}
-	"DT_PropVehicleDriveable"
-	{
-		"m_hPlayer"		"Int"
-		"m_nSpeed"		"Int"
-		"m_nRPM"		"Int"
-		"m_flThrottle"		"Float"
-		"m_nBoostTimeLeft"		"Int"
-		"m_nHasBoost"		"Int"
-		"m_nScannerDisabledWeapons"		"Int"
-		"m_nScannerDisabledVehicle"		"Int"
-		"m_bEnterAnimOn"		"Int"
-		"m_bExitAnimOn"		"Int"
-		"m_bUnableToFire"		"Int"
-		"m_vecEyeExitEndpoint"		"Vector"
-		"m_bHasGun"		"Int"
-		"m_vecGunCrosshair"		"Vector"
-	}
-	"DT_ParticleSmokeGrenade"
-	{
-		"m_flSpawnTime"		"Float"
-		"m_FadeStartTime"		"Float"
-		"m_FadeEndTime"		"Float"
-		"m_CurrentStage"		"Int"
-	}
-	"DT_ParticleFire"
-	{
-		"m_vOrigin"		"Vector"
-		"m_vDirection"		"Vector"
-	}
-	"DT_TEGaussExplosion"
-	{
-		"m_nType"		"Int"
-		"m_vecDirection"		"Vector"
-	}
-	"DT_QuadraticBeam"
-	{
-		"m_targetPosition"		"Vector"
-		"m_controlPosition"		"Vector"
-		"m_scrollRate"		"Float"
-		"m_flWidth"		"Float"
-	}
-	"DT_Embers"
-	{
-		"m_nDensity"		"Int"
-		"m_nLifeTime"		"Int"
-		"m_nSpeed"		"Int"
-		"m_bEmit"		"Int"
-	}
-	"DT_EnvWind"
-	{
-		"m_EnvWindShared"
-		{
-			"m_iMinWind"		"Int"
-			"m_iMaxWind"		"Int"
-			"m_iMinGust"		"Int"
-			"m_iMaxGust"		"Int"
-			"m_flMinGustDelay"		"Float"
-			"m_flMaxGustDelay"		"Float"
-			"m_iGustDirChange"		"Int"
-			"m_iWindSeed"		"Int"
-			"m_iInitialWindDir"		"Int"
-			"m_flInitialWindSpeed"		"Float"
-			"m_flStartTime"		"Float"
-			"m_flGustDuration"		"Float"
-		}
-	}
-	"DT_Precipitation"
-	{
-		"m_nPrecipType"		"Int"
-	}
-	"DT_WeaponIFMBaseCamera"
-	{
-		"m_flRenderAspectRatio"		"Float"
-		"m_flRenderFOV"		"Float"
-		"m_flRenderArmLength"		"Float"
-		"m_vecRenderPosition"		"Vector"
-		"m_angRenderAngles"		"Vector"
-	}
-	"DT_TFWearable"
-	{
-		"m_bDisguiseWearable"		"Int"
-		"m_hWeaponAssociatedWith"		"Int"
-	}
-	"DT_BaseAttributableItem"
-	{
-		"m_AttributeManager"
-		{
-			"m_hOuter"		"Int"
-			"m_ProviderType"		"Int"
-			"m_iReapplyProvisionParity"		"Int"
-			"m_Item"
-			{
-				"m_iItemDefinitionIndex"		"Int"
-				"m_iEntityLevel"		"Int"
-				"m_iItemIDHigh"		"Int"
-				"m_iItemIDLow"		"Int"
-				"m_iAccountID"		"Int"
-				"m_iEntityQuality"		"Int"
-				"m_bInitialized"		"Int"
-				"m_bOnlyIterateItemViewAttributes"		"Int"
-				"m_AttributeList"
-				{
-					"m_Attributes"
-					{
-						"lengthproxy"
-						{
-							"lengthprop20"		"Int"
-						}
-					}
-				}
-				"m_iTeamNumber"		"Int"
-				"m_NetworkedDynamicAttributesForDemos"
-				{
-					"m_Attributes"
-					{
-						"lengthproxy"
-						{
-							"lengthprop20"		"Int"
-						}
-					}
-				}
-			}
-		}
-	}
-	"DT_EconEntity"
-	{
-		"m_AttributeManager"
-		{
-			"m_hOuter"		"Int"
-			"m_ProviderType"		"Int"
-			"m_iReapplyProvisionParity"		"Int"
-			"m_Item"
-			{
-				"m_iItemDefinitionIndex"		"Int"
-				"m_iEntityLevel"		"Int"
-				"m_iItemIDHigh"		"Int"
-				"m_iItemIDLow"		"Int"
-				"m_iAccountID"		"Int"
-				"m_iEntityQuality"		"Int"
-				"m_bInitialized"		"Int"
-				"m_bOnlyIterateItemViewAttributes"		"Int"
-				"m_AttributeList"
-				{
-					"m_Attributes"
-					{
-						"lengthproxy"
-						{
-							"lengthprop20"		"Int"
-						}
-					}
-				}
-				"m_iTeamNumber"		"Int"
-				"m_NetworkedDynamicAttributesForDemos"
-				{
-					"m_Attributes"
-					{
-						"lengthproxy"
-						{
-							"lengthprop20"		"Int"
-						}
-					}
-				}
-			}
-		}
-		"m_bValidatedAttachedEntity"		"Int"
-	}
-	"DT_HandleTest"
-	{
-		"m_Handle"		"Int"
-		"m_bSendHandle"		"Int"
-	}
-	"DT_TeamplayRoundBasedRulesProxy"
-	{
-		"teamplayroundbased_gamerules_data"
-		{
-			"m_iRoundState"		"Int"
-			"m_bInWaitingForPlayers"		"Int"
-			"m_iWinningTeam"		"Int"
-			"m_bInOvertime"		"Int"
-			"m_bInSetup"		"Int"
-			"m_bSwitchedTeamsThisRound"		"Int"
-			"m_bAwaitingReadyRestart"		"Int"
-			"m_flRestartRoundTime"		"Float"
-			"m_flMapResetTime"		"Float"
-			"m_nRoundsPlayed"		"Int"
-			"m_flNextRespawnWave"		"DataTable"
-			"m_TeamRespawnWaveTimes"		"DataTable"
-			"m_bTeamReady"		"DataTable"
-			"m_bStopWatch"		"Int"
-			"m_bMultipleTrains"		"Int"
-			"m_bPlayerReady"		"DataTable"
-			"m_bCheatsEnabledDuringLevel"		"Int"
-			"m_flCountdownTime"		"Float"
-			"m_flStateTransitionTime"		"Float"
-		}
-	}
-	"DT_TeamRoundTimer"
-	{
-		"m_bTimerPaused"		"Int"
-		"m_flTimeRemaining"		"Float"
-		"m_flTimerEndTime"		"Float"
-		"m_nTimerMaxLength"		"Int"
-		"m_bIsDisabled"		"Int"
-		"m_bShowInHUD"		"Int"
-		"m_nTimerLength"		"Int"
-		"m_nTimerInitialLength"		"Int"
-		"m_bAutoCountdown"		"Int"
-		"m_nSetupTimeLength"		"Int"
-		"m_nState"		"Int"
-		"m_bStartPaused"		"Int"
-		"m_bShowTimeRemaining"		"Int"
-		"m_bInCaptureWatchState"		"Int"
-		"m_bStopWatchTimer"		"Int"
-		"m_flTotalTime"		"Float"
-	}
-	"DT_SpriteTrail"
-	{
-		"m_flLifetime"		"Float"
-		"m_flStartWidth"		"Float"
-		"m_flEndWidth"		"Float"
-		"m_flStartWidthVariance"		"Float"
-		"m_flTextureRes"		"Float"
-		"m_flMinFadeLength"		"Float"
-		"m_vecSkyboxOrigin"		"Vector"
-		"m_flSkyboxScale"		"Float"
-	}
-	"DT_Sprite"
-	{
-		"m_hAttachedToEntity"		"Int"
-		"m_nAttachment"		"Int"
-		"m_flScaleTime"		"Float"
-		"m_flSpriteScale"		"Float"
-		"m_flSpriteFramerate"		"Float"
-		"m_flGlowProxySize"		"Float"
-		"m_flHDRColorScale"		"Float"
-		"m_flFrame"		"Float"
-		"m_flBrightnessTime"		"Float"
-		"m_nBrightness"		"Int"
-		"m_bWorldSpaceScale"		"Int"
-	}
-	"DT_Ragdoll_Attached"
-	{
-		"m_boneIndexAttached"		"Int"
-		"m_ragdollAttachedObjectIndex"		"Int"
-		"m_attachmentPointBoneSpace"		"Vector"
-		"m_attachmentPointRagdollSpace"		"Vector"
-	}
-	"DT_Ragdoll"
-	{
-		"m_ragAngles[0]"		"Vector"
-		"m_ragAngles"		"Array"
-		"m_ragPos[0]"		"Vector"
-		"m_ragPos"		"Array"
-		"m_hUnragdoll"		"Int"
-		"m_flBlendWeight"		"Float"
-		"m_nOverlaySequence"		"Int"
-	}
-	"DT_PoseController"
-	{
-		"m_hProps"		"DataTable"
-		"m_chPoseIndex"		"DataTable"
-		"m_bPoseValueParity"		"Int"
-		"m_fPoseValue"		"Float"
-		"m_fInterpolationTime"		"Float"
-		"m_bInterpolationWrap"		"Int"
-		"m_fCycleFrequency"		"Float"
-		"m_nFModType"		"Int"
-		"m_fFModTimeOffset"		"Float"
-		"m_fFModRate"		"Float"
-		"m_fFModAmplitude"		"Float"
-	}
-	"DT_FuncLadder"
-	{
-		"m_vecPlayerMountPositionTop"		"Vector"
-		"m_vecPlayerMountPositionBottom"		"Vector"
-		"m_vecLadderDir"		"Vector"
-		"m_bFakeLadder"		"Int"
-	}
-	"DT_DetailController"
-	{
-		"m_flFadeStartDist"		"Float"
-		"m_flFadeEndDist"		"Float"
-	}
-	"DT_World"
-	{
-		"m_flWaveHeight"		"Float"
-		"m_WorldMins"		"Vector"
-		"m_WorldMaxs"		"Vector"
-		"m_bStartDark"		"Int"
-		"m_flMaxOccludeeArea"		"Float"
-		"m_flMinOccluderArea"		"Float"
-		"m_flMaxPropScreenSpaceWidth"		"Float"
-		"m_flMinPropScreenSpaceWidth"		"Float"
-		"m_iszDetailSpriteMaterial"		"String"
-		"m_bColdWorld"		"Int"
-	}
-	"DT_WaterLODControl"
-	{
-		"m_flCheapWaterStartDistance"		"Float"
-		"m_flCheapWaterEndDistance"		"Float"
-	}
-	"DT_VoteController"
-	{
-		"m_iActiveIssueIndex"		"Int"
-		"m_nVoteIdx"		"Int"
-		"m_iOnlyTeamToVote"		"Int"
-		"m_nVoteOptionCount"		"DataTable"
-		"m_nPotentialVotes"		"Int"
-		"m_bIsYesNoVote"		"Int"
-	}
-	"DT_VGuiScreen"
-	{
-		"m_flWidth"		"Float"
-		"m_flHeight"		"Float"
-		"m_fScreenFlags"		"Int"
-		"m_nPanelName"		"Int"
-		"m_nAttachmentIndex"		"Int"
-		"m_nOverlayMaterial"		"Int"
-		"m_hPlayerOwner"		"Int"
-	}
-	"DT_PropJeep"
-	{
-		"m_bHeadlightIsOn"		"Int"
-	}
-	"DT_PropVehicleChoreoGeneric"
-	{
-		"m_hPlayer"		"Int"
-		"m_bEnterAnimOn"		"Int"
-		"m_bExitAnimOn"		"Int"
-		"m_vecEyeExitEndpoint"		"Vector"
-		"m_vehicleView.bClampEyeAngles"		"Int"
-		"m_vehicleView.flPitchCurveZero"		"Float"
-		"m_vehicleView.flPitchCurveLinear"		"Float"
-		"m_vehicleView.flRollCurveZero"		"Float"
-		"m_vehicleView.flRollCurveLinear"		"Float"
-		"m_vehicleView.flFOV"		"Float"
-		"m_vehicleView.flYawMin"		"Float"
-		"m_vehicleView.flYawMax"		"Float"
-		"m_vehicleView.flPitchMin"		"Float"
-		"m_vehicleView.flPitchMax"		"Float"
-	}
-	"DT_ProxyToggle"
-	{
-		"blah"
-		{
-			"m_WithProxy"		"Int"
-		}
-	}
-	"DT_Tesla"
-	{
-		"m_SoundName"		"String"
-		"m_iszSpriteName"		"String"
-	}
-	"DT_TeamTrainWatcher"
-	{
-		"m_flTotalProgress"		"Float"
-		"m_iTrainSpeedLevel"		"Int"
-		"m_flRecedeTime"		"Float"
-		"m_nNumCappers"		"Int"
-		"m_hGlowEnt"		"Int"
-	}
-	"DT_BaseTeamObjectiveResource"
-	{
-		"m_iTimerToShowInHUD"		"Int"
-		"m_iStopWatchTimer"		"Int"
-		"m_iNumControlPoints"		"Int"
-		"m_bPlayingMiniRounds"		"Int"
-		"m_bControlPointsReset"		"Int"
-		"m_iUpdateCapHudParity"		"Int"
-		"m_vCPPositions[0]"		"Vector"
-		"m_vCPPositions"		"Array"
-		"m_bCPIsVisible"		"DataTable"
-		"m_flLazyCapPerc"		"DataTable"
-		"m_iTeamIcons"		"DataTable"
-		"m_iTeamOverlays"		"DataTable"
-		"m_iTeamReqCappers"		"DataTable"
-		"m_flTeamCapTime"		"DataTable"
-		"m_iPreviousPoints"		"DataTable"
-		"m_bTeamCanCap"		"DataTable"
-		"m_iTeamBaseIcons"		"DataTable"
-		"m_iBaseControlPoints"		"DataTable"
-		"m_bInMiniRound"		"DataTable"
-		"m_iWarnOnCap"		"DataTable"
-		"m_iszWarnSound[0]"		"String"
-		"m_iszWarnSound"		"Array"
-		"m_flPathDistance"		"DataTable"
-		"m_iCPGroup"		"DataTable"
-		"m_bCPLocked"		"DataTable"
-		"m_nNumNodeHillData"		"DataTable"
-		"m_flNodeHillData"		"DataTable"
-		"m_bTrackAlarm"		"DataTable"
-		"m_flUnlockTimes"		"DataTable"
-		"m_bHillIsDownhill"		"DataTable"
-		"m_flCPTimerTimes"		"DataTable"
-		"m_iNumTeamMembers"		"DataTable"
-		"m_iCappingTeam"		"DataTable"
-		"m_iTeamInZone"		"DataTable"
-		"m_bBlocked"		"DataTable"
-		"m_iOwner"		"DataTable"
-		"m_bCPCapRateScalesWithPlayers"		"DataTable"
-		"m_pszCapLayoutInHUD"		"String"
-		"m_flCustomPositionX"		"Float"
-		"m_flCustomPositionY"		"Float"
-	}
-	"DT_Team"
-	{
-		"m_iTeamNum"		"Int"
-		"m_iScore"		"Int"
-		"m_iRoundsWon"		"Int"
-		"m_szTeamname"		"String"
-		"player_array_element"		"Int"
-		"\"player_array\""		"Array"
-	}
-	"DT_Sun"
-	{
-		"m_clrRender"		"Int"
-		"m_clrOverlay"		"Int"
-		"m_vDirection"		"Vector"
-		"m_bOn"		"Int"
-		"m_nSize"		"Int"
-		"m_nOverlaySize"		"Int"
-		"m_nMaterial"		"Int"
-		"m_nOverlayMaterial"		"Int"
-		"HDRColorScale"		"Float"
-	}
-	"DT_ParticlePerformanceMonitor"
-	{
-		"m_bMeasurePerf"		"Int"
-		"m_bDisplayPerf"		"Int"
-	}
-	"DT_SpotlightEnd"
-	{
-		"m_flLightScale"		"Float"
-		"m_Radius"		"Float"
-	}
-	"DT_SlideshowDisplay"
-	{
-		"m_bEnabled"		"Int"
-		"m_szDisplayText"		"String"
-		"m_szSlideshowDirectory"		"String"
-		"m_chCurrentSlideLists"		"DataTable"
-		"m_fMinSlideTime"		"Float"
-		"m_fMaxSlideTime"		"Float"
-		"m_iCycleType"		"Int"
-		"m_bNoListRepeats"		"Int"
-	}
-	"DT_ShadowControl"
-	{
-		"m_shadowDirection"		"Vector"
-		"m_shadowColor"		"Int"
-		"m_flShadowMaxDist"		"Float"
-		"m_bDisableShadows"		"Int"
-	}
-	"DT_SceneEntity"
-	{
-		"m_nSceneStringIndex"		"Int"
-		"m_bIsPlayingBack"		"Int"
-		"m_bPaused"		"Int"
-		"m_bMultiplayer"		"Int"
-		"m_flForceClientTime"		"Float"
-		"m_hActorList"
-		{
-			"lengthproxy"
-			{
-				"lengthprop16"		"Int"
-			}
-		}
-	}
-	"DT_RopeKeyframe"
-	{
-		"m_iRopeMaterialModelIndex"		"Int"
-		"m_hStartPoint"		"Int"
-		"m_hEndPoint"		"Int"
-		"m_iStartAttachment"		"Int"
-		"m_iEndAttachment"		"Int"
-		"m_fLockedPoints"		"Int"
-		"m_Slack"		"Int"
-		"m_RopeLength"		"Int"
-		"m_RopeFlags"		"Int"
-		"m_TextureScale"		"Float"
-		"m_nSegments"		"Int"
-		"m_bConstrainBetweenEndpoints"		"Int"
-		"m_Subdiv"		"Int"
-		"m_Width"		"Float"
-		"m_flScrollSpeed"		"Float"
-		"m_vecOrigin"		"Vector"
-		"moveparent"		"Int"
-		"m_iParentAttachment"		"Int"
-	}
-	"DT_RagdollManager"
-	{
-		"m_iCurrentMaxRagdollCount"		"Int"
-	}
-	"DT_PhysicsPropMultiplayer"
-	{
-		"m_iPhysicsMode"		"Int"
-		"m_fMass"		"Float"
-		"m_collisionMins"		"Vector"
-		"m_collisionMaxs"		"Vector"
-	}
-	"DT_PhysBoxMultiplayer"
-	{
-		"m_iPhysicsMode"		"Int"
-		"m_fMass"		"Float"
-	}
-	"DT_DynamicProp"
-	{
-		"m_bUseHitboxesForRenderBox"		"Int"
-	}
-	"DT_PointWorldText"
-	{
-		"m_szText"		"String"
-		"m_flTextSize"		"Float"
-		"m_flTextSpacingX"		"Float"
-		"m_flTextSpacingY"		"Float"
-		"m_colTextColor"		"Int"
-		"m_nOrientation"		"Int"
-		"m_nFont"		"Int"
-		"m_bRainbow"		"Int"
-	}
-	"DT_PointCommentaryNode"
-	{
-		"m_bActive"		"Int"
-		"m_flStartTime"		"Float"
-		"m_iszCommentaryFile"		"String"
-		"m_iszCommentaryFileNoHDR"		"String"
-		"m_iszSpeakers"		"String"
-		"m_iNodeNumber"		"Int"
-		"m_iNodeNumberMax"		"Int"
-		"m_hViewPosition"		"Int"
-	}
-	"DT_PointCamera"
-	{
-		"m_FOV"		"Float"
-		"m_Resolution"		"Float"
-		"m_bFogEnable"		"Int"
-		"m_FogColor"		"Int"
-		"m_flFogStart"		"Float"
-		"m_flFogEnd"		"Float"
-		"m_flFogMaxDensity"		"Float"
-		"m_bActive"		"Int"
-		"m_bUseScreenAspectRatio"		"Int"
-	}
-	"DT_PlayerResource"
-	{
-		"m_iPing"		"DataTable"
-		"m_iScore"		"DataTable"
-		"m_iDeaths"		"DataTable"
-		"m_bConnected"		"DataTable"
-		"m_iTeam"		"DataTable"
-		"m_bAlive"		"DataTable"
-		"m_iHealth"		"DataTable"
-		"m_iAccountID"		"DataTable"
-		"m_bValid"		"DataTable"
-		"m_iUserID"		"DataTable"
-	}
-	"DT_Plasma"
-	{
-		"m_flStartScale"		"Float"
-		"m_flScale"		"Float"
-		"m_flScaleTime"		"Float"
-		"m_nFlags"		"Int"
-		"m_nPlasmaModelIndex"		"Int"
-		"m_nPlasmaModelIndex2"		"Int"
-		"m_nGlowModelIndex"		"Int"
-	}
-	"DT_PhysicsProp"
-	{
-		"m_bAwake"		"Int"
-	}
-	"DT_PhysBox"
-	{
-		"m_mass"		"Float"
-	}
-	"DT_ParticleSystem"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_hOwnerEntity"		"Int"
-		"moveparent"		"Int"
-		"m_iParentAttachment"		"Int"
-		"m_angRotation"		"Vector"
-		"m_iEffectIndex"		"Int"
-		"m_bActive"		"Int"
-		"m_flStartTime"		"Float"
-		"m_hControlPointEnts"		"DataTable"
-		"m_iControlPointParents"		"DataTable"
-		"m_bWeatherEffect"		"Int"
-	}
-	"DT_MaterialModifyControl"
-	{
-		"m_szMaterialName"		"String"
-		"m_szMaterialVar"		"String"
-		"m_szMaterialVarValue"		"String"
-		"m_iFrameStart"		"Int"
-		"m_iFrameEnd"		"Int"
-		"m_bWrap"		"Int"
-		"m_flFramerate"		"Float"
-		"m_bNewAnimCommandsSemaphore"		"Int"
-		"m_flFloatLerpStartValue"		"Float"
-		"m_flFloatLerpEndValue"		"Float"
-		"m_flFloatLerpTransitionTime"		"Float"
-		"m_bFloatLerpWrap"		"Int"
-		"m_nModifyMode"		"Int"
-	}
-	"DT_LightGlow"
-	{
-		"m_clrRender"		"Int"
-		"m_nHorizontalSize"		"Int"
-		"m_nVerticalSize"		"Int"
-		"m_nMinDist"		"Int"
-		"m_nMaxDist"		"Int"
-		"m_nOuterMaxDist"		"Int"
-		"m_spawnflags"		"Int"
-		"m_vecOrigin"		"Vector"
-		"m_angRotation"		"Vector"
-		"moveparent"		"Int"
-		"m_flGlowProxySize"		"Float"
-		"HDRColorScale"		"Float"
-	}
-	"DT_InfoOverlayAccessor"
-	{
-		"m_iTextureFrameIndex"		"Int"
-		"m_iOverlayID"		"Int"
-	}
-	"DT_FuncSmokeVolume"
-	{
-		"m_Color1"		"Int"
-		"m_Color2"		"Int"
-		"m_MaterialName"		"String"
-		"m_ParticleDrawWidth"		"Float"
-		"m_ParticleSpacingDistance"		"Float"
-		"m_DensityRampSpeed"		"Float"
-		"m_RotationSpeed"		"Float"
-		"m_MovementSpeed"		"Float"
-		"m_Density"		"Float"
-		"m_spawnflags"		"Int"
-		"m_Collision"
-		{
-			"m_vecMinsPreScaled"		"Vector"
-			"m_vecMaxsPreScaled"		"Vector"
-			"m_vecMins"		"Vector"
-			"m_vecMaxs"		"Vector"
-			"m_nSolidType"		"Int"
-			"m_usSolidFlags"		"Int"
-			"m_nSurroundType"		"Int"
-			"m_triggerBloat"		"Int"
-			"m_bUniformTriggerBloat"		"Int"
-			"m_vecSpecifiedSurroundingMinsPreScaled"		"Vector"
-			"m_vecSpecifiedSurroundingMaxsPreScaled"		"Vector"
-			"m_vecSpecifiedSurroundingMins"		"Vector"
-			"m_vecSpecifiedSurroundingMaxs"		"Vector"
-		}
-	}
-	"DT_FuncRotating"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_angRotation[0]"		"Float"
-		"m_angRotation[1]"		"Float"
-		"m_angRotation[2]"		"Float"
-		"m_flSimulationTime"		"Int"
-	}
-	"DT_FuncOccluder"
-	{
-		"m_bActive"		"Int"
-		"m_nOccluderIndex"		"Int"
-	}
-	"DT_Func_LOD"
-	{
-		"m_fDisappearDist"		"Float"
-	}
-	"DT_TEDust"
-	{
-		"m_flSize"		"Float"
-		"m_flSpeed"		"Float"
-		"m_vecDirection"		"Vector"
-	}
-	"DT_Func_Dust"
-	{
-		"m_Color"		"Int"
-		"m_SpawnRate"		"Int"
-		"m_flSizeMin"		"Float"
-		"m_flSizeMax"		"Float"
-		"m_LifetimeMin"		"Int"
-		"m_LifetimeMax"		"Int"
-		"m_DustFlags"		"Int"
-		"m_SpeedMax"		"Int"
-		"m_DistMax"		"Int"
-		"m_nModelIndex"		"Int"
-		"m_FallSpeed"		"Float"
-		"m_Collision"
-		{
-			"m_vecMinsPreScaled"		"Vector"
-			"m_vecMaxsPreScaled"		"Vector"
-			"m_vecMins"		"Vector"
-			"m_vecMaxs"		"Vector"
-			"m_nSolidType"		"Int"
-			"m_usSolidFlags"		"Int"
-			"m_nSurroundType"		"Int"
-			"m_triggerBloat"		"Int"
-			"m_bUniformTriggerBloat"		"Int"
-			"m_vecSpecifiedSurroundingMinsPreScaled"		"Vector"
-			"m_vecSpecifiedSurroundingMaxsPreScaled"		"Vector"
-			"m_vecSpecifiedSurroundingMins"		"Vector"
-			"m_vecSpecifiedSurroundingMaxs"		"Vector"
-		}
-	}
-	"DT_FuncConveyor"
-	{
-		"m_flConveyorSpeed"		"Float"
-	}
-	"DT_BreakableSurface"
-	{
-		"m_nNumWide"		"Int"
-		"m_nNumHigh"		"Int"
-		"m_flPanelWidth"		"Float"
-		"m_flPanelHeight"		"Float"
-		"m_vNormal"		"Vector"
-		"m_vCorner"		"Vector"
-		"m_bIsBroken"		"Int"
-		"m_nSurfaceType"		"Int"
-		"m_RawPanelBitVec"		"DataTable"
-	}
-	"DT_FuncAreaPortalWindow"
-	{
-		"m_flFadeStartDist"		"Float"
-		"m_flFadeDist"		"Float"
-		"m_flTranslucencyLimit"		"Float"
-		"m_iBackgroundModelIndex"		"Int"
-	}
-	"DT_CFish"
-	{
-		"m_poolOrigin"		"Vector"
-		"m_x"		"Float"
-		"m_y"		"Float"
-		"m_z"		"Float"
-		"m_angle"		"Float"
-		"m_nModelIndex"		"Int"
-		"m_lifeState"		"Int"
-		"m_waterLevel"		"Float"
-	}
-	"DT_EntityFlame"
-	{
-		"m_hEntAttached"		"Int"
-	}
-	"DT_FireSmoke"
-	{
-		"m_flStartScale"		"Float"
-		"m_flScale"		"Float"
-		"m_flScaleTime"		"Float"
-		"m_nFlags"		"Int"
-		"m_nFlameModelIndex"		"Int"
-		"m_nFlameFromAboveModelIndex"		"Int"
-	}
-	"DT_EnvTonemapController"
-	{
-		"m_bUseCustomAutoExposureMin"		"Int"
-		"m_bUseCustomAutoExposureMax"		"Int"
-		"m_bUseCustomBloomScale"		"Int"
-		"m_flCustomAutoExposureMin"		"Float"
-		"m_flCustomAutoExposureMax"		"Float"
-		"m_flCustomBloomScale"		"Float"
-		"m_flCustomBloomScaleMinimum"		"Float"
-	}
-	"DT_EnvScreenEffect"
-	{
-		"m_flDuration"		"Float"
-		"m_nType"		"Int"
-	}
-	"DT_EnvScreenOverlay"
-	{
-		"m_iszOverlayNames[0]"		"String"
-		"m_iszOverlayNames"		"Array"
-		"m_flOverlayTimes[0]"		"Float"
-		"m_flOverlayTimes"		"Array"
-		"m_flStartTime"		"Float"
-		"m_iDesiredOverlay"		"Int"
-		"m_bIsActive"		"Int"
-	}
-	"DT_EnvProjectedTexture"
-	{
-		"m_hTargetEntity"		"Int"
-		"m_bState"		"Int"
-		"m_flLightFOV"		"Float"
-		"m_bEnableShadows"		"Int"
-		"m_bLightOnlyTarget"		"Int"
-		"m_bLightWorld"		"Int"
-		"m_bCameraSpace"		"Int"
-		"m_LinearFloatLightColor"		"Vector"
-		"m_flAmbient"		"Float"
-		"m_SpotlightTextureName"		"String"
-		"m_nSpotlightTextureFrame"		"Int"
-		"m_flNearZ"		"Float"
-		"m_flFarZ"		"Float"
-		"m_nShadowQuality"		"Int"
-	}
-	"DT_EnvParticleScript"
-	{
-		"m_flSequenceScale"		"Float"
-	}
-	"DT_FogController"
-	{
-		"m_fog.enable"		"Int"
-		"m_fog.blend"		"Int"
-		"m_fog.dirPrimary"		"Vector"
-		"m_fog.colorPrimary"		"Int"
-		"m_fog.colorSecondary"		"Int"
-		"m_fog.start"		"Float"
-		"m_fog.end"		"Float"
-		"m_fog.farz"		"Float"
-		"m_fog.maxdensity"		"Float"
-		"m_fog.colorPrimaryLerpTo"		"Int"
-		"m_fog.colorSecondaryLerpTo"		"Int"
-		"m_fog.startLerpTo"		"Float"
-		"m_fog.endLerpTo"		"Float"
-		"m_fog.lerptime"		"Float"
-		"m_fog.duration"		"Float"
-	}
-	"DT_EntityParticleTrail"
-	{
-		"m_iMaterialName"		"Int"
-		"m_Info"
-		{
-			"m_flLifetime"		"Float"
-			"m_flStartSize"		"Float"
-			"m_flEndSize"		"Float"
-		}
-		"m_hConstraintEntity"		"Int"
-	}
-	"DT_EntityDissolve"
-	{
-		"m_flStartTime"		"Float"
-		"m_flFadeOutStart"		"Float"
-		"m_flFadeOutLength"		"Float"
-		"m_flFadeOutModelStart"		"Float"
-		"m_flFadeOutModelLength"		"Float"
-		"m_flFadeInStart"		"Float"
-		"m_flFadeInLength"		"Float"
-		"m_nDissolveType"		"Int"
-		"m_vDissolverOrigin"		"Vector"
-		"m_nMagnitude"		"Int"
-	}
-	"DT_DynamicLight"
-	{
-		"m_Flags"		"Int"
-		"m_LightStyle"		"Int"
-		"m_Radius"		"Float"
-		"m_Exponent"		"Int"
-		"m_InnerAngle"		"Float"
-		"m_OuterAngle"		"Float"
-		"m_SpotRadius"		"Float"
-	}
-	"DT_ColorCorrectionVolume"
-	{
-		"m_Weight"		"Float"
-		"m_lookupFilename"		"String"
-	}
-	"DT_ColorCorrection"
-	{
-		"m_vecOrigin"		"Vector"
-		"m_minFalloff"		"Float"
-		"m_maxFalloff"		"Float"
-		"m_flCurWeight"		"Float"
-		"m_netLookupFilename"		"String"
-		"m_bEnabled"		"Int"
-	}
-	"DT_BasePlayer"
-	{
-		"localdata"
-		{
-			"m_Local"
-			{
-				"m_chAreaBits"		"DataTable"
-				"m_chAreaPortalBits"		"DataTable"
-				"m_iHideHUD"		"Int"
-				"m_flFOVRate"		"Float"
-				"m_bDucked"		"Int"
-				"m_bDucking"		"Int"
-				"m_bInDuckJump"		"Int"
-				"m_flDucktime"		"Float"
-				"m_flDuckJumpTime"		"Float"
-				"m_flJumpTime"		"Float"
-				"m_flFallVelocity"		"Float"
-				"m_vecPunchAngle"		"Vector"
-				"m_vecPunchAngleVel"		"Vector"
-				"m_bDrawViewmodel"		"Int"
-				"m_bWearingSuit"		"Int"
-				"m_bPoisoned"		"Int"
-				"m_bForceLocalPlayerDraw"		"Int"
-				"m_flStepSize"		"Float"
-				"m_bAllowAutoMovement"		"Int"
-				"m_skybox3d.scale"		"Int"
-				"m_skybox3d.origin"		"Vector"
-				"m_skybox3d.area"		"Int"
-				"m_skybox3d.fog.enable"		"Int"
-				"m_skybox3d.fog.blend"		"Int"
-				"m_skybox3d.fog.dirPrimary"		"Vector"
-				"m_skybox3d.fog.colorPrimary"		"Int"
-				"m_skybox3d.fog.colorSecondary"		"Int"
-				"m_skybox3d.fog.start"		"Float"
-				"m_skybox3d.fog.end"		"Float"
-				"m_skybox3d.fog.maxdensity"		"Float"
-				"m_PlayerFog.m_hCtrl"		"Int"
-				"m_audio.localSound[0]"		"Vector"
-				"m_audio.localSound[1]"		"Vector"
-				"m_audio.localSound[2]"		"Vector"
-				"m_audio.localSound[3]"		"Vector"
-				"m_audio.localSound[4]"		"Vector"
-				"m_audio.localSound[5]"		"Vector"
-				"m_audio.localSound[6]"		"Vector"
-				"m_audio.localSound[7]"		"Vector"
-				"m_audio.soundscapeIndex"		"Int"
-				"m_audio.localBits"		"Int"
-				"m_audio.entIndex"		"Int"
-				"m_szScriptOverlayMaterial"		"String"
-			}
-			"m_vecViewOffset[0]"		"Float"
-			"m_vecViewOffset[1]"		"Float"
-			"m_vecViewOffset[2]"		"Float"
-			"m_flFriction"		"Float"
-			"m_iAmmo"		"DataTable"
-			"m_fOnTarget"		"Int"
-			"m_nTickBase"		"Int"
-			"m_nNextThinkTick"		"Int"
-			"m_hLastWeapon"		"Int"
-			"m_hGroundEntity"		"Int"
-			"m_vecVelocity[0]"		"Float"
-			"m_vecVelocity[1]"		"Float"
-			"m_vecVelocity[2]"		"Float"
-			"m_vecBaseVelocity"		"Vector"
-			"m_hConstraintEntity"		"Int"
-			"m_vecConstraintCenter"		"Vector"
-			"m_flConstraintRadius"		"Float"
-			"m_flConstraintWidth"		"Float"
-			"m_flConstraintSpeedFactor"		"Float"
-			"m_flDeathTime"		"Float"
-			"m_nWaterLevel"		"Int"
-			"m_flLaggedMovementValue"		"Float"
-		}
-		"m_AttributeList"
-		{
-			"m_Attributes"
-			{
-				"lengthproxy"
-				{
-					"lengthprop20"		"Int"
-				}
-			}
-		}
-		"pl"
-		{
-			"deadflag"		"Int"
-		}
-		"m_iFOV"		"Int"
-		"m_iFOVStart"		"Int"
-		"m_flFOVTime"		"Float"
-		"m_iDefaultFOV"		"Int"
-		"m_hZoomOwner"		"Int"
-		"m_hVehicle"		"Int"
-		"m_hUseEntity"		"Int"
-		"m_iHealth"		"Int"
-		"m_lifeState"		"Int"
-		"m_iBonusProgress"		"Int"
-		"m_iBonusChallenge"		"Int"
-		"m_flMaxspeed"		"Float"
-		"m_fFlags"		"Int"
-		"m_iObserverMode"		"Int"
-		"m_hObserverTarget"		"Int"
-		"m_hViewModel[0]"		"Int"
-		"m_hViewModel"		"Array"
-		"m_szLastPlaceName"		"String"
-		"m_hMyWearables"
-		{
-			"lengthproxy"
-			{
-				"lengthprop8"		"Int"
-			}
-		}
-	}
-	"DT_BaseFlex"
-	{
-		"m_flexWeight"		"DataTable"
-		"m_blinktoggle"		"Int"
-		"m_viewtarget"		"Vector"
-	}
-	"DT_BaseEntity"
-	{
-		"AnimTimeMustBeFirst"
-		{
-			"m_flAnimTime"		"Int"
-		}
-		"m_flSimulationTime"		"Int"
-		"m_ubInterpolationFrame"		"Int"
-		"m_vecOrigin"		"Vector"
-		"m_angRotation"		"Vector"
-		"m_nModelIndex"		"Int"
-		"m_fEffects"		"Int"
-		"m_nRenderMode"		"Int"
-		"m_nRenderFX"		"Int"
-		"m_clrRender"		"Int"
-		"m_iTeamNum"		"Int"
-		"m_CollisionGroup"		"Int"
-		"m_flElasticity"		"Float"
-		"m_flShadowCastDistance"		"Float"
-		"m_hOwnerEntity"		"Int"
-		"m_hEffectEntity"		"Int"
-		"moveparent"		"Int"
-		"m_iParentAttachment"		"Int"
-		"movetype"		"Int"
-		"movecollide"		"Int"
-		"m_Collision"
-		{
-			"m_vecMinsPreScaled"		"Vector"
-			"m_vecMaxsPreScaled"		"Vector"
-			"m_vecMins"		"Vector"
-			"m_vecMaxs"		"Vector"
-			"m_nSolidType"		"Int"
-			"m_usSolidFlags"		"Int"
-			"m_nSurroundType"		"Int"
-			"m_triggerBloat"		"Int"
-			"m_bUniformTriggerBloat"		"Int"
-			"m_vecSpecifiedSurroundingMinsPreScaled"		"Vector"
-			"m_vecSpecifiedSurroundingMaxsPreScaled"		"Vector"
-			"m_vecSpecifiedSurroundingMins"		"Vector"
-			"m_vecSpecifiedSurroundingMaxs"		"Vector"
-		}
-		"m_iTextureFrameIndex"		"Int"
-		"predictable_id"
-		{
-			"m_PredictableID"		"Int"
-			"m_bIsPlayerSimulated"		"Int"
-		}
-		"m_bSimulatedEveryTick"		"Int"
-		"m_bAnimatedEveryTick"		"Int"
-		"m_bAlternateSorting"		"Int"
-		"m_nModelIndexOverrides"		"DataTable"
-	}
-	"DT_BaseDoor"
-	{
-		"m_flWaveHeight"		"Float"
-	}
-	"DT_BaseCombatCharacter"
-	{
-		"bcc_localdata"
-		{
-			"m_flNextAttack"		"Float"
-		}
-		"m_hActiveWeapon"		"Int"
-		"m_hMyWeapons"		"DataTable"
-		"m_bGlowEnabled"		"Int"
-	}
-	"DT_BaseAnimatingOverlay"
-	{
-		"overlay_vars"
-		{
-			"m_AnimOverlay"
-			{
-				"lengthproxy"
-				{
-					"lengthprop15"		"Int"
-				}
-			}
-		}
-	}
-	"DT_BoneFollower"
-	{
-		"m_modelIndex"		"Int"
-		"m_solidIndex"		"Int"
-	}
-	"DT_BaseAnimating"
-	{
-		"m_nSequence"		"Int"
-		"m_nForceBone"		"Int"
-		"m_vecForce"		"Vector"
-		"m_nSkin"		"Int"
-		"m_nBody"		"Int"
-		"m_nHitboxSet"		"Int"
-		"m_flModelScale"		"Float"
-		"m_flModelWidthScale"		"Float"
-		"m_flPoseParameter"		"DataTable"
-		"m_flPlaybackRate"		"Float"
-		"m_flEncodedController"		"DataTable"
-		"m_bClientSideAnimation"		"Int"
-		"m_bClientSideFrameReset"		"Int"
-		"m_nNewSequenceParity"		"Int"
-		"m_nResetEventsParity"		"Int"
-		"m_nMuzzleFlashParity"		"Int"
-		"m_hLightingOrigin"		"Int"
-		"m_hLightingOriginRelative"		"Int"
-		"serveranimdata"
-		{
-			"m_flCycle"		"Float"
-		}
-		"m_fadeMinDist"		"Float"
-		"m_fadeMaxDist"		"Float"
-		"m_flFadeScale"		"Float"
-	}
-	"DT_InfoLightingRelative"
-	{
-		"m_hLightingLandmark"		"Int"
-	}
-	"DT_AI_BaseNPC"
-	{
-		"m_lifeState"		"Int"
-		"m_bPerformAvoidance"		"Int"
-		"m_bIsMoving"		"Int"
-		"m_bFadeCorpse"		"Int"
-		"m_iDeathPose"		"Int"
-		"m_iDeathFrame"		"Int"
-		"m_iSpeedModRadius"		"Int"
-		"m_iSpeedModSpeed"		"Int"
-		"m_bSpeedModActive"		"Int"
-		"m_bImportanRagdoll"		"Int"
-		"m_flTimePingEffect"		"Float"
-	}
-	"DT_Beam"
-	{
-		"m_nBeamType"		"Int"
-		"m_nBeamFlags"		"Int"
-		"m_nNumBeamEnts"		"Int"
-		"m_hAttachEntity"		"DataTable"
-		"m_nAttachIndex"		"DataTable"
-		"m_nHaloIndex"		"Int"
-		"m_fHaloScale"		"Float"
-		"m_fWidth"		"Float"
-		"m_fEndWidth"		"Float"
-		"m_fFadeLength"		"Float"
-		"m_fAmplitude"		"Float"
-		"m_fStartFrame"		"Float"
-		"m_fSpeed"		"Float"
-		"m_flFramerate"		"Float"
-		"m_flHDRColorScale"		"Float"
-		"m_clrRender"		"Int"
-		"m_nRenderFX"		"Int"
-		"m_nRenderMode"		"Int"
-		"m_flFrame"		"Float"
-		"m_vecEndPos"		"Vector"
-		"m_nModelIndex"		"Int"
-		"m_nMinDXLevel"		"Int"
-		"m_vecOrigin"		"Vector"
-		"moveparent"		"Int"
-		"beampredictable_id"
-		{
-			"m_PredictableID"		"Int"
-			"m_bIsPlayerSimulated"		"Int"
-		}
-	}
-	"DT_BaseViewModel"
-	{
-		"m_nModelIndex"		"Int"
-		"m_nSkin"		"Int"
-		"m_nBody"		"Int"
-		"m_nSequence"		"Int"
-		"m_nViewModelIndex"		"Int"
-		"m_flPlaybackRate"		"Float"
-		"m_fEffects"		"Int"
-		"m_nAnimationParity"		"Int"
-		"m_hWeapon"		"Int"
-		"m_hOwner"		"Int"
-		"m_nNewSequenceParity"		"Int"
-		"m_nResetEventsParity"		"Int"
-		"m_nMuzzleFlashParity"		"Int"
-		"m_flPoseParameter[0]"		"Float"
-		"m_flPoseParameter"		"Array"
-	}
-	"DT_BaseProjectile"
-	{
-		"m_hOriginalLauncher"		"Int"
-	}
-	"DT_BaseGrenade"
-	{
-		"m_flDamage"		"Float"
-		"m_DmgRadius"		"Float"
-		"m_bIsLive"		"Int"
-		"m_hThrower"		"Int"
-		"m_vecVelocity"		"Vector"
-		"m_fFlags"		"Int"
-	}
-	"DT_BaseCombatWeapon"
-	{
-		"LocalWeaponData"
-		{
-			"m_iClip1"		"Int"
-			"m_iClip2"		"Int"
-			"m_iPrimaryAmmoType"		"Int"
-			"m_iSecondaryAmmoType"		"Int"
-			"m_nViewModelIndex"		"Int"
-			"m_nCustomViewmodelModelIndex"		"Int"
-			"m_bFlipViewModel"		"Int"
-		}
-		"LocalActiveWeaponData"
-		{
-			"m_flNextPrimaryAttack"		"Float"
-			"m_flNextSecondaryAttack"		"Float"
-			"m_nNextThinkTick"		"Int"
-			"m_flTimeWeaponIdle"		"Float"
-		}
-		"m_iViewModelIndex"		"Int"
-		"m_iWorldModelIndex"		"Int"
-		"m_iState"		"Int"
-		"m_hOwner"		"Int"
+m_flChargeLevel: Float
+```
+
+### CTFWeaponSapper
+```lua
+m_flChargeBeginTime: Float
+```
+
+### CTFWeaponBuilder
+```lua
+m_iBuildState:  Integer
+	BuilderLocalData
+	{
+	m_iObjectType:  Integer
+	m_hObjectBeingBuilt:  Integer
+	m_aBuildableObjectTypes: DataTable
+	}
+m_iObjectMode:  Integer
+m_flWheatleyTalkingUntil: Float
+```
+
+### CTFWeaponBuilder
+```lua
+m_iBuildState:  Integer
+	BuilderLocalData
+	{
+	m_iObjectType:  Integer
+	m_hObjectBeingBuilt:  Integer
+	m_aBuildableObjectTypes: DataTable
+	}
+m_iObjectMode:  Integer
+m_flWheatleyTalkingUntil: Float
+```
+
+### CTFProjectile_Rocket
+```lua
+m_bCritical:  Integer
+```
+
+### CTFProjectile_Flare
+```lua
+m_bCritical:  Integer
+```
+
+### CTFProjectile_EnergyBall
+```lua
+m_bChargedShot:  Integer
+m_vColor1:  Vector
+m_vColor2:  Vector
+```
+
+### CTFProjectile_Arrow
+```lua
+m_bArrowAlight:  Integer
+m_bCritical:  Integer
+m_iProjectileType:  Integer
+```
+
+### CMannVsMachineStats
+```lua
+m_iCurrentWaveIdx:  Integer
+m_iServerWaveID:  Integer
+m_iCurrencyCollectedForRespec:  Integer
+m_nRespecsAwardedInWave:  Integer
+
+m_runningTotalWaveStats
+{
+	nCreditsDropped:  Integer
+	nCreditsAcquired:  Integer
+	nCreditsBonus:  Integer
+	nPlayerDeaths:  Integer
+	nBuyBacks:  Integer
+}
+
+m_previousWaveStats
+{
+		nCreditsDropped:  Integer
+		nCreditsAcquired:  Integer
+		nCreditsBonus:  Integer
+		nPlayerDeaths:  Integer
+		nBuyBacks:  Integer
+}
+
+m_currentWaveStats
+{
+	nCreditsDropped:  Integer
+	nCreditsAcquired:  Integer
+	nCreditsBonus:  Integer
+	nPlayerDeaths:  Integer
+	nBuyBacks:  Integer
+}
+```
+
+### CTFBaseBoss
+```lua
+m_lastHealthPercentage: Float
+```
+
+### CBossAlpha
+```lua
+m_isNuking:  Integer
+```
+
+### CTFWeaponSpellBook
+```lua
+m_iSelectedSpellIndex:  Integer
+m_iSpellCharges:  Integer
+m_flTimeNextSpell: Float
+m_bFiredAttack:  Integer
+```
+
+### CHightower_TeleportVortex
+```lua
+m_iState:  Integer
+```
+
+### CTeleportVortex
+```lua
+m_iState:  Integer
+```
+
+### CZombie
+```lua
+m_flHeadScale: Float
+```
+
+### CMerasmus
+```lua
+m_bRevealed:  Integer
+m_bIsDoingAOEAttack:  Integer
+m_bStunned:  Integer
+```
+
+### CEyeballBoss
+```lua
+m_lookAtSpot:  Vector
+m_attitude:  Integer
+```
+
+### CTFBotHintEngineerNest
+```lua
+m_bHasActiveTeleporter:  Integer
+```
+
+### CBotNPCMinion
+```lua
+m_stunTarget:  Integer
+```
+
+### CBotNPC
+```lua
+m_laserTarget:  Integer
+m_isNuking:  Integer
+```
+
+### CPasstimeGun
+```lua
+m_eThrowState:  Integer
+m_fChargeBeginTime: Float
+```
+
+### CTFRobotDestruction_Robot
+```lua
+m_iHealth:  Integer
+m_iMaxHealth:  Integer
+m_eType:  Integer
+```
+
+### CTFReviveMarker
+```lua
+m_hOwner:  Integer
+m_iHealth:  Integer
+m_iMaxHealth:  Integer
+m_nRevives:  Integer
+```
+
+### CTFProjectile_BallOfFire
+```lua
+m_vecInitialVelocity:  Vector
+m_vecSpawnOrigin:  Vector
+```
+
+### CTFBaseProjectile
+```lua
+m_vInitialVelocity:  Vector
+m_hLauncher:  Integer
+```
+
+### CTFPointManager
+```lua
+m_nRandomSeed:  Integer
+m_unNextPointIndex:  Integer
+m_nSpawnTime: DataTable
+```
+
+### CTFRobotDestructionLogic
+```lua
+m_nMaxPoints:  Integer
+m_nBlueScore:  Integer
+m_nRedScore:  Integer
+m_nBlueTargetPoints:  Integer
+m_nRedTargetPoints:  Integer
+m_flBlueTeamRespawnScale: Float
+m_flRedTeamRespawnScale: Float
+m_flBlueFinaleEndTime: Float
+m_flRedFinaleEndTime: Float
+m_flFinaleLength: Float
+m_szResFile: String
+m_eWinningMethod: DataTable
+m_flCountdownEndTime: Float
+```
+
+### CTFRobotDestruction_RobotGroup
+```lua
+m_pszHudIcon: String
+m_iTeamNum:  Integer
+m_nGroupNumber:  Integer
+m_nState:  Integer
+m_flRespawnStartTime: Float
+m_flRespawnEndTime: Float
+m_flLastAttackedTime: Float
+```
+
+### CTFPlayerDestructionLogic
+```lua
+m_hRedTeamLeader:  Integer
+m_hBlueTeamLeader:  Integer
+m_iszCountdownImage: String
+m_bUsingCountdownImage:  Integer
+```
+
+### CTFMinigameLogic
+```lua
+m_hActiveMinigame:  Integer
+```
+
+### CTFMinigame
+```lua
+m_nMinigameTeamScore: DataTable
+m_nMaxScoreForMiniGame:  Integer
+m_pszHudResFile: String
+m_eScoringType:  Integer
+```
+
+### CTFPowerupBottle
+```lua
+m_bActive:  Integer
+m_usNumCharges:  Integer
+```
+
+### CHalloweenSoulPack
+```lua
+m_hTarget:  Integer
+m_vecPreCurvePos:  Vector
+m_vecStartCurvePos:  Vector
+m_flDuration: Float
+```
+
+### CBonusRoundLogic
+```lua
+m_hBonusWinner:  Integer
+
+m_aBonusPlayerRoll
+{
+	lengthproxy
+	{
+		lengthprop101:  Integer
 	}
 }
+
+m_Item
+{
+	m_iItemDefinitionIndex:  Integer
+	m_iEntityLevel:  Integer
+	m_iItemIDHigh:  Integer
+	m_iItemIDLow:  Integer
+	m_iAccountID:  Integer
+	m_iEntityQuality:  Integer
+	m_bInitialized:  Integer
+	m_bOnlyIterateItemViewAttributes:  Integer
+	m_iTeamNumber:  Integer
+	m_AttributeList
+	{
+		m_Attributes
+		{
+			lengthproxy
+			{
+				lengthprop20:  Integer
+			}
+		}
+	}
+
+	m_NetworkedDynamicAttributesForDemos
+	{
+		m_Attributes
+		{
+			lengthproxy
+			{
+				lengthprop20:  Integer
+			}
+		}
+	}
+}
+```
+
+### CTFGameRulesProxy
+```lua
+tf_gamerules_data
+{
+	m_nGameType:  Integer
+	m_nStopWatchState:  Integer
+	m_pszTeamGoalStringRed: String
+	m_pszTeamGoalStringBlue: String
+	m_flCapturePointEnableTime: Float
+	m_nHudType:  Integer
+	m_bIsInTraining:  Integer
+	m_bAllowTrainingAchievements:  Integer
+	m_bIsWaitingForTrainingContinue:  Integer
+	m_bIsTrainingHUDVisible:  Integer
+	m_bIsInItemTestingMode:  Integer
+	m_hBonusLogic:  Integer
+	m_bPlayingKoth:  Integer
+	m_bPlayingMedieval:  Integer
+	m_bPlayingHybrid_CTF_CP:  Integer
+	m_bPlayingSpecialDeliveryMode:  Integer
+	m_bPlayingRobotDestructionMode:  Integer
+	m_hRedKothTimer:  Integer
+	m_hBlueKothTimer:  Integer
+	m_nMapHolidayType:  Integer
+	m_itHandle:  Integer
+	m_bPlayingMannVsMachine:  Integer
+	m_hBirthdayPlayer:  Integer
+	m_nBossHealth:  Integer
+	m_nMaxBossHealth:  Integer
+	m_fBossNormalizedTravelDistance:  Integer
+	m_bMannVsMachineAlarmStatus:  Integer
+	m_bHaveMinPlayersToEnableReady:  Integer
+	m_bBountyModeEnabled:  Integer
+	m_nHalloweenEffect:  Integer
+	m_fHalloweenEffectStartTime: Float
+	m_fHalloweenEffectDuration: Float
+	m_halloweenScenario:  Integer
+	m_bHelltowerPlayersInHell:  Integer
+	m_bIsUsingSpells:  Integer
+	m_bCompetitiveMode:  Integer
+	m_nMatchGroupType:  Integer
+	m_bMatchEnded:  Integer
+	m_bPowerupMode:  Integer
+	m_pszCustomUpgradesFile: String
+	m_bTruceActive:  Integer
+	m_bShowMatchSummary:  Integer
+	m_bShowCompetitiveMatchSummary:  Integer
+	m_bTeamsSwitched:  Integer
+	m_bMapHasMatchSummaryStage:  Integer
+	m_bPlayersAreOnMatchSummaryStage:  Integer
+	m_bStopWatchWinner:  Integer
+	m_ePlayerWantsRematch: DataTable
+	m_eRematchState:  Integer
+	m_nNextMapVoteOptions: DataTable
+	m_nForceUpgrades:  Integer
+	m_nForceEscortPushLogic:  Integer
+	m_bRopesHolidayLightsAllowed:  Integer
+}
+```
+
+### CTFFlameManager
+```lua
+m_hWeapon:  Integer
+m_hAttacker:  Integer
+m_flSpreadDegree: Float
+m_flRedirectedFlameSizeMult: Float
+m_flFlameStartSizeMult: Float
+m_flFlameEndSizeMult: Float
+m_flFlameIgnorePlayerVelocity: Float
+m_flFlameReflectionAdditionalLifeTime: Float
+m_flFlameReflectionDamageReduction: Float
+m_iMaxFlameReflectionCount:  Integer
+m_nShouldReflect:  Integer
+m_flFlameSpeed: Float
+m_flFlameLifeTime: Float
+m_flRandomLifeTimeOffset: Float
+m_flFlameGravity: Float
+m_flFlameDrag: Float
+m_flFlameUp: Float
+m_bIsFiring:  Integer
+```
+
+### CCHalloweenGiftPickup
+```lua
+m_hTargetPlayer:  Integer
+```
+
+### CCBonusDuckPickup
+```lua
+m_bSpecial:  Integer
+```
+
+### CCaptureFlag
+```lua
+m_bDisabled:  Integer
+m_bVisibleWhenDisabled:  Integer
+m_nType:  Integer
+m_nFlagStatus:  Integer
+m_flResetTime: Float
+m_flNeutralTime: Float
+m_flMaxResetTime: Float
+m_hPrevOwner:  Integer
+m_szModel: String
+m_szHudIcon: String
+m_szPaperEffect: String
+m_szTrailEffect: String
+m_nUseTrailEffect:  Integer
+m_nPointValue:  Integer
+m_flAutoCapTime: Float
+m_bGlowEnabled:  Integer
+m_flTimeToSetPoisonous: Float
+```
+
+### CTFTeam
+```lua
+m_nFlagCaptures:  Integer
+m_iRole:  Integer
+team_object_array_element:  Integer
+team_object_array: Array
+m_hLeader:  Integer
+```
+
+### CTFPlayerResource
+```lua
+m_iTotalScore: DataTable
+m_iMaxHealth: DataTable
+m_iMaxBuffedHealth: DataTable
+m_iPlayerClass: DataTable
+m_bArenaSpectator: DataTable
+m_iActiveDominations: DataTable
+m_flNextRespawnTime: DataTable
+m_iChargeLevel: DataTable
+m_iDamage: DataTable
+m_iDamageAssist: DataTable
+m_iDamageBoss: DataTable
+m_iHealing: DataTable
+m_iHealingAssist: DataTable
+m_iDamageBlocked: DataTable
+m_iCurrencyCollected: DataTable
+m_iBonusPoints: DataTable
+m_iPlayerLevel: DataTable
+m_iStreaks: DataTable
+m_iUpgradeRefundCredits: DataTable
+m_iBuybackCredits: DataTable
+m_iPartyLeaderRedTeamIndex:  Integer
+m_iPartyLeaderBlueTeamIndex:  Integer
+m_iEventTeamStatus:  Integer
+m_iPlayerClassWhenKilled: DataTable
+m_iConnectionState: DataTable
+m_flConnectTime: DataTable
+```
+
+### CTFPlayer
+```lua
+m_bSaveMeParity:  Integer
+m_bIsMiniBoss:  Integer
+m_bIsABot:  Integer
+m_nBotSkill:  Integer
+m_nWaterLevel:  Integer
+m_hRagdoll:  Integer
+
+m_PlayerClass
+{
+	m_iClass:  Integer
+	m_iszClassIcon: String
+	m_iszCustomModel: String
+	m_vecCustomModelOffset:  Vector
+	m_angCustomModelRotation:  Vector
+	m_bCustomModelRotates:  Integer
+	m_bCustomModelRotationSet:  Integer
+	m_bCustomModelVisibleToSelf:  Integer
+	m_bUseClassAnimations:  Integer
+	m_iClassModelParity:  Integer
+}
+
+m_Shared
+{
+	m_nPlayerCond:  Integer
+	m_bJumping:  Integer
+	m_nNumHealers:  Integer
+	m_iCritMult:  Integer
+	m_iAirDash:  Integer
+	m_nAirDucked:  Integer
+	m_flDuckTimer: Float
+	m_nPlayerState:  Integer
+	m_iDesiredPlayerClass:  Integer
+	m_flMovementStunTime: Float
+	m_iMovementStunAmount:  Integer
+	m_iMovementStunParity:  Integer
+	m_hStunner:  Integer
+	m_iStunFlags:  Integer
+	m_nArenaNumChanges:  Integer
+	m_bArenaFirstBloodBoost:  Integer
+	m_iWeaponKnockbackID:  Integer
+	m_bLoadoutUnavailable:  Integer
+	m_iItemFindBonus:  Integer
+	m_bShieldEquipped:  Integer
+	m_bParachuteEquipped:  Integer
+	m_iNextMeleeCrit:  Integer
+	m_iDecapitations:  Integer
+	m_iRevengeCrits:  Integer
+	m_iDisguiseBody:  Integer
+	m_hCarriedObject:  Integer
+	m_bCarryingObject:  Integer
+	m_flNextNoiseMakerTime: Float
+	m_iSpawnRoomTouchCount:  Integer
+	m_iKillCountSinceLastDeploy:  Integer
+	m_flFirstPrimaryAttack: Float
+	m_flEnergyDrinkMeter: Float
+	m_flHypeMeter: Float
+	m_flChargeMeter: Float
+	m_flInvisChangeCompleteTime: Float
+	m_nDisguiseTeam:  Integer
+	m_nDisguiseClass:  Integer
+	m_nDisguiseSkinOverride:  Integer
+	m_nMaskClass:  Integer
+	m_hDisguiseTarget:  Integer
+	m_iDisguiseHealth:  Integer
+	m_bFeignDeathReady:  Integer
+	m_hDisguiseWeapon:  Integer
+	m_nTeamTeleporterUsed:  Integer
+	m_flCloakMeter: Float
+	m_flSpyTranqBuffDuration: Float
+	
+	tfsharedlocaldata
+	{
+		m_nDesiredDisguiseTeam:  Integer
+		m_nDesiredDisguiseClass:  Integer
+		m_flStealthNoAttackExpire: Float
+		m_flStealthNextChangeTime: Float
+		m_bLastDisguisedAsOwnTeam:  Integer
+		m_flRageMeter: Float
+		m_bRageDraining:  Integer
+		m_flNextRageEarnTime: Float
+		m_bInUpgradeZone:  Integer
+		m_flItemChargeMeter: DataTable
+		m_bPlayerDominated: DataTable
+		m_bPlayerDominatingMe: DataTable
+	
+		m_ScoreData
+		{
+			m_iCaptures:  Integer
+			m_iDefenses:  Integer
+			m_iKills:  Integer
+			m_iDeaths:  Integer
+			m_iSuicides:  Integer
+			m_iDominations:  Integer
+			m_iRevenge:  Integer
+			m_iBuildingsBuilt:  Integer
+			m_iBuildingsDestroyed:  Integer
+			m_iHeadshots:  Integer
+			m_iBackstabs:  Integer
+			m_iHealPoints:  Integer
+			m_iInvulns:  Integer
+			m_iTeleports:  Integer
+			m_iResupplyPoints:  Integer
+			m_iKillAssists:  Integer
+			m_iPoints:  Integer
+			m_iBonusPoints:  Integer
+			m_iDamageDone:  Integer
+			m_iCrits:  Integer
+		}
+			
+		m_RoundScoreData
+		{
+			m_iCaptures:  Integer
+			m_iDefenses:  Integer
+			m_iKills:  Integer
+			m_iDeaths:  Integer
+			m_iSuicides:  Integer
+			m_iDominations:  Integer
+			m_iRevenge:  Integer
+			m_iBuildingsBuilt:  Integer
+			m_iBuildingsDestroyed:  Integer
+			m_iHeadshots:  Integer
+			m_iBackstabs:  Integer
+			m_iHealPoints:  Integer
+			m_iInvulns:  Integer
+			m_iTeleports:  Integer
+			m_iResupplyPoints:  Integer
+			m_iKillAssists:  Integer
+			m_iPoints:  Integer
+			m_iBonusPoints:  Integer
+			m_iDamageDone:  Integer
+			m_iCrits:  Integer
+		}
+	}
+
+	m_ConditionList
+	{
+		_condition_bits:  Integer
+	}
+
+	m_iTauntIndex:  Integer
+	m_iTauntConcept:  Integer
+	m_nPlayerCondEx:  Integer
+	m_iStunIndex:  Integer
+	m_nHalloweenBombHeadStage:  Integer
+	m_nPlayerCondEx2:  Integer
+	m_nPlayerCondEx3:  Integer
+	m_nStreaks:: DataTable
+	m_unTauntSourceItemID_Low:  Integer
+	m_unTauntSourceItemID_High:  Integer
+	m_flRuneCharge: Float
+	m_bHasPasstimeBall:  Integer
+	m_bIsTargetedForPasstimePass:  Integer
+	m_hPasstimePassTarget:  Integer
+	m_askForBallTime: Float
+	m_bKingRuneBuffActive:  Integer
+
+	m_ConditionData
+	{
+		lengthproxy
+		{
+			lengthprop131:  Integer
+		}
+	}
+
+	m_nPlayerCondEx4:  Integer
+	m_flHolsterAnimTime: Float
+	m_hSwitchTo:  Integer
+}
+
+m_hItem:  Integer
+tflocaldata
+{
+	m_vecOrigin: VectorXY
+	m_vecOrigin[2]: Float
+	player_object_array_element:  Integer
+	player_object_array: Array
+	m_angEyeAngles[0]: Float
+	m_angEyeAngles[1]: Float
+	m_bIsCoaching:  Integer
+	m_hCoach:  Integer
+	m_hStudent:  Integer
+	m_nCurrency:  Integer
+	m_nExperienceLevel:  Integer
+	m_nExperienceLevelProgress:  Integer
+	m_bMatchSafeToLeave:  Integer
+}
+
+tfnonlocaldata
+{
+	m_vecOrigin: VectorXY,
+	m_vecOrigin[2]: Float
+	m_angEyeAngles[0]: Float
+	m_angEyeAngles[1]: Float
+}
+
+m_bAllowMoveDuringTaunt:  Integer
+m_bIsReadyToHighFive:  Integer
+m_hHighFivePartner:  Integer
+m_nForceTauntCam:  Integer
+m_flTauntYaw: Float
+m_nActiveTauntSlot:  Integer
+m_iTauntItemDefIndex:  Integer
+m_flCurrentTauntMoveSpeed: Float
+m_flVehicleReverseTime: Float
+m_flMvMLastDamageTime: Float
+m_flLastDamageTime: Float
+m_bInPowerPlay:  Integer
+m_iSpawnCounter:  Integer
+m_bArenaSpectator:  Integer
+
+m_AttributeManager
+{
+	m_hOuter:  Integer
+	m_ProviderType:  Integer
+	m_iReapplyProvisionParity:  Integer
+}
+
+m_flHeadScale: Float
+m_flTorsoScale: Float
+m_flHandScale: Float
+m_bUseBossHealthBar:  Integer
+m_bUsingVRHeadset:  Integer
+m_bForcedSkin:  Integer
+m_nForcedSkin:  Integer
+m_bGlowEnabled:  Integer
+
+TFSendHealersDataTable
+{
+	m_nActiveWpnClip:  Integer
+}
+
+m_flKartNextAvailableBoost: Float
+m_iKartHealth:  Integer
+m_iKartState:  Integer
+m_hGrapplingHookTarget:  Integer
+m_hSecondaryLastWeapon:  Integer
+m_bUsingActionSlot:  Integer
+m_flInspectTime: Float
+m_flHelpmeButtonPressTime: Float
+m_iCampaignMedals:  Integer
+m_iPlayerSkinOverride:  Integer
+m_bViewingCYOAPDA:  Integer
+m_bRegenerating:  Integer
+```
+
+### CTFRagdoll
+```lua
+m_vecRagdollOrigin:  Vector
+m_hPlayer:  Integer
+m_vecForce:  Vector
+m_vecRagdollVelocity:  Vector
+m_nForceBone:  Integer
+m_bGib:  Integer
+m_bBurning:  Integer
+m_bElectrocuted:  Integer
+m_bFeignDeath:  Integer
+m_bWasDisguised:  Integer
+m_bOnGround:  Integer
+m_bCloaked:  Integer
+m_bBecomeAsh:  Integer
+m_iDamageCustom:  Integer
+m_iTeam:  Integer
+m_iClass:  Integer
+
+m_hRagWearables
+{
+	lengthproxy
+	{
+		lengthprop8:  Integer
+	}
+}
+
+m_bGoldRagdoll:  Integer
+m_bIceRagdoll:  Integer
+m_bCritOnHardHit:  Integer
+m_flHeadScale: Float
+m_flTorsoScale: Float
+m_flHandScale: Float
+```
+
+### CTFPasstimeLogic
+```lua
+m_hBall:  Integer
+m_trackPoints[0]:  Vector
+m_trackPoints: Array
+m_iNumSections:  Integer
+m_iCurrentSection:  Integer
+m_flMaxPassRange: Float
+m_iBallPower:  Integer
+m_flPackSpeed: Float
+m_bPlayerIsPackMember: DataTable
+```
+
+### CPasstimeBall
+```lua
+m_iCollisionCount:  Integer
+m_hHomingTarget:  Integer
+m_hCarrier:  Integer
+m_hPrevCarrier:  Integer
+```
+
+### CTFObjectiveResource
+```lua
+m_nMannVsMachineMaxWaveCount:  Integer
+m_nMannVsMachineWaveCount:  Integer
+m_nMannVsMachineWaveEnemyCount:  Integer
+m_nMvMWorldMoney:  Integer
+m_flMannVsMachineNextWaveTime: Float
+m_bMannVsMachineBetweenWaves:  Integer
+m_nFlagCarrierUpgradeLevel:  Integer
+m_flMvMBaseBombUpgradeTime: Float
+m_flMvMNextBombUpgradeTime: Float
+m_iszMvMPopfileName: String
+m_iChallengeIndex:  Integer
+m_nMvMEventPopfileType:  Integer
+m_nMannVsMachineWaveClassCounts: DataTable
+m_iszMannVsMachineWaveClassNames[0]: String
+m_iszMannVsMachineWaveClassNames: Array
+m_nMannVsMachineWaveClassFlags: DataTable
+m_nMannVsMachineWaveClassCounts2: DataTable
+m_iszMannVsMachineWaveClassNames2[0]: String
+m_iszMannVsMachineWaveClassNames2: Array
+m_nMannVsMachineWaveClassFlags2: DataTable
+m_bMannVsMachineWaveClassActive: DataTable
+m_bMannVsMachineWaveClassActive2: DataTable
+```
+
+### CTFGlow
+```lua
+m_iMode:  Integer
+m_glowColor:  Integer
+m_bDisabled:  Integer
+m_hTarget:  Integer
+```
+
+### CAmmoPack
+```lua
+m_vecInitialVelocity:  Vector
+m_angRotation[0]: Float
+m_angRotation[1]: Float
+m_angRotation[2]: Float
+```
+
+### CObjectTeleporter
+```lua
+m_iState:  Integer
+m_flRechargeTime: Float
+m_flCurrentRechargeDuration: Float
+m_iTimesUsed:  Integer
+m_flYawToExit: Float
+m_bMatchBuilding:  Integer
+```
+
+### CObjectSentrygun
+```lua
+m_iAmmoShells:  Integer
+m_iAmmoRockets:  Integer
+m_iState:  Integer
+m_bPlayerControlled:  Integer
+m_nShieldLevel:  Integer
+m_bShielded:  Integer
+m_hEnemy:  Integer
+m_hAutoAimTarget:  Integer
+	
+SentrygunLocalData
+{
+	m_iKills:  Integer
+	m_iAssists:  Integer
+}
+```
+
+### CObjectDispenser
+```lua
+m_iState:  Integer
+m_iAmmoMetal:  Integer
+m_iMiniBombCounter:  Integer
+healing_array_element:  Integer
+healing_array: Array
+```
+
+### CMonsterResource
+```lua
+m_iBossHealthPercentageByte:  Integer
+m_iBossStunPercentageByte:  Integer
+m_iSkillShotCompleteCount:  Integer
+m_fSkillShotComboEndTime: Float
+m_iBossState:  Integer
+```
+
+### CFuncPasstimeGoal
+```lua
+m_bTriggerDisabled:  Integer
+m_iGoalType:  Integer
+```
+
+### CCaptureZone
+```lua
+m_bDisabled:  Integer
+```
+
+### CCurrencyPack
+```lua
+m_bDistributed:  Integer
+```
+
+### CBaseObject
+```lua
+m_iHealth:  Integer
+m_iMaxHealth:  Integer
+m_bHasSapper:  Integer
+m_iObjectType:  Integer
+m_bBuilding:  Integer
+m_bPlacing:  Integer
+m_bCarried:  Integer
+m_bCarryDeploy:  Integer
+m_bMiniBuilding:  Integer
+m_flPercentageConstructed: Float
+m_fObjectFlags:  Integer
+m_hBuiltOnEntity:  Integer
+m_bDisabled:  Integer
+m_hBuilder:  Integer
+m_vecBuildMaxs:  Vector
+m_vecBuildMins:  Vector
+m_iDesiredBuildRotations:  Integer
+m_bServerOverridePlacement:  Integer
+m_iUpgradeLevel:  Integer
+m_iUpgradeMetal:  Integer
+m_iUpgradeMetalRequired:  Integer
+m_iHighestUpgradeLevel:  Integer
+m_iObjectMode:  Integer
+m_bDisposableBuilding:  Integer
+m_bWasMapPlaced:  Integer
+m_bPlasmaDisable:  Integer
+```
+
+### CTestTraceline
+```lua
+m_clrRender:  Integer
+m_vecOrigin:  Vector
+m_angRotation[0]: Float
+m_angRotation[1]: Float
+m_angRotation[2]: Float
+moveparent:  Integer
+```
+
+### CBaseBeam
+```lua
+m_nModelIndex:  Integer
+m_nHaloIndex:  Integer
+m_nStartFrame:  Integer
+m_nFrameRate:  Integer
+m_fLife: Float
+m_fWidth: Float
+m_fEndWidth: Float
+m_nFadeLength:  Integer
+m_fAmplitude: Float
+m_nSpeed:  Integer
+r:  Integer
+g:  Integer
+B:  Integer
+a:  Integer
+m_nFlags:  Integer
+```
+
+### CSteamJet
+```lua
+m_SpreadSpeed: Float
+m_Speed: Float
+m_StartSize: Float
+m_EndSize: Float
+m_Rate: Float
+m_JetLength: Float
+m_bEmit:  Integer
+m_bFaceLeft:  Integer
+m_nType:  Integer
+m_spawnflags:  Integer
+m_flRollSpeed: Float
+```
+
+### CSmokeStack
+```lua
+m_SpreadSpeed: Float
+m_Speed: Float
+m_StartSize: Float
+m_EndSize: Float
+m_Rate: Float
+m_JetLength: Float
+m_bEmit:  Integer
+m_flBaseSpread: Float
+m_flTwist: Float
+m_flRollSpeed: Float
+m_iMaterialModel:  Integer
+m_AmbientLight.m_vPos:  Vector
+m_AmbientLight.m_vColor:  Vector
+m_AmbientLight.m_flIntensity: Float
+m_DirLight.m_vPos:  Vector
+m_DirLight.m_vColor:  Vector
+m_DirLight.m_flIntensity: Float
+m_vWind:  Vector
+```
+
+### CDustTrail
+```lua
+m_SpawnRate: Float
+m_Color:  Vector
+m_ParticleLifetime: Float
+m_StopEmitTime: Float
+m_MinSpeed: Float
+m_MaxSpeed: Float
+m_MinDirectedSpeed: Float
+m_MaxDirectedSpeed: Float
+m_StartSize: Float
+m_EndSize: Float
+m_SpawnRadius: Float
+m_bEmit:  Integer
+m_Opacity: Float
+```
+
+### CFireTrail
+```lua
+m_nAttachment:  Integer
+m_flLifetime: Float
+```
+
+### CSporeTrail
+```lua
+m_flSpawnRate: Float
+m_vecEndColor:  Vector
+m_flParticleLifetime: Float
+m_flStartSize: Float
+m_flEndSize: Float
+m_flSpawnRadius: Float
+m_bEmit:  Integer
+```
+
+### CSporeExplosion
+```lua
+m_flSpawnRate: Float
+m_flParticleLifetime: Float
+m_flStartSize: Float
+m_flEndSize: Float
+m_flSpawnRadius: Float
+m_bEmit:  Integer
+m_bDontRemove:  Integer
+```
+
+### CRocketTrail
+```lua
+m_SpawnRate: Float
+m_StartColor:  Vector
+m_EndColor:  Vector
+m_ParticleLifetime: Float
+m_StopEmitTime: Float
+m_MinSpeed: Float
+m_MaxSpeed: Float
+m_StartSize: Float
+m_EndSize: Float
+m_SpawnRadius: Float
+m_bEmit:  Integer
+m_nAttachment:  Integer
+m_Opacity: Float
+m_bDamaged:  Integer
+m_flFlareScale: Float
+```
+
+### CSmokeTrail
+```lua
+m_SpawnRate: Float
+m_StartColor:  Vector
+m_EndColor:  Vector
+m_ParticleLifetime: Float
+m_StopEmitTime: Float
+m_MinSpeed: Float
+m_MaxSpeed: Float
+m_MinDirectedSpeed: Float
+m_MaxDirectedSpeed: Float
+m_StartSize: Float
+m_EndSize: Float
+m_SpawnRadius: Float
+m_bEmit:  Integer
+m_nAttachment:  Integer
+m_Opacity: Float
+```
+
+### CPropVehicleDriveable
+```lua
+m_hPlayer:  Integer
+m_nSpeed:  Integer
+m_nRPM:  Integer
+m_flThrottle: Float
+m_nBoostTimeLeft:  Integer
+m_nHasBoost:  Integer
+m_nScannerDisabledWeapons:  Integer
+m_nScannerDisabledVehicle:  Integer
+m_bEnterAnimOn:  Integer
+m_bExitAnimOn:  Integer
+m_bUnableToFire:  Integer
+m_vecEyeExitEndpoint:  Vector
+m_bHasGun:  Integer
+m_vecGunCrosshair:  Vector
+```
+
+### CParticleSmokeGrenade
+```lua
+m_flSpawnTime: Float
+m_FadeStartTime: Float
+m_FadeEndTime: Float
+m_CurrentStage:  Integer
+```
+
+### CParticleFire
+```lua
+m_vOrigin:  Vector
+m_vDirection:  Vector
+```
+
+### CQuadraticBeam
+```lua
+m_targetPosition:  Vector
+m_controlPosition:  Vector
+m_scrollRate: Float
+m_flWidth: Float
+```
+
+### CEmbers
+```lua
+m_nDensity:  Integer
+m_nLifeTime:  Integer
+m_nSpeed:  Integer
+m_bEmit:  Integer
+```
+
+### CEnvWind
+```lua
+m_EnvWindShared
+{
+	m_iMinWind:  Integer
+	m_iMaxWind:  Integer
+	m_iMinGust:  Integer
+	m_iMaxGust:  Integer
+	m_flMinGustDelay: Float
+	m_flMaxGustDelay: Float
+	m_iGustDirChange:  Integer
+	m_iWindSeed:  Integer
+	m_iInitialWindDir:  Integer
+	m_flInitialWindSpeed: Float
+	m_flStartTime: Float
+	m_flGustDuration: Float
+}
+```
+
+### CPrecipitation
+```lua
+m_nPrecipType:  Integer
+```
+
+### CWeaponIFMBaseCamera
+```lua
+m_flRenderAspectRatio: Float
+m_flRenderFOV: Float
+m_flRenderArmLength: Float
+m_vecRenderPosition:  Vector
+m_angRenderAngles:  Vector
+```
+
+### CTFWearable
+```lua
+m_bDisguiseWearable:  Integer
+m_hWeaponAssociatedWith:  Integer
+```
+
+### CBaseAttributableItem
+```lua
+m_AttributeManager
+{
+	m_hOuter:  Integer
+	m_ProviderType:  Integer
+	m_iReapplyProvisionParity:  Integer
+	m_Item
+	{
+		m_iItemDefinitionIndex:  Integer
+		m_iEntityLevel:  Integer
+		m_iItemIDHigh:  Integer
+		m_iItemIDLow:  Integer
+		m_iAccountID:  Integer
+		m_iEntityQuality:  Integer
+		m_bInitialized:  Integer
+		m_bOnlyIterateItemViewAttributes:  Integer
+		m_iTeamNumber:  Integer
+		m_AttributeList
+		{
+			m_Attributes
+			{
+				lengthproxy:
+				{
+					lengthprop20:  Integer
+				}
+			}
+		}
+
+		m_NetworkedDynamicAttributesForDemos
+		{
+			m_Attributes
+			{
+				lengthproxy:
+				{
+					lengthprop20:  Integer
+				}
+			}
+		}
+	}
+}
+```
+
+### CEconEntity
+```lua
+m_AttributeManager
+{
+	m_hOuter:  Integer
+	m_ProviderType:  Integer
+	m_iReapplyProvisionParity:  Integer
+	m_Item
+	{
+		m_iItemDefinitionIndex:  Integer
+		m_iEntityLevel:  Integer
+		m_iItemIDHigh:  Integer
+		m_iItemIDLow:  Integer
+		m_iAccountID:  Integer
+		m_iEntityQuality:  Integer
+		m_bInitialized:  Integer
+		m_bOnlyIterateItemViewAttributes:  Integer
+		m_iTeamNumber:  Integer
+
+		m_AttributeList
+		{
+			m_Attributes
+			{
+				lengthproxy:
+				{
+					lengthprop20:  Integer
+				}
+			}
+		}
+
+		m_NetworkedDynamicAttributesForDemos
+		{
+			m_Attributes
+			{
+				lengthproxy:
+				{
+					lengthprop20:  Integer
+				}
+			}
+		}
+	}
+}
+m_bValidatedAttachedEntity:  Integer
+```
+
+### CHandleTest
+```lua
+m_Handle:  Integer
+m_bSendHandle:  Integer
+```
+
+### CTeamplayRoundBasedRulesProxy
+```lua
+teamplayroundbased_gamerules_data
+{
+	m_iRoundState:  Integer
+	m_bInWaitingForPlayers:  Integer
+	m_iWinningTeam:  Integer
+	m_bInOvertime:  Integer
+	m_bInSetup:  Integer
+	m_bSwitchedTeamsThisRound:  Integer
+	m_bAwaitingReadyRestart:  Integer
+	m_flRestartRoundTime: Float
+	m_flMapResetTime: Float
+	m_nRoundsPlayed:  Integer
+	m_flNextRespawnWave: DataTable
+	m_TeamRespawnWaveTimes: DataTable
+	m_bTeamReady: DataTable
+	m_bStopWatch:  Integer
+	m_bMultipleTrains:  Integer
+	m_bPlayerReady: DataTable
+	m_bCheatsEnabledDuringLevel:  Integer
+	m_flCountdownTime: Float
+	m_flStateTransitionTime: Float
+}
+```
+
+### CTeamRoundTimer
+```lua
+m_bTimerPaused:  Integer
+m_flTimeRemaining: Float
+m_flTimerEndTime: Float
+m_nTimerMaxLength:  Integer
+m_bIsDisabled:  Integer
+m_bShowInHUD:  Integer
+m_nTimerLength:  Integer
+m_nTimerInitialLength:  Integer
+m_bAutoCountdown:  Integer
+m_nSetupTimeLength:  Integer
+m_nState:  Integer
+m_bStartPaused:  Integer
+m_bShowTimeRemaining:  Integer
+m_bInCaptureWatchState:  Integer
+m_bStopWatchTimer:  Integer
+m_flTotalTime: Float
+```
+
+### CSpriteTrail
+```lua
+m_flLifetime: Float
+m_flStartWidth: Float
+m_flEndWidth: Float
+m_flStartWidthVariance: Float
+m_flTextureRes: Float
+m_flMinFadeLength: Float
+m_vecSkyboxOrigin:  Vector
+m_flSkyboxScale: Float
+```
+
+### CSprite
+```lua
+m_hAttachedToEntity:  Integer
+m_nAttachment:  Integer
+m_flScaleTime: Float
+m_flSpriteScale: Float
+m_flSpriteFramerate: Float
+m_flGlowProxySize: Float
+m_flHDRColorScale: Float
+m_flFrame: Float
+m_flBrightnessTime: Float
+m_nBrightness:  Integer
+m_bWorldSpaceScale:  Integer
+```
+
+### CRagdoll_Attached
+```lua
+m_boneIndexAttached:  Integer
+m_ragdollAttachedObjectIndex:  Integer
+m_attachmentPointBoneSpace:  Vector
+m_attachmentPointRagdollSpace:  Vector
+```
+
+### CRagdoll
+```lua
+m_ragAngles[0]:  Vector
+m_ragAngles: Array
+m_ragPos[0]:  Vector
+m_ragPos: Array
+m_hUnragdoll:  Integer
+m_flBlendWeight: Float
+m_nOverlaySequence:  Integer
+```
+
+### CPoseController
+```lua
+m_hProps: DataTable
+m_chPoseIndex: DataTable
+m_bPoseValueParity:  Integer
+m_fPoseValue: Float
+m_fInterpolationTime: Float
+m_bInterpolationWrap:  Integer
+m_fCycleFrequency: Float
+m_nFModType:  Integer
+m_fFModTimeOffset: Float
+m_fFModRate: Float
+m_fFModAmplitude: Float
+```
+
+### CFuncLadder
+```lua
+m_vecPlayerMountPositionTop:  Vector
+m_vecPlayerMountPositionBottom:  Vector
+m_vecLadderDir:  Vector
+m_bFakeLadder:  Integer
+```
+
+### CDetailController
+```lua
+m_flFadeStartDist: Float
+m_flFadeEndDist: Float
+```
+
+### CWorld
+```lua
+m_flWaveHeight: Float
+m_WorldMins:  Vector
+m_WorldMaxs:  Vector
+m_bStartDark:  Integer
+m_flMaxOccludeeArea: Float
+m_flMinOccluderArea: Float
+m_flMaxPropScreenSpaceWidth: Float
+m_flMinPropScreenSpaceWidth: Float
+m_iszDetailSpriteMaterial: String
+m_bColdWorld:  Integer
+```
+
+### CWaterLODControl
+```lua
+m_flCheapWaterStartDistance: Float
+m_flCheapWaterEndDistance: Float
+```
+
+### CVoteController
+```lua
+m_iActiveIssueIndex:  Integer
+m_nVoteIdx:  Integer
+m_iOnlyTeamToVote:  Integer
+m_nVoteOptionCount: DataTable
+m_nPotentialVotes:  Integer
+m_bIsYesNoVote:  Integer
+```
+
+### CVGuiScreen
+```lua
+m_flWidth: Float
+m_flHeight: Float
+m_fScreenFlags:  Integer
+m_nPanelName:  Integer
+m_nAttachmentIndex:  Integer
+m_nOverlayMaterial:  Integer
+m_hPlayerOwner:  Integer
+```
+
+### CPropJeep
+```lua
+m_bHeadlightIsOn:  Integer
+```
+
+### CPropVehicleChoreoGeneric
+```lua
+m_hPlayer:  Integer
+m_bEnterAnimOn:  Integer
+m_bExitAnimOn:  Integer
+m_vecEyeExitEndpoint:  Vector
+m_vehicleView.bClampEyeAngles:  Integer
+m_vehicleView.flPitchCurveZero: Float
+m_vehicleView.flPitchCurveLinear: Float
+m_vehicleView.flRollCurveZero: Float
+m_vehicleView.flRollCurveLinear: Float
+m_vehicleView.flFOV: Float
+m_vehicleView.flYawMin: Float
+m_vehicleView.flYawMax: Float
+m_vehicleView.flPitchMin: Float
+m_vehicleView.flPitchMax: Float
+```
+
+### CProxyToggle
+```lua
+blah
+{
+	m_WithProxy:  Integer
+}
+```
+
+### CTesla
+```lua
+m_SoundName: String
+m_iszSpriteName: String
+```
+
+### CTeamTrainWatcher
+```lua
+m_flTotalProgress: Float
+m_iTrainSpeedLevel:  Integer
+m_flRecedeTime: Float
+m_nNumCappers:  Integer
+m_hGlowEnt:  Integer
+```
+
+### CBaseTeamObjectiveResource
+```lua
+m_iTimerToShowInHUD:  Integer
+m_iStopWatchTimer:  Integer
+m_iNumControlPoints:  Integer
+m_bPlayingMiniRounds:  Integer
+m_bControlPointsReset:  Integer
+m_iUpdateCapHudParity:  Integer
+m_vCPPositions[0]:  Vector
+m_vCPPositions: Array
+m_bCPIsVisible: DataTable
+m_flLazyCapPerc: DataTable
+m_iTeamIcons: DataTable
+m_iTeamOverlays: DataTable
+m_iTeamReqCappers: DataTable
+m_flTeamCapTime: DataTable
+m_iPreviousPoints: DataTable
+m_bTeamCanCap: DataTable
+m_iTeamBaseIcons: DataTable
+m_iBaseControlPoints: DataTable
+m_bInMiniRound: DataTable
+m_iWarnOnCap: DataTable
+m_iszWarnSound[0]: String
+m_iszWarnSound: Array
+m_flPathDistance: DataTable
+m_iCPGroup: DataTable
+m_bCPLocked: DataTable
+m_nNumNodeHillData: DataTable
+m_flNodeHillData: DataTable
+m_bTrackAlarm: DataTable
+m_flUnlockTimes: DataTable
+m_bHillIsDownhill: DataTable
+m_flCPTimerTimes: DataTable
+m_iNumTeamMembers: DataTable
+m_iCappingTeam: DataTable
+m_iTeamInZone: DataTable
+m_bBlocked: DataTable
+m_iOwner: DataTable
+m_bCPCapRateScalesWithPlayers: DataTable
+m_pszCapLayoutInHUD: String
+m_flCustomPositionX: Float
+m_flCustomPositionY: Float
+```
+
+### CTeam
+```lua
+m_iTeamNum:  Integer
+m_iScore:  Integer
+m_iRoundsWon:  Integer
+m_szTeamname: String
+player_array_element:  Integer
+player_array: Array
+```
+
+### CSun
+```lua
+m_clrRender:  Integer
+m_clrOverlay:  Integer
+m_vDirection:  Vector
+m_bOn:  Integer
+m_nSize:  Integer
+m_nOverlaySize:  Integer
+m_nMaterial:  Integer
+m_nOverlayMaterial:  Integer
+	HDRColorScale: Float
+```
+
+### CParticlePerformanceMonitor
+```lua
+m_bMeasurePerf:  Integer
+m_bDisplayPerf:  Integer
+```
+
+### CSpotlightEnd
+```lua
+m_flLightScale: Float
+m_Radius: Float
+```
+
+### CSlideshowDisplay
+```lua
+m_bEnabled:  Integer
+m_szDisplayText: String
+m_szSlideshowDirectory: String
+m_chCurrentSlideLists: DataTable
+m_fMinSlideTime: Float
+m_fMaxSlideTime: Float
+m_iCycleType:  Integer
+m_bNoListRepeats:  Integer
+```
+
+### CShadowControl
+```lua
+m_shadowDirection:  Vector
+m_shadowColor:  Integer
+m_flShadowMaxDist: Float
+m_bDisableShadows:  Integer
+```
+
+### CSceneEntity
+```lua
+m_nSceneStringIndex:  Integer
+m_bIsPlayingBack:  Integer
+m_bPaused:  Integer
+m_bMultiplayer:  Integer
+m_flForceClientTime: Float
+
+m_hActorList
+{
+	lengthproxy
+	{
+		lengthprop16:  Integer
+	}
+}
+```
+
+### CRopeKeyframe
+```lua
+m_iRopeMaterialModelIndex:  Integer
+m_hStartPoint:  Integer
+m_hEndPoint:  Integer
+m_iStartAttachment:  Integer
+m_iEndAttachment:  Integer
+m_fLockedPoints:  Integer
+m_Slack:  Integer
+m_RopeLength:  Integer
+m_RopeFlags:  Integer
+m_TextureScale: Float
+m_nSegments:  Integer
+m_bConstrainBetweenEndpoints:  Integer
+m_Subdiv:  Integer
+m_Width: Float
+m_flScrollSpeed: Float
+m_vecOrigin:  Vector
+moveparent:  Integer
+m_iParentAttachment:  Integer
+```
+
+### CRagdollManager
+```lua
+m_iCurrentMaxRagdollCount:  Integer
+```
+
+### CPhysicsPropMultiplayer
+```lua
+m_iPhysicsMode:  Integer
+m_fMass: Float
+m_collisionMins:  Vector
+m_collisionMaxs:  Vector
+```
+
+### CPhysBoxMultiplayer
+```lua
+m_iPhysicsMode:  Integer
+m_fMass: Float
+```
+
+### CDynamicProp
+```lua
+m_bUseHitboxesForRenderBox:  Integer
+```
+
+### CPointWorldText
+```lua
+m_szText: String
+m_flTextSize: Float
+m_flTextSpacingX: Float
+m_flTextSpacingY: Float
+m_colTextColor:  Integer
+m_nOrientation:  Integer
+m_nFont:  Integer
+m_bRainbow:  Integer
+```
+
+### CPointCommentaryNode
+```lua
+m_bActive:  Integer
+m_flStartTime: Float
+m_iszCommentaryFile: String
+m_iszCommentaryFileNoHDR: String
+m_iszSpeakers: String
+m_iNodeNumber:  Integer
+m_iNodeNumberMax:  Integer
+m_hViewPosition:  Integer
+```
+
+### CPointCamera
+```lua
+m_FOV: Float
+m_Resolution: Float
+m_bFogEnable:  Integer
+m_FogColor:  Integer
+m_flFogStart: Float
+m_flFogEnd: Float
+m_flFogMaxDensity: Float
+m_bActive:  Integer
+m_bUseScreenAspectRatio:  Integer
+```
+
+### CPlayerResource
+```lua
+m_iPing: DataTable
+m_iScore: DataTable
+m_iDeaths: DataTable
+m_bConnected: DataTable
+m_iTeam: DataTable
+m_bAlive: DataTable
+m_iHealth: DataTable
+m_iAccountID: DataTable
+m_bValid: DataTable
+m_iUserID: DataTable
+```
+
+### CPlasma
+```lua
+m_flStartScale: Float
+m_flScale: Float
+m_flScaleTime: Float
+m_nFlags:  Integer
+m_nPlasmaModelIndex:  Integer
+m_nPlasmaModelIndex2:  Integer
+m_nGlowModelIndex:  Integer
+```
+
+### CPhysicsProp
+```lua
+m_bAwake:  Integer
+```
+
+### CPhysBox
+```lua
+m_mass: Float
+```
+
+### CParticleSystem
+```lua
+m_vecOrigin:  Vector
+m_hOwnerEntity:  Integer
+moveparent:  Integer
+m_iParentAttachment:  Integer
+m_angRotation:  Vector
+m_iEffectIndex:  Integer
+m_bActive:  Integer
+m_flStartTime: Float
+m_hControlPointEnts: DataTable
+m_iControlPointParents: DataTable
+m_bWeatherEffect:  Integer
+```
+
+### CMaterialModifyControl
+```lua
+m_szMaterialName: String
+m_szMaterialVar: String
+m_szMaterialVarValue: String
+m_iFrameStart:  Integer
+m_iFrameEnd:  Integer
+m_bWrap:  Integer
+m_flFramerate: Float
+m_bNewAnimCommandsSemaphore:  Integer
+m_flFloatLerpStartValue: Float
+m_flFloatLerpEndValue: Float
+m_flFloatLerpTransitionTime: Float
+m_bFloatLerpWrap:  Integer
+m_nModifyMode:  Integer
+```
+
+### CLightGlow
+```lua
+m_clrRender:  Integer
+m_nHorizontalSize:  Integer
+m_nVerticalSize:  Integer
+m_nMinDist:  Integer
+m_nMaxDist:  Integer
+m_nOuterMaxDist:  Integer
+m_spawnflags:  Integer
+m_vecOrigin:  Vector
+m_angRotation:  Vector
+moveparent:  Integer
+m_flGlowProxySize: Float
+HDRColorScale: Float
+```
+
+### CInfoOverlayAccessor
+```lua
+m_iTextureFrameIndex:  Integer
+m_iOverlayID:  Integer
+```
+
+### CFuncSmokeVolume
+```lua
+m_Color1:  Integer
+m_Color2:  Integer
+m_MaterialName: String
+m_ParticleDrawWidth: Float
+m_ParticleSpacingDistance: Float
+m_DensityRampSpeed: Float
+m_RotationSpeed: Float
+m_MovementSpeed: Float
+m_Density: Float
+m_spawnflags:  Integer
+
+m_Collision
+{
+	m_vecMinsPreScaled:  Vector
+	m_vecMaxsPreScaled:  Vector
+	m_vecMins:  Vector
+	m_vecMaxs:  Vector
+	m_nSolidType:  Integer
+	m_usSolidFlags:  Integer
+	m_nSurroundType:  Integer
+	m_triggerBloat:  Integer
+	m_bUniformTriggerBloat:  Integer
+	m_vecSpecifiedSurroundingMinsPreScaled:  Vector
+	m_vecSpecifiedSurroundingMaxsPreScaled:  Vector
+	m_vecSpecifiedSurroundingMins:  Vector
+	m_vecSpecifiedSurroundingMaxs:  Vector
+}
+```
+
+### CFuncRotating
+```lua
+m_vecOrigin:  Vector
+m_angRotation[0]: Float
+m_angRotation[1]: Float
+m_angRotation[2]: Float
+m_flSimulationTime:  Integer
+```
+
+### CFuncOccluder
+```lua
+m_bActive:  Integer
+m_nOccluderIndex:  Integer
+```
+
+### CFunc_LOD
+```lua
+m_fDisappearDist: Float
+```
+
+### CFunc_Dust
+```lua
+m_Color:  Integer
+m_SpawnRate:  Integer
+m_flSizeMin: Float
+m_flSizeMax: Float
+m_LifetimeMin:  Integer
+m_LifetimeMax:  Integer
+m_DustFlags:  Integer
+m_SpeedMax:  Integer
+m_DistMax:  Integer
+m_nModelIndex:  Integer
+m_FallSpeed: Float
+
+m_Collision
+{
+	m_vecMinsPreScaled:  Vector
+	m_vecMaxsPreScaled:  Vector
+	m_vecMins:  Vector
+	m_vecMaxs:  Vector
+	m_nSolidType:  Integer
+	m_usSolidFlags:  Integer
+	m_nSurroundType:  Integer
+	m_triggerBloat:  Integer
+	m_bUniformTriggerBloat:  Integer
+	m_vecSpecifiedSurroundingMinsPreScaled:  Vector
+	m_vecSpecifiedSurroundingMaxsPreScaled:  Vector
+	m_vecSpecifiedSurroundingMins:  Vector
+	m_vecSpecifiedSurroundingMaxs:  Vector
+}
+```
+
+### CFuncConveyor
+```lua
+m_flConveyorSpeed: Float
+```
+
+### CBreakableSurface
+```lua
+m_nNumWide:  Integer
+m_nNumHigh:  Integer
+m_flPanelWidth: Float
+m_flPanelHeight: Float
+m_vNormal:  Vector
+m_vCorner:  Vector
+m_bIsBroken:  Integer
+m_nSurfaceType:  Integer
+m_RawPanelBitVec: DataTable
+```
+
+### CFuncAreaPortalWindow
+```lua
+m_flFadeStartDist: Float
+m_flFadeDist: Float
+m_flTranslucencyLimit: Float
+m_iBackgroundModelIndex:  Integer
+```
+
+### CCFish
+```lua
+m_poolOrigin:  Vector
+m_x: Float
+m_y: Float
+m_z: Float
+m_angle: Float
+m_nModelIndex:  Integer
+m_lifeState:  Integer
+m_waterLevel: Float
+```
+
+### CEntityFlame
+```lua
+m_hEntAttached:  Integer
+```
+
+### CFireSmoke
+```lua
+m_flStartScale: Float
+m_flScale: Float
+m_flScaleTime: Float
+m_nFlags:  Integer
+m_nFlameModelIndex:  Integer
+m_nFlameFromAboveModelIndex:  Integer
+```
+
+### CEnvTonemapController
+```lua
+m_bUseCustomAutoExposureMin:  Integer
+m_bUseCustomAutoExposureMax:  Integer
+m_bUseCustomBloomScale:  Integer
+m_flCustomAutoExposureMin: Float
+m_flCustomAutoExposureMax: Float
+m_flCustomBloomScale: Float
+m_flCustomBloomScaleMinimum: Float
+```
+
+### CEnvScreenEffect
+```lua
+m_flDuration: Float
+m_nType:  Integer
+```
+
+### CEnvScreenOverlay
+```lua
+m_iszOverlayNames[0]: String
+m_iszOverlayNames: Array
+m_flOverlayTimes[0]: Float
+m_flOverlayTimes: Array
+m_flStartTime: Float
+m_iDesiredOverlay:  Integer
+m_bIsActive:  Integer
+```
+
+### CEnvProjectedTexture
+```lua
+m_hTargetEntity:  Integer
+m_bState:  Integer
+m_flLightFOV: Float
+m_bEnableShadows:  Integer
+m_bLightOnlyTarget:  Integer
+m_bLightWorld:  Integer
+m_bCameraSpace:  Integer
+m_LinearFloatLightColor:  Vector
+m_flAmbient: Float
+m_SpotlightTextureName: String
+m_nSpotlightTextureFrame:  Integer
+m_flNearZ: Float
+m_flFarZ: Float
+m_nShadowQuality:  Integer
+```
+
+### CEnvParticleScript
+```lua
+m_flSequenceScale: Float
+```
+
+### CFogController
+```lua
+m_fog.enable:  Integer
+m_fog.blend:  Integer
+m_fog.dirPrimary:  Vector
+m_fog.colorPrimary:  Integer
+m_fog.colorSecondary:  Integer
+m_fog.start: Float
+m_fog.end: Float
+m_fog.farz: Float
+m_fog.maxdensity: Float
+m_fog.colorPrimaryLerpTo:  Integer
+m_fog.colorSecondaryLerpTo:  Integer
+m_fog.startLerpTo: Float
+m_fog.endLerpTo: Float
+m_fog.lerptime: Float
+m_fog.duration: Float
+```
+
+### CEntityParticleTrail
+```lua
+m_iMaterialName:  Integer
+m_hConstraintEntity:  Integer
+
+m_Info
+{
+	m_flLifetime: Float
+	m_flStartSize: Float
+	m_flEndSize: Float
+}
+```
+
+### CEntityDissolve
+```lua
+m_flStartTime: Float
+m_flFadeOutStart: Float
+m_flFadeOutLength: Float
+m_flFadeOutModelStart: Float
+m_flFadeOutModelLength: Float
+m_flFadeInStart: Float
+m_flFadeInLength: Float
+m_nDissolveType:  Integer
+m_vDissolverOrigin:  Vector
+m_nMagnitude:  Integer
+```
+
+### CDynamicLight
+```lua
+m_Flags:  Integer
+m_LightStyle:  Integer
+m_Radius: Float
+m_Exponent:  Integer
+m_InnerAngle: Float
+m_OuterAngle: Float
+m_SpotRadius: Float
+```
+
+### CColorCorrectionVolume
+```lua
+m_Weight: Float
+m_lookupFilename: String
+```
+
+### CColorCorrection
+```lua
+m_vecOrigin:  Vector
+m_minFalloff: Float
+m_maxFalloff: Float
+m_flCurWeight: Float
+m_netLookupFilename: String
+m_bEnabled:  Integer
+```
+
+### CBasePlayer
+```lua
+m_iFOV:  Integer
+m_iFOVStart:  Integer
+m_flFOVTime: Float
+m_iDefaultFOV:  Integer
+m_hZoomOwner:  Integer
+m_hVehicle:  Integer
+m_hUseEntity:  Integer
+m_iHealth:  Integer
+m_lifeState:  Integer
+m_iBonusProgress:  Integer
+m_iBonusChallenge:  Integer
+m_flMaxspeed: Float
+m_fFlags:  Integer
+m_iObserverMode:  Integer
+m_hObserverTarget:  Integer
+m_hViewModel[0]:  Integer
+m_hViewModel: Array
+m_szLastPlaceName: String
+
+localdata
+{
+	m_vecViewOffset[0]: Float
+	m_vecViewOffset[1]: Float
+	m_vecViewOffset[2]: Float
+	m_flFriction: Float
+	m_iAmmo: DataTable
+	m_fOnTarget:  Integer
+	m_nTickBase:  Integer
+	m_nNextThinkTick:  Integer
+	m_hLastWeapon:  Integer
+	m_hGroundEntity:  Integer
+	m_vecVelocity[0]: Float
+	m_vecVelocity[1]: Float
+	m_vecVelocity[2]: Float
+	m_vecBaseVelocity:  Vector
+	m_hConstraintEntity:  Integer
+	m_vecConstraintCenter:  Vector
+	m_flConstraintRadius: Float
+	m_flConstraintWidth: Float
+	m_flConstraintSpeedFactor: Float
+	m_flDeathTime: Float
+	m_nWaterLevel:  Integer
+	m_flLaggedMovementValue: Float
+
+	m_Local
+	{
+		m_chAreaBits: DataTable
+		m_chAreaPortalBits: DataTable
+		m_iHideHUD:  Integer
+		m_flFOVRate: Float
+		m_bDucked:  Integer
+		m_bDucking:  Integer
+		m_bInDuckJump:  Integer
+		m_flDucktime: Float
+		m_flDuckJumpTime: Float
+		m_flJumpTime: Float
+		m_flFallVelocity: Float
+		m_vecPunchAngle:  Vector
+		m_vecPunchAngleVel:  Vector
+		m_bDrawViewmodel:  Integer
+		m_bWearingSuit:  Integer
+		m_bPoisoned:  Integer
+		m_bForceLocalPlayerDraw:  Integer
+		m_flStepSize: Float
+		m_bAllowAutoMovement:  Integer
+		m_skybox3d.scale:  Integer
+		m_skybox3d.origin:  Vector
+		m_skybox3d.area:  Integer
+		m_skybox3d.fog.enable:  Integer
+		m_skybox3d.fog.blend:  Integer
+		m_skybox3d.fog.dirPrimary:  Vector
+		m_skybox3d.fog.colorPrimary:  Integer
+		m_skybox3d.fog.colorSecondary:  Integer
+		m_skybox3d.fog.start: Float
+		m_skybox3d.fog.end: Float
+		m_skybox3d.fog.maxdensity: Float
+		m_PlayerFog.m_hCtrl:  Integer
+		m_audio.localSound[0]:  Vector
+		m_audio.localSound[1]:  Vector
+		m_audio.localSound[2]:  Vector
+		m_audio.localSound[3]:  Vector
+		m_audio.localSound[4]:  Vector
+		m_audio.localSound[5]:  Vector
+		m_audio.localSound[6]:  Vector
+		m_audio.localSound[7]:  Vector
+		m_audio.soundscapeIndex:  Integer
+		m_audio.localBits:  Integer
+		m_audio.entIndex:  Integer
+		m_szScriptOverlayMaterial: String
+	}
+}
+
+m_AttributeList
+{
+	m_Attributes
+	{
+		lengthproxy
+		{
+			lengthprop20:  Integer
+		}
+	}
+}
+
+pl
+{
+	deadflag:  Integer
+}
+
+m_hMyWearables
+{
+	lengthproxy
+	{
+		lengthprop8:  Integer
+	}
+}
+```
+
+### CBaseFlex
+```lua
+m_flexWeight: DataTable
+m_blinktoggle:  Integer
+m_viewtarget:  Vector
+```
+
+### CBaseEntity
+```lua
+AnimTimeMustBeFirst
+{
+	m_flAnimTime:  Integer
+}
+m_flSimulationTime:  Integer
+m_ubInterpolationFrame:  Integer
+m_vecOrigin:  Vector
+m_angRotation:  Vector
+m_nModelIndex:  Integer
+m_fEffects:  Integer
+m_nRenderMode:  Integer
+m_nRenderFX:  Integer
+m_clrRender:  Integer
+m_iTeamNum:  Integer
+m_CollisionGroup:  Integer
+m_flElasticity: Float
+m_flShadowCastDistance: Float
+m_hOwnerEntity:  Integer
+m_hEffectEntity:  Integer
+moveparent:  Integer
+m_iParentAttachment:  Integer
+movetype:  Integer
+movecollide:  Integer
+
+m_iTextureFrameIndex:  Integer
+m_bSimulatedEveryTick:  Integer
+m_bAnimatedEveryTick:  Integer
+m_bAlternateSorting:  Integer
+m_nModelIndexOverrides: DataTable
+
+m_Collision
+{
+	m_vecMinsPreScaled:  Vector
+	m_vecMaxsPreScaled:  Vector
+	m_vecMins:  Vector
+	m_vecMaxs:  Vector
+	m_nSolidType:  Integer
+	m_usSolidFlags:  Integer
+	m_nSurroundType:  Integer
+	m_triggerBloat:  Integer
+	m_bUniformTriggerBloat:  Integer
+	m_vecSpecifiedSurroundingMinsPreScaled:  Vector
+	m_vecSpecifiedSurroundingMaxsPreScaled:  Vector
+	m_vecSpecifiedSurroundingMins:  Vector
+	m_vecSpecifiedSurroundingMaxs:  Vector
+}
+
+predictable_id
+{
+	m_PredictableID:  Integer
+	m_bIsPlayerSimulated:  Integer
+}
+```
+
+### CBaseDoor
+```lua
+m_flWaveHeight: Float
+```
+
+### CBaseCombatCharacter
+```lua
+bcc_localdata
+{
+	m_flNextAttack: Float
+}
+
+m_hActiveWeapon:  Integer
+m_hMyWeapons: DataTable
+m_bGlowEnabled:  Integer
+```
+
+### CBaseAnimatingOverlay
+```lua
+overlay_vars
+{
+	m_AnimOverlay
+	{
+		lengthproxy
+		{
+			lengthprop15:  Integer
+		}
+	}
+}
+```
+
+### CBoneFollower
+```lua
+m_modelIndex:  Integer
+m_solidIndex:  Integer
+```
+
+### CBaseAnimating
+```lua
+m_nSequence:  Integer
+m_nForceBone:  Integer
+m_vecForce:  Vector
+m_nSkin:  Integer
+m_nBody:  Integer
+m_nHitboxSet:  Integer
+m_flModelScale: Float
+m_flModelWidthScale: Float
+m_flPoseParameter: DataTable
+m_flPlaybackRate: Float
+m_flEncodedController: DataTable
+m_bClientSideAnimation:  Integer
+m_bClientSideFrameReset:  Integer
+m_nNewSequenceParity:  Integer
+m_nResetEventsParity:  Integer
+m_nMuzzleFlashParity:  Integer
+m_hLightingOrigin:  Integer
+m_hLightingOriginRelative:  Integer
+
+m_fadeMinDist: Float
+m_fadeMaxDist: Float
+m_flFadeScale: Float
+
+serveranimdata
+{
+	m_flCycle: Float
+}
+```
+
+### CInfoLightingRelative
+```lua
+m_hLightingLandmark:  Integer
+```
+
+### CAI_BaseNPC
+```lua
+m_lifeState:  Integer
+m_bPerformAvoidance:  Integer
+m_bIsMoving:  Integer
+m_bFadeCorpse:  Integer
+m_iDeathPose:  Integer
+m_iDeathFrame:  Integer
+m_iSpeedModRadius:  Integer
+m_iSpeedModSpeed:  Integer
+m_bSpeedModActive:  Integer
+m_bImportanRagdoll:  Integer
+m_flTimePingEffect: Float
+```
+
+### CBeam
+```lua
+m_nBeamType:  Integer
+m_nBeamFlags:  Integer
+m_nNumBeamEnts:  Integer
+m_hAttachEntity: DataTable
+m_nAttachIndex: DataTable
+m_nHaloIndex:  Integer
+m_fHaloScale: Float
+m_fWidth: Float
+m_fEndWidth: Float
+m_fFadeLength: Float
+m_fAmplitude: Float
+m_fStartFrame: Float
+m_fSpeed: Float
+m_flFramerate: Float
+m_flHDRColorScale: Float
+m_clrRender:  Integer
+m_nRenderFX:  Integer
+m_nRenderMode:  Integer
+m_flFrame: Float
+m_vecEndPos:  Vector
+m_nModelIndex:  Integer
+m_nMinDXLevel:  Integer
+m_vecOrigin:  Vector
+moveparent:  Integer
+
+beampredictable_id
+{
+	m_PredictableID:  Integer
+	m_bIsPlayerSimulated:  Integer
+}
+```
+
+### CBaseViewModel
+```lua
+m_nModelIndex:  Integer
+m_nSkin:  Integer
+m_nBody:  Integer
+m_nSequence:  Integer
+m_nViewModelIndex:  Integer
+m_flPlaybackRate: Float
+m_fEffects:  Integer
+m_nAnimationParity:  Integer
+m_hWeapon:  Integer
+m_hOwner:  Integer
+m_nNewSequenceParity:  Integer
+m_nResetEventsParity:  Integer
+m_nMuzzleFlashParity:  Integer
+m_flPoseParameter[0]: Float
+m_flPoseParameter: Array
+```
+
+### CBaseProjectile
+```lua
+m_hOriginalLauncher:  Integer
+```
+
+### CBaseGrenade
+```lua
+m_flDamage: Float
+m_DmgRadius: Float
+m_bIsLive:  Integer
+m_hThrower:  Integer
+m_vecVelocity:  Vector
+m_fFlags:  Integer
+```
+
+### CBaseCombatWeapon
+```lua
+m_iViewModelIndex:  Integer
+m_iWorldModelIndex:  Integer
+m_iState:  Integer
+m_hOwner:  Integer
+
+LocalWeaponData
+{
+	m_iClip1:  Integer
+	m_iClip2:  Integer
+	m_iPrimaryAmmoType:  Integer
+	m_iSecondaryAmmoType:  Integer
+	m_nViewModelIndex:  Integer
+	m_nCustomViewmodelModelIndex:  Integer
+	m_bFlipViewModel:  Integer
+}
+
+LocalActiveWeaponData
+{
+	m_flNextPrimaryAttack: Float
+	m_flNextSecondaryAttack: Float
+	m_nNextThinkTick:  Integer
+	m_flTimeWeaponIdle: Float
+}
+```
+
+## Temp Entities
+
+### CTETFParticleEffect
+```lua
+m_vecOrigin[0]: Float
+m_vecOrigin[1]: Float
+m_vecOrigin[2]: Float
+m_vecStart[0]: Float
+m_vecStart[1]: Float
+m_vecStart[2]: Float
+m_vecAngles:  Vector
+m_iParticleSystemIndex:  Integer
+entindex:  Integer
+m_iAttachType:  Integer
+m_iAttachmentPointIndex:  Integer
+m_bResetParticles:  Integer
+m_bCustomColors:  Integer
+m_CustomColors.m_vecColor1:  Vector
+m_CustomColors.m_vecColor2:  Vector
+m_bControlPoint1:  Integer
+m_ControlPoint1.m_eParticleAttachment:  Integer
+m_ControlPoint1.m_vecOffset[0]: Float
+m_ControlPoint1.m_vecOffset[1]: Float
+m_ControlPoint1.m_vecOffset[2]: Float
+```
+
+### CTETFExplosion
+```lua
+m_vecOrigin[0]: Float
+m_vecOrigin[1]: Float
+m_vecOrigin[2]: Float
+m_vecNormal:  Vector
+m_iWeaponID:  Integer
+entindex:  Integer
+m_nDefID:  Integer
+m_nSound:  Integer
+m_iCustomParticleIndex:  Integer
+```
+
+### CTETFBlood
+```lua
+m_vecOrigin[0]: Float
+m_vecOrigin[1]: Float
+m_vecOrigin[2]: Float
+m_vecNormal:  Vector
+entindex:  Integer
+```
+
+### CTEPlayerAnimEvent
+```lua
+m_hPlayer:  Integer
+m_iEvent:  Integer
+m_nData:  Integer
+```
+
+### CTEFireBullets
+```lua
+m_vecOrigin:  Vector
+m_vecAngles[0]: Float
+m_vecAngles[1]: Float
+m_iWeaponID:  Integer
+m_iMode:  Integer
+m_iSeed:  Integer
+m_iPlayer:  Integer
+m_flSpread: Float
+m_bCritical:  Integer
+```
+
+### CTEWorldDecal
+```lua
+m_vecOrigin:  Vector
+m_nIndex:  Integer
+```
+
+### CTESpriteSpray
+```lua
+m_vecOrigin:  Vector
+m_vecDirection:  Vector
+m_nModelIndex:  Integer
+m_fNoise: Float
+m_nCount:  Integer
+m_nSpeed:  Integer
+```
+
+### CTESprite
+```lua
+m_vecOrigin:  Vector
+m_nModelIndex:  Integer
+m_fScale: Float
+m_nBrightness:  Integer
+```
+
+### CTESparks
+```lua
+m_nMagnitude:  Integer
+m_nTrailLength:  Integer
+m_vecDir:  Vector
+```
+
+### CTESmoke
+```lua
+m_vecOrigin:  Vector
+m_nModelIndex:  Integer
+m_fScale: Float
+m_nFrameRate:  Integer
+```
+
+### CTEShowLine
+```lua
+m_vecEnd:  Vector
+```
+
+### CTEProjectedDecal
+```lua
+m_vecOrigin:  Vector
+m_angRotation:  Vector
+m_flDistance: Float
+m_nIndex:  Integer
+```
+
+### CTEPlayerDecal
+```lua
+m_vecOrigin:  Vector
+m_nEntity:  Integer
+m_nPlayer:  Integer
+```
+
+### CTEPhysicsProp
+```lua
+m_vecOrigin:  Vector
+m_angRotation[0]: Float
+m_angRotation[1]: Float
+m_angRotation[2]: Float
+m_vecVelocity:  Vector
+m_nModelIndex:  Integer
+m_nFlags:  Integer
+m_nSkin:  Integer
+m_nEffects:  Integer
+```
+
+### CTEParticleSystem
+```lua
+m_vecOrigin[0]: Float
+m_vecOrigin[1]: Float
+m_vecOrigin[2]: Float
+```
+
+### CTEMuzzleFlash
+```lua
+m_vecOrigin:  Vector
+m_vecAngles:  Vector
+m_flScale: Float
+m_nType:  Integer
+```
+
+### CTELargeFunnel
+```lua
+m_nModelIndex:  Integer
+m_nReversed:  Integer
+```
+
+### CTEKillPlayerAttachments
+```lua
+m_nPlayer:  Integer
+```
+
+### CTEImpact
+```lua
+m_vecOrigin:  Vector
+m_vecNormal:  Vector
+m_iType:  Integer
+m_ucFlags:  Integer
+```
+
+### CTEGlowSprite
+```lua
+m_vecOrigin:  Vector
+m_nModelIndex:  Integer
+m_fScale: Float
+m_fLife: Float
+m_nBrightness:  Integer
+```
+
+### CTEShatterSurface
+```lua
+m_vecOrigin:  Vector
+m_vecAngles:  Vector
+m_vecForce:  Vector
+m_vecForcePos:  Vector
+m_flWidth: Float
+m_flHeight: Float
+m_flShardSize: Float
+m_nSurfaceType:  Integer
+m_uchFrontColor[0]:  Integer
+m_uchFrontColor[1]:  Integer
+m_uchFrontColor[2]:  Integer
+m_uchBackColor[0]:  Integer
+m_uchBackColor[1]:  Integer
+m_uchBackColor[2]:  Integer
+```
+
+### CTEFootprintDecal
+```lua
+m_vecOrigin:  Vector
+m_vecDirection:  Vector
+m_nEntity:  Integer
+m_nIndex:  Integer
+m_chMaterialType:  Integer
+```
+
+### CTEFizz
+```lua
+m_nEntity:  Integer
+m_nModelIndex:  Integer
+m_nDensity:  Integer
+m_nCurrent:  Integer
+```
+
+### CTEExplosion
+```lua
+m_nModelIndex:  Integer
+m_fScale: Float
+m_nFrameRate:  Integer
+m_nFlags:  Integer
+m_vecNormal:  Vector
+m_chMaterialType:  Integer
+m_nRadius:  Integer
+m_nMagnitude:  Integer
+```
+
+### CTEEnergySplash
+```lua
+m_vecPos:  Vector
+m_vecDir:  Vector
+m_bExplosive:  Integer
+```
+
+### CTEEffectDispatch
+```lua
+m_EffectData
+{
+	m_vOrigin[0]: Float
+	m_vOrigin[1]: Float
+	m_vOrigin[2]: Float
+	m_vStart[0]: Float
+	m_vStart[1]: Float
+	m_vStart[2]: Float
+	m_vAngles:  Vector
+	m_vNormal:  Vector
+	m_fFlags:  Integer
+	m_flMagnitude: Float
+	m_flScale: Float
+	m_nAttachmentIndex:  Integer
+	m_nSurfaceProp:  Integer
+	m_iEffectName:  Integer
+	m_nMaterial:  Integer
+	m_nDamageType:  Integer
+	m_nHitBox:  Integer
+	entindex:  Integer
+	m_nColor:  Integer
+	m_flRadius: Float
+	m_bCustomColors:  Integer
+	m_CustomColors.m_vecColor1:  Vector
+	m_CustomColors.m_vecColor2:  Vector
+	m_bControlPoint1:  Integer
+	m_ControlPoint1.m_eParticleAttachment:  Integer
+	m_ControlPoint1.m_vecOffset[0]: Float
+	m_ControlPoint1.m_vecOffset[1]: Float
+	m_ControlPoint1.m_vecOffset[2]: Float
+}
+```
+
+### CTEDynamicLight
+```lua
+m_vecOrigin:  Vector
+r:  Integer
+g:  Integer
+B:  Integer
+exponent:  Integer
+m_fRadius: Float
+m_fTime: Float
+m_fDecay: Float
+```
+
+### CTEDecal
+```lua
+m_vecOrigin:  Vector
+m_vecStart:  Vector
+m_nEntity:  Integer
+m_nHitBox:  Integer
+m_nIndex:  Integer
+```
+
+### CTEClientProjectile
+```lua
+m_vecOrigin:  Vector
+m_vecVelocity:  Vector
+m_nModelIndex:  Integer
+m_nLifeTime:  Integer
+m_hOwner:  Integer
+```
+
+### CTEBubbleTrail
+```lua
+m_vecMins:  Vector
+m_vecMaxs:  Vector
+m_nModelIndex:  Integer
+m_flWaterZ: Float
+m_nCount:  Integer
+m_fSpeed: Float
+```
+
+### CTEBubbles
+```lua
+m_vecMins:  Vector
+m_vecMaxs:  Vector
+m_nModelIndex:  Integer
+m_fHeight: Float
+m_nCount:  Integer
+m_fSpeed: Float
+```
+
+### CTEBSPDecal
+```lua
+m_vecOrigin:  Vector
+m_nEntity:  Integer
+m_nIndex:  Integer
+```
+
+### CTEBreakModel
+```lua
+m_vecOrigin:  Vector
+m_angRotation[0]: Float
+m_angRotation[1]: Float
+m_angRotation[2]: Float
+m_vecSize:  Vector
+m_vecVelocity:  Vector
+m_nModelIndex:  Integer
+m_nRandomization:  Integer
+m_nCount:  Integer
+m_fTime: Float
+m_nFlags:  Integer
+```
+
+### CTEBloodStream
+```lua
+m_vecDirection:  Vector
+r:  Integer
+g:  Integer
+B:  Integer
+a:  Integer
+m_nAmount:  Integer
+```
+
+### CTEBloodSprite
+```lua
+m_vecOrigin:  Vector
+m_vecDirection:  Vector
+r:  Integer
+g:  Integer
+B:  Integer
+a:  Integer
+m_nSprayModel:  Integer
+m_nDropModel:  Integer
+m_nSize:  Integer
+```
+
+### CTEBeamSpline
+```lua
+m_nPoints:  Integer
+m_vecPoints[0]:  Vector
+m_vecPoints: Array
+```
+
+### CTEBeamRingPoint
+```lua
+m_vecCenter:  Vector
+m_flStartRadius: Float
+m_flEndRadius: Float
+```
+
+### CTEBeamRing
+```lua
+m_nStartEntity:  Integer
+m_nEndEntity:  Integer
+```
+
+### CTEBeamPoints
+```lua
+m_vecStartPoint:  Vector
+m_vecEndPoint:  Vector
+```
+
+### CTEBeamLaser
+```lua
+m_nStartEntity:  Integer
+m_nEndEntity:  Integer
+```
+
+### CTEBeamFollow
+```lua
+m_iEntIndex:  Integer
+```
+
+### CTEBeamEnts
+```lua
+m_nStartEntity:  Integer
+m_nEndEntity:  Integer
+```
+
+### CTEBeamEntPoint
+```lua
+m_nStartEntity:  Integer
+m_nEndEntity:  Integer
+m_vecStartPoint:  Vector
+m_vecEndPoint:  Vector
+```
+
+### CTEMetalSparks
+```lua
+m_vecPos:  Vector
+m_vecDir:  Vector
+```
+
+### CTEGaussExplosion
+```lua
+m_nType:  Integer
+m_vecDirection:  Vector
+```
+
+### CTEDust
+```lua
+m_flSize: Float
+m_flSpeed: Float
+m_vecDirection:  Vector
 ```
