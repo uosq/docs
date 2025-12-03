@@ -8,15 +8,15 @@ This page describes the Lua globals that are available.
 
 Prints message to console. Each argument is printed on a new line.
 
-### printc( r:integer, g:integer, b:integer, a:integer, msg:any, ... )
+### printc( r: integer, g: integer, b: integer, a: integer, msg: any, ... )
 
 Prints a colored message to console. Each argument is printed on a new line.
 
-### LoadScript( scriptFile )
+### LoadScript( scriptFile: string )
 
 Loads a Lua script from given file.
 
-### UnloadScript( scriptFile )
+### UnloadScript( scriptFile: string )
 
 Unloads a Lua script from given file.
 

@@ -131,3 +131,9 @@ if #party.GetQueuedMatchGroups() > 0 then
     print( "I'm in queue!" )
 end
 ```
+
+```lua title="Check If we can queue"
+local casual = party.GetAllMatchGroups()["Casual"]
+local canQueue = type(party.CanQueueForMatchGroup(casual)) == "boolean"
+print(canQueue)
+```

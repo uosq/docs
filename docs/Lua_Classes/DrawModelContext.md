@@ -12,7 +12,7 @@ Returns entity linked to the drawn model, can be nil.
 
 Returns the name of the model being drawn.
 
-### ForcedMaterialOverride( mat:Material )
+### ForcedMaterialOverride( mat: Material )
 
 Replace material used to draw the model. Material can be found or created via materials. API
 
@@ -20,27 +20,31 @@ Replace material used to draw the model. Material can be found or created via ma
 
 Redraws the model. Can be used to achieve various effects with different materials.
 
-### StudioSetColorModulation( color:Color )
+### StudioSetColorModulation( r: number, g: number, b: number )
 
 Sets the color modulation of the model via StudioRender. Only works for models rendered using STUDIO_RENDER flag.
 
-### StudioSetAlphaModulation( alpha:number )
+### StudioSetAlphaModulation( alpha: number )
 
 Sets the alpha modulation of the model via StudioRender. Only works for models rendered using STUDIO_RENDER flag.
 
-### SetColorModulation( color:Color )
+### SetColorModulation( r: number, g: number, b: number )
 
 Sets the color modulation of the model via RenderView.
 
-### SetAlphaModulation( alpha:number )
+`r`, `g` and `b` have a range of [0, 1].
+
+### SetAlphaModulation( alpha: number )
 
 Sets the alpha modulation of the model via RenderView.
 
-### DepthRange( start:number, end:number )
+The `alpha` parameter has a range of [0, 1]
+
+### DepthRange( start: number, end: number )
 
 Sets the depth range of the scene. Useful for drawing models in the background or other various effects. Should be reset to the default (0,1) when done.
 
-### SuppressEngineLighting( bool:boolean )
+### SuppressEngineLighting( bool: boolean )
 
 Suppresses the engine lighting when drawing the model.
 
@@ -75,4 +79,19 @@ local function onDrawModel( drawModelContext )
 end
  
 callbacks.Register("DrawModel", "hook123", onDrawModel) 
+```
+
+``` lua title="Change LocalPlayer color"
+
+---@param context DrawModelContext
+local function OnDrawModel( context )
+	local localPlayer = context:GetEntity()
+	if localPlayer == nil or localPlayer:GetIndex() ~= client.GetLocalPlayerIndex() then
+		return
+	end
+
+	context:SetColorModulation(1.0, 0.0, 0.0)
+end
+
+callbacks.Register("DrawModel", "colorModExample", OnDrawModel)
 ```
