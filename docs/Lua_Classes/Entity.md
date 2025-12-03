@@ -28,7 +28,7 @@ Returns the team number of the entity
 
 Returns the absolute position of the entity
 
-### SetAbsOrigin(origin:Vector)
+### SetAbsOrigin([origin:Vector3](../Lua_Classes/Vector3.md))
 
 Sets the absolute position of the entity
 
@@ -36,7 +36,7 @@ Sets the absolute position of the entity
 
 Returns the absolute angles of the entity
 
-### SetAbsAngles(angles:Vector)
+### SetAbsAngles([angles:Vector3](../Lua_Classes/Vector3.md))
 
 Sets the absolute angles of the entity
 
@@ -131,6 +131,22 @@ Sets the entity invisibility value
 
 Draws the model of the entity
 
+The most commonly used flag is `STUDIO_RENDER`
+
+| Flag Name | Value |
+| - | - |
+| STUDIO_NONE | 0x00000000 |
+| STUDIO_RENDER | 0x00000001 |
+| STUDIO_VIEWXFORMATTACHMENTS | 0x00000002 |
+| STUDIO_DRAWTRANSLUCENTSUBMODELS | 0x00000004 |
+| STUDIO_TWOPASS | 0x00000008 |
+| STUDIO_STATIC_LIGHTING | 0x00000010 |
+| STUDIO_WIREFRAME | 0x00000020 |
+| STUDIO_ITEM_BLINK | 0x00000040 |
+| STUDIO_NOSHADOWS | 0x00000080 |
+| STUDIO_WIREFRAME_VCOLLIDE | 0x00000100 |
+| STUDIO_NO_OVERRIDE_FOR_ATTACH | 0x00000200 |
+
 ### Release()
 
 Releases the entity, making it invalid. Calling this for networkable entities will kick you from the server. This is only useful for non-networkable entities created with [entities.CreateEntityByName](../Lua_Libraries/entities.md#CreateEntityByName)
@@ -199,7 +215,7 @@ Sets the bool value of the given netvar.
 
 Set the entity value of the given netvar.
 
-### SetPropVector( value:Vector3, propName, ... )
+### SetPropVector( [value:Vector3](../Lua_Classes/Vector3.md), propName, ... )
 
 Set the vector value of the given netvar.
 
@@ -279,13 +295,13 @@ Returns the entity for the specified loadout slot. This can be used to get the h
 
 Whether the player is currently in a freezecam after death
 
-## GetVAngles()
+### GetVAngles()
 
 Returns the third person view angles of the player, as a Vector3
 
-## SetVAngles( vecAngles:Vector3 )
+### SetVAngles( [vecAngles:Vector3](../Lua_Classes/Vector3.md) )
 
-Sets the third person view angles of the player, only really effective on the localplayer
+Sets the third person view angles of the player, only really effective on the localplayer and on FrameStageNotify callback in stage FRAME_RENDER_START
 
 ## Weapon entity methods
 
@@ -327,7 +343,7 @@ Returns [data](WeaponData.md) about the weapon
 
 Weapon "gun" methods are only available if the weapon is a shooting weapon, i.e. with projectiles.
 
-### GetProjectileFireSetup( player:entity, vecOffset:Vector3, bHitTeammates:bool, flEndDist:number )
+### GetProjectileFireSetup( player:entity, [vecOffset:Vector3](../Lua_Classes/Vector3.md), bHitTeammates:bool, flEndDist:number )
 
 Returns vecSrc as Vector3 and angForward as Vector3. vecSrc is the starting position of the projectile, angForward is the direction of the projectile. vecOffset is the offset of the projectile from the player's eye position. bHitTeammates is whether the projectile can hit teammates. flEndDist is the distance the projectile can travel before it disappears.
 
@@ -381,7 +397,7 @@ Returns the swing range of the weapon, returns nil if the weapon is not a melee 
 
 Returns the [Trace object](../Trace) result of the weapon's swing. In simple terms, it simulates what would weapon hit if it was swung.
 
-### Medigun methods
+## Medigun methods
 
 ### GetMedigunHealRate()
 

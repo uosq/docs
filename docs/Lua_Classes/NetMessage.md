@@ -32,11 +32,11 @@ Returns the message name.
 
 Returns the message as a human readable string with the contents of the message.
 
-### WriteToBitBuffer( bitBuffer:BitBuffer )
+### WriteToBitBuffer( [bitBuffer:BitBuffer](../Lua_Classes/BitBuffer.md) )
 
 Writes the message content to a [BitBuffer](../Lua_Classes/BitBuffer.md), useful for reading its variables via the bit buffer. Make sure that current bit position is correct and that you do not overflow the buffer.
 
-### ReadFromBitBuffer( bitBuffer:BitBuffer )
+### ReadFromBitBuffer( [bitBuffer:BitBuffer](../Lua_Classes/BitBuffer.md) )
 
 Reads the message content from a [BitBuffer](../Lua_Classes/BitBuffer.md) and applies it to the message. If done in SendNetMsg callback, the sent message will be changed. Make sure that current bit position is correct.
 

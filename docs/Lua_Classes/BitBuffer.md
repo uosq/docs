@@ -4,7 +4,7 @@ The BitBuffer object is used to read and write data that is usually sent over th
 
 ## Constructor
 
-## BitBuffer( )
+### BitBuffer( )
 
 Creates a new BitBuffer object with an empty buffer. You can write to it using methods below or have some other functions write to it for you, such as [NetMessage::WriteToBitBuffer](../Lua_Classes/NetMessage.md) .
 
